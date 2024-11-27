@@ -2,4 +2,93 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  font-size: 1vw;
+}
+
+body {
+  background: white;
+}
+body .dropdown-menu-container {
+  height: 100svh;
+  position: absolute;
+  overflow: hidden;
+  z-index: 9;
+  right: 0;
+  top: 0;
+  width: 100%;
+  font-family: "poppins";
+  display: flex;
+}
+body .dropdown-menu-container .filter {
+  width: calc(100svw - 500px);
+  backdrop-filter: brightness(75%) blur(3px);
+}
+body .dropdown-menu-container .menu {
+  width: 500px;
+  background: #fdf8ef;
+  padding: 0px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .dropdown-menu-container .menu .socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+body .dropdown-menu-container .menu .socials div {
+  width: 50px;
+  height: 50px;
+  background: #f2ab40;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body .dropdown-menu-container .menu .close {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  margin: 35px 0px;
+  font-size: 0.85rem;
+}
+body .dropdown-menu-container .menu .close p {
+  text-decoration: underline;
+}
+body .dropdown-menu-container .menu .close p:hover {
+  text-decoration: none;
+}
+body .dropdown-menu-container .menu .close button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: transparent;
+  border: none;
+}
+body .dropdown-menu-container .menu .close button span {
+  font-size: 1.75rem;
+}
+body .dropdown-menu-container .menu ol {
+  list-style-type: none;
+}
+body .dropdown-menu-container .menu ol li {
+  width: 100%;
+  cursor: pointer;
+  border-top: 1px rgba(24, 17, 19, 0.4196078431) solid;
+  padding: 20px 0px;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+body .dropdown-menu-container .menu ol li:last-of-type {
+  border-bottom: 1px rgba(24, 17, 19, 0.4196078431) solid;
+}
+body .dropdown-menu-container .menu ol li a {
+  text-decoration: none;
+  color: #181113;
 }/*# sourceMappingURL=styles.css.map */
