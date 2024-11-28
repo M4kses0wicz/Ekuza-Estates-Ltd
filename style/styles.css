@@ -24,7 +24,7 @@ body .dropdown-menu-container {
 }
 body .dropdown-menu-container .filter {
   width: calc(100svw - 500px);
-  backdrop-filter: brightness(75%) blur(3px);
+  backdrop-filter: brightness(75%) blur(1px);
 }
 body .dropdown-menu-container .menu {
   width: 500px;
@@ -36,18 +36,68 @@ body .dropdown-menu-container .menu {
 }
 body .dropdown-menu-container .menu .socials {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-bottom: 35px;
+  width: 100%;
 }
-body .dropdown-menu-container .menu .socials div {
+body .dropdown-menu-container .menu .socials a {
   width: 50px;
   height: 50px;
-  background: #f2ab40;
-  border-radius: 100%;
+  border-radius: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  flex-direction: row;
+  padding-left: 7.5px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: #181113;
+  text-decoration: none;
+  border: #181113 2px solid;
+  text-wrap: nowrap;
+  gap: 7.5px;
+  overflow: hidden;
+}
+body .dropdown-menu-container .menu .socials a:nth-of-type(3) {
+  padding-left: 8px;
+}
+body .dropdown-menu-container .menu .socials a:nth-of-type(4) {
+  padding-left: 10.5px;
+  gap: 8.5px;
+}
+body .dropdown-menu-container .menu .socials a.fb::after {
+  content: "Alex Ekuza";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a.whatsapp::after {
+  content: "+44 1233 123731";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a.email::after {
+  content: "crazygmail@gmail.com";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a.linkedin::after {
+  content: "fancylinkedinprofile";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a:hover:nth-of-type(1) {
+  width: 145px;
+}
+body .dropdown-menu-container .menu .socials a:hover:nth-of-type(2) {
+  width: 185px;
+}
+body .dropdown-menu-container .menu .socials a:hover:nth-of-type(3) {
+  width: 260px;
+}
+body .dropdown-menu-container .menu .socials a:hover:nth-of-type(4) {
+  width: 222px;
+}
+body .dropdown-menu-container .menu .socials a:hover {
+  scale: 100%;
+}
+body .dropdown-menu-container .menu .socials a i {
+  font-size: 30px;
 }
 body .dropdown-menu-container .menu .close {
   display: flex;
@@ -55,10 +105,14 @@ body .dropdown-menu-container .menu .close {
   align-items: center;
   gap: 5px;
   margin: 35px 0px;
-  font-size: 0.85rem;
+  font-size: clamp(20px, 0.9rem, 100px);
+}
+body .dropdown-menu-container .menu .close .x:hover p {
+  text-decoration: none;
 }
 body .dropdown-menu-container .menu .close p {
   text-decoration: underline;
+  cursor: pointer;
 }
 body .dropdown-menu-container .menu .close p:hover {
   text-decoration: none;
@@ -70,9 +124,10 @@ body .dropdown-menu-container .menu .close button {
   flex-direction: row;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 body .dropdown-menu-container .menu .close button span {
-  font-size: 1.75rem;
+  font-size: clamp(37.5px, 1.5rem, 100px);
 }
 body .dropdown-menu-container .menu ol {
   list-style-type: none;
@@ -82,13 +137,111 @@ body .dropdown-menu-container .menu ol li {
   cursor: pointer;
   border-top: 1px rgba(24, 17, 19, 0.4196078431) solid;
   padding: 20px 0px;
-  font-size: 1.15rem;
+  font-size: clamp(25px, 1.15rem, 100px);
   font-weight: 500;
 }
 body .dropdown-menu-container .menu ol li:last-of-type {
   border-bottom: 1px rgba(24, 17, 19, 0.4196078431) solid;
 }
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(0) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(1) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.025s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(2) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.05s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(3) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.075s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(4) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.1s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(5) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.125s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(6) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.15s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(7) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.175s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(8) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.2s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(9) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.225s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(10) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.25s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(11) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.275s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(12) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.3s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(13) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.325s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(14) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.35s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(15) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.375s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(16) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.4s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(17) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.425s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(18) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.45s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(19) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.475s;
+}
 body .dropdown-menu-container .menu ol li a {
   text-decoration: none;
   color: #181113;
+  display: flex;
+}
+body .dropdown-menu-container .menu ol li a span {
+  display: block;
+  transition: 0.1s;
+}
+body .dropdown-menu-container .menu ol li a span.space {
+  height: 5px;
+  width: 9px;
+}
+
+@keyframes nav-txt-anim {
+  from {
+    color: #f2ab40;
+  }
+  to {
+    color: #181113;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -33,7 +33,7 @@ body {
     display: flex;
     .filter {
       width: calc(100svw - 500px);
-      backdrop-filter: brightness(75%) blur(3px);
+      backdrop-filter: brightness(75%) blur(1px);
     }
     .menu {
       width: 500px;
@@ -44,14 +44,70 @@ body {
       justify-content: space-between;
       .socials {
         display: flex;
+        flex-direction: column;
         gap: 10px;
         margin-bottom: 35px;
-        div {
+        width: 100%;
+        a {
           width: 50px;
           height: 50px;
-          background: $gold;
-          border-radius: 100%;
-          @include FlexCenter(row);
+          border-radius: 100px;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          padding-left: 7.5px;
+          cursor: pointer;
+          transition: 0.5s;
+          color: $black;
+          text-decoration: none;
+          border: $black 2px solid;
+          text-wrap: nowrap;
+          gap: 7.5px;
+          overflow: hidden;
+          &:nth-of-type(3) {
+            padding-left: 8px;
+          }
+          &:nth-of-type(4) {
+            padding-left: 10.5px;
+            gap: 8.5px;
+          }
+          &.fb::after {
+            content: "Alex Ekuza";
+            font-size: 17px;
+          }
+          &.whatsapp::after {
+            content: "+44 1233 123731";
+            font-size: 17px;
+          }
+          &.email::after {
+            content: "crazygmail@gmail.com";
+            font-size: 17px;
+          }
+          &.linkedin::after {
+            content: "fancylinkedinprofile";
+            font-size: 17px;
+          }
+
+          &:hover {
+            &:nth-of-type(1) {
+              width: 145px;
+            }
+            &:nth-of-type(2) {
+              width: 185px;
+            }
+            &:nth-of-type(3) {
+              width: 260px;
+            }
+            &:nth-of-type(4) {
+              width: 222px;
+            }
+          }
+          &:hover {
+            scale: 100%;
+          }
+          i {
+            font-size: 30px;
+          }
         }
       }
       .close {
@@ -60,9 +116,13 @@ body {
         align-items: center;
         gap: 5px;
         margin: 35px 0px;
-        font-size: 0.85rem;
+        font-size: clamp(20px, 0.9rem, 100px);
+        .x:hover p {
+          text-decoration: none;
+        }
         p {
           text-decoration: underline;
+          cursor: pointer;
           &:hover {
             text-decoration: none;
           }
@@ -71,8 +131,9 @@ body {
           @include FlexCenter(row);
           background: transparent;
           border: none;
+          cursor: pointer;
           span {
-            font-size: 1.75rem;
+            font-size: clamp(37.5px, 1.5rem, 100px);
           }
         }
       }
@@ -83,17 +144,43 @@ body {
           cursor: pointer;
           border-top: 1px #1811136b solid;
           padding: 20px 0px;
-          font-size: 1.15rem;
+          font-size: clamp(25px, 1.15rem, 100px);
           font-weight: 500;
           &:last-of-type {
             border-bottom: 1px #1811136b solid;
           }
+          @for $i from 0 to 20 {
+            &:hover {
+              a span:nth-of-type(#{$i}) {
+                animation: nav-txt-anim 0.5s forwards;
+                animation-delay: calc($i * 0.025s);
+              }
+            }
+          }
           a {
             text-decoration: none;
             color: $black;
+            display: flex;
+            span {
+              display: block;
+              transition: 0.1s;
+              &.space {
+                height: 5px;
+                width: 9px;
+              }
+            }
           }
         }
       }
     }
+  }
+}
+
+@keyframes nav-txt-anim {
+  from {
+    color: $gold;
+  }
+  to {
+    color: $black;
   }
 }
