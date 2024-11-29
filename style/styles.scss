@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 1vw;
+}
+
+$white: #fdf8ef;
+$gold: #f2ab40;
+$black: #181113;
+
+@mixin FlexCenter($fd) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $fd;
+}
+
+@mixin mobile-w($w) {
+  @media (max-width: $w) {
+    @content;
+  }
+}
+
+@mixin mobile-h($h) {
+  @media (max-height: $h) {
+    @content;
+  }
+}
+
+body {
+  background: white;
+  .dropdown-menu-container {
+    height: 100svh;
+    position: absolute;
+    overflow: hidden;
+    z-index: 9;
+    right: 0;
+    top: 0;
+    width: 100%;
+    font-family: "poppins";
+    display: flex;
+    .filter {
+      width: calc(100svw - 500px);
+      backdrop-filter: brightness(75%) blur(1px);
+    }
+    .menu {
+      width: 500px;
+      background: $white;
+      padding: 0px 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .socials {
+        display: flex;
+        flex-direction: column;
+        @include mobile-h(800px) {
+          flex-direction: row;
+          justify-content: center;
+        }
+        .wrapper {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          @include mobile-h(800px) {
+            width: 50px;
+          }
+          a {
+            &:hover {
+              width: 205px !important ;
+            }
+          }
+        }
+        .toast {
+          display: none;
+        }
+        .copied {
+          display: block !important;
+          font-size: 15px;
+          margin-left: 12px;
+          animation: toast-anim 2s cubic-bezier(1, 0, 0, 1) forwards;
+          animation-delay: -0.5s;
+          @include mobile-h(800px) {
+            position: absolute;
+            transform: translateX(-25%) translateY(-50px);
+            animation: toast-anim-mobile 2s cubic-bezier(1, 0, 0, 1) forwards;
+          }
+        }
+        gap: 10px;
+        margin-bottom: 35px;
+        width: 100%;
+        padding-top: 35px;
+        a {
+          width: 50px;
+          height: 50px;
+          border-radius: 100px;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          padding-left: 7.5px;
+          cursor: pointer;
+          transition: 0.5s;
+          color: $black;
+          text-decoration: none;
+          border: $black 2px solid;
+          text-wrap: nowrap;
+          gap: 7.5px;
+          overflow: hidden;
+          @include mobile-h(800px) {
+            width: 50px !important;
+          }
+          &:nth-of-type(1) {
+            padding-left: 8px;
+          }
+          &:nth-of-type(3) {
+            padding-left: 10.5px;
+            gap: 8.5px;
+          }
+          &.fb::after {
+            content: "Alex Ekuza";
+            font-size: 17px;
+          }
+          &.whatsapp::after {
+            content: "+44 7949 940893";
+            font-size: 17px;
+          }
+          &.email::after {
+            content: "crazygmail@gmail.com";
+            font-size: 17px;
+          }
+          &.linkedin::after {
+            content: "fancylinkedinprofile";
+            font-size: 17px;
+          }
+
+          &:hover {
+            &:nth-of-type(1) {
+              width: 145px;
+            }
+            &:nth-of-type(2) {
+              width: 260px;
+            }
+            &:nth-of-type(3) {
+              width: 222px;
+            }
+          }
+          &:hover {
+            scale: 100%;
+          }
+          i {
+            font-size: 30px;
+          }
+        }
+      }
+      .close {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 5px;
+        margin: 35px 0px;
+        font-size: clamp(20px, 0.9rem, 100px);
+        .x:hover p {
+          text-decoration: none;
+        }
+        p {
+          text-decoration: underline;
+          cursor: pointer;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        button {
+          @include FlexCenter(row);
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          span {
+            font-size: clamp(37.5px, 1.5rem, 100px);
+          }
+        }
+      }
+      ol {
+        list-style-type: none;
+        li {
+          width: 100%;
+          cursor: pointer;
+          border-top: 1px #1811136b solid;
+          padding: 20px 0px;
+          font-size: clamp(25px, 1.15rem, 100px);
+          @include mobile-h(610px) {
+            font-size: 20px;
+            padding: 10px 0px;
+          }
+          font-weight: 500;
+          &:last-of-type {
+            border-bottom: 1px #1811136b solid;
+          }
+          @for $i from 0 to 20 {
+            &:hover {
+              a span:nth-of-type(#{$i}) {
+                animation: nav-txt-anim 0.5s forwards;
+                animation-delay: calc($i * 0.025s);
+              }
+            }
+          }
+          a {
+            text-decoration: none;
+            color: $black;
+            display: flex;
+            span {
+              display: block;
+              transition: 0.1s;
+              &.space {
+                height: 5px;
+                width: 9px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes nav-txt-anim {
+  from {
+    color: $gold;
+  }
+  to {
+    color: $black;
+  }
+}
+
+@keyframes toast-anim {
+  0% {
+    scale: 0%;
+    opacity: 0%;
+    rotate: 10deg;
+  }
+  50% {
+    scale: 110%;
+    opacity: 100%;
+    rotate: -370deg;
+  }
+  100% {
+    scale: 0%;
+    opacity: 0%;
+    rotate: 10deg;
+  }
+}
+
+@keyframes toast-anim-mobile {
+  0% {
+    opacity: 0%;
+    margin-bottom: -34px;
+  }
+  50% {
+    opacity: 100%;
+    margin-bottom: 4px;
+  }
+  100% {
+    opacity: 0%;
+    margin-bottom: -34px;
+  }
+}
