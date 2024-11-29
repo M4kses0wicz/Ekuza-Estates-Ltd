@@ -57,7 +57,7 @@ body {
       .socials {
         display: flex;
         flex-direction: column;
-        @include mobile-h(800px) {
+        @include mobile-w(600px) {
           flex-direction: row;
           justify-content: center;
         }
@@ -65,7 +65,7 @@ body {
           display: flex;
           align-items: center;
           width: 100%;
-          @include mobile-h(800px) {
+          @include mobile-w(600px) {
             width: 50px;
           }
           a {
@@ -83,7 +83,7 @@ body {
           margin-left: 12px;
           animation: toast-anim 2s cubic-bezier(1, 0, 0, 1) forwards;
           animation-delay: -0.5s;
-          @include mobile-h(800px) {
+          @include mobile-w(600px) {
             position: absolute;
             transform: translateX(-25%) translateY(-50px);
             animation: toast-anim-mobile 2s cubic-bezier(1, 0, 0, 1) forwards;
@@ -109,7 +109,7 @@ body {
           text-wrap: nowrap;
           gap: 7.5px;
           overflow: hidden;
-          @include mobile-h(800px) {
+          @include mobile-w(600px) {
             width: 50px !important;
           }
           &:nth-of-type(1) {
@@ -210,6 +210,9 @@ body {
             text-decoration: none;
             color: $black;
             display: flex;
+            @include mobile-w(600px) {
+              justify-content: center;
+            }
             span {
               display: block;
               transition: 0.1s;
