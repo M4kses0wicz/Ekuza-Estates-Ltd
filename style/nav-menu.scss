@@ -33,7 +33,33 @@ $black: #181113;
 
 body {
   background: white;
+  header {
+    width: 100svw;
+    height: 100px;
+    border-bottom: 1px $black solid;
+    @include FlexCenter(row);
+    nav {
+      @include FlexCenter(column);
+      cursor: pointer;
+      &:hover {
+        span {
+          text-decoration: none;
+        }
+      }
+      i {
+        font-size: 50px;
+      }
+      span {
+        font-size: 15px;
+        text-decoration: underline;
+      }
+    }
+  }
   .dropdown-menu-container {
+    &.opened {
+      display: block !important;
+    }
+    display: none !important;
     height: 100svh;
     position: absolute;
     overflow: hidden;
@@ -44,8 +70,19 @@ body {
     font-family: "poppins";
     display: flex;
     .filter {
-      width: calc(100svw - 500px);
-      backdrop-filter: brightness(75%) blur(1px);
+      width: 100svw;
+      height: 100svh;
+      backdrop-filter: brightness(100%) blur(0px);
+      // animation: filter-slide 3s 1s ease infinite;
+      // border: 5px red dashed;
+      display: flex;
+      justify-content: end;
+      overflow: hidden;
+      transition: 0.5s;
+      &.opened {
+        width: 100svw;
+        backdrop-filter: brightness(85%) blur(1px);
+      }
     }
     .menu {
       width: 500px;
@@ -54,6 +91,12 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      border-left: 2px;
+      transition: 0.5s;
+      transform: translateX(500px);
+      &.opened {
+        transform: translateX(0px);
+      }
       .socials {
         display: flex;
         flex-direction: column;
@@ -210,6 +253,13 @@ body {
             text-decoration: none;
             color: $black;
             display: flex;
+            &.selected {
+              font-weight: 700;
+              span:first-of-type {
+                border-left: #f2ab40 3px solid;
+                padding-left: 10px;
+              }
+            }
             @include mobile-w(600px) {
               justify-content: center;
             }

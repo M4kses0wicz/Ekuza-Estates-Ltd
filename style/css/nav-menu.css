@@ -11,7 +11,34 @@
 body {
   background: white;
 }
+body header {
+  width: 100svw;
+  height: 100px;
+  border-bottom: 1px #181113 solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+body header nav:hover span {
+  text-decoration: none;
+}
+body header nav i {
+  font-size: 50px;
+}
+body header nav span {
+  font-size: 15px;
+  text-decoration: underline;
+}
 body .dropdown-menu-container {
+  display: none !important;
   height: 100svh;
   position: absolute;
   overflow: hidden;
@@ -22,9 +49,21 @@ body .dropdown-menu-container {
   font-family: "poppins";
   display: flex;
 }
+body .dropdown-menu-container.opened {
+  display: block !important;
+}
 body .dropdown-menu-container .filter {
-  width: calc(100svw - 500px);
-  backdrop-filter: brightness(75%) blur(1px);
+  width: 100svw;
+  height: 100svh;
+  backdrop-filter: brightness(100%) blur(0px);
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+  transition: 0.5s;
+}
+body .dropdown-menu-container .filter.opened {
+  width: 100svw;
+  backdrop-filter: brightness(85%) blur(1px);
 }
 body .dropdown-menu-container .menu {
   width: 500px;
@@ -33,6 +72,12 @@ body .dropdown-menu-container .menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-left: 2px;
+  transition: 0.5s;
+  transform: translateX(500px);
+}
+body .dropdown-menu-container .menu.opened {
+  transform: translateX(0px);
 }
 body .dropdown-menu-container .menu .socials {
   display: flex;
@@ -272,6 +317,13 @@ body .dropdown-menu-container .menu ol li a {
   text-decoration: none;
   color: #181113;
   display: flex;
+}
+body .dropdown-menu-container .menu ol li a.selected {
+  font-weight: 700;
+}
+body .dropdown-menu-container .menu ol li a.selected span:first-of-type {
+  border-left: #f2ab40 3px solid;
+  padding-left: 10px;
 }
 @media (max-width: 600px) {
   body .dropdown-menu-container .menu ol li a {

@@ -33,113 +33,121 @@
 
   <body>
     <div class="dropdown-menu-container">
-      <div class="filter"></div>
-      <div class="menu">
-        <div>
-          <div class="close">
-            <!-- <p>Close Menu</p> -->
-            <button class="x" title="Close menu" aria-label="Close Menu">
-              <span class="material-symbols-outlined"> close </span>
-            </button>
+      <div class="filter">
+        <div class="menu">
+          <div>
+            <div class="close">
+              <!-- <p>Close Menu</p> -->
+              <button
+                class="x"
+                title="Close menu"
+                aria-label="Close Menu"
+                onclick="closeMenu()"
+              >
+                <span class="material-symbols-outlined"> close </span>
+              </button>
+            </div>
+            <ol>
+              <li>
+                <a href="#" class="selected">
+                  <span>H</span>
+                  <span>o</span>
+                  <span>m</span>
+                  <span>e</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>R</span>
+                  <span>e</span>
+                  <span>n</span>
+                  <span>t</span>
+                  <span class="space"></span>
+                  <span>t</span>
+                  <span>o</span>
+                  <span class="space"></span>
+                  <span>r</span>
+                  <span>e</span>
+                  <span>n</span>
+                  <span>t</span>
+                  <span class="space"></span>
+                  <span>d</span>
+                  <span>e</span>
+                  <span>a</span>
+                  <span>l</span>
+                  <span>s</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>H</span>
+                  <span>M</span>
+                  <span>O</span>
+                  <span class="space"> </span>
+                  <span>d</span>
+                  <span>e</span>
+                  <span>a</span>
+                  <span>l</span>
+                  <span>s</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>B</span>
+                  <span>R</span>
+                  <span>R</span>
+                  <span class="space"> </span>
+                  <span>d</span>
+                  <span>e</span>
+                  <span>a</span>
+                  <span>l</span>
+                  <span>s</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>B</span>
+                  <span>e</span>
+                  <span>s</span>
+                  <span>p</span>
+                  <span>o</span>
+                  <span>k</span>
+                  <span>e</span>
+                  <span class="space"> </span>
+                  <span>d</span>
+                  <span>e</span>
+                  <span>a</span>
+                  <span>l</span>
+                  <span>s</span>
+                </a>
+              </li>
+            </ol>
           </div>
-          <ol>
-            <li>
-              <a href="#">
-                <span>H</span>
-                <span>o</span>
-                <span>m</span>
-                <span>e</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>R</span>
-                <span>e</span>
-                <span>n</span>
-                <span>t</span>
-                <span class="space"></span>
-                <span>t</span>
-                <span>o</span>
-                <span class="space"></span>
-                <span>r</span>
-                <span>e</span>
-                <span>n</span>
-                <span>t</span>
-                <span class="space"></span>
-                <span>d</span>
-                <span>e</span>
-                <span>a</span>
-                <span>l</span>
-                <span>s</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>H</span>
-                <span>M</span>
-                <span>O</span>
-                <span class="space"> </span>
-                <span>d</span>
-                <span>e</span>
-                <span>a</span>
-                <span>l</span>
-                <span>s</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>B</span>
-                <span>R</span>
-                <span>R</span>
-                <span class="space"> </span>
-                <span>d</span>
-                <span>e</span>
-                <span>a</span>
-                <span>l</span>
-                <span>s</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>B</span>
-                <span>e</span>
-                <span>s</span>
-                <span>p</span>
-                <span>o</span>
-                <span>k</span>
-                <span>e</span>
-                <span class="space"> </span>
-                <span>d</span>
-                <span>e</span>
-                <span>a</span>
-                <span>l</span>
-                <span>s</span>
-              </a>
-            </li>
-          </ol>
-        </div>
-        <div class="socials">
-          <a class="fb" title="Click to enter" target="_blank">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <div class="wrapper">
-            <a class="whatsapp" title="Click to copy" onclick="copyPhone()">
-              <i class="fa-solid fa-phone"></i>
+          <div class="socials">
+            <a class="fb" title="Click to enter" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
             </a>
-            <div class="toast">Copied!</div>
+            <div class="wrapper">
+              <a class="whatsapp" title="Click to copy" onclick="copyPhone()">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <div class="toast">Copied!</div>
+            </div>
+            <a class="email" title="Click to enter" target="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a class="linkedin" title="Click to enter" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
           </div>
-          <a class="email" title="Click to enter" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-          <a class="linkedin" title="Click to enter" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
         </div>
       </div>
     </div>
 
     <header>
-      <nav></nav>
+      <nav>
+        <i class="fa-solid fa-bars" onclick="openMenu()"></i> <span>Menu</span>
+      </nav>
     </header>
 
     <script src="nav-menu.js"></script>
