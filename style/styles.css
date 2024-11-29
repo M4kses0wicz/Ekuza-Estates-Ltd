@@ -40,6 +40,7 @@ body .dropdown-menu-container .menu .socials {
   gap: 10px;
   margin-bottom: 35px;
   width: 100%;
+  padding-top: 35px;
 }
 body .dropdown-menu-container .menu .socials a {
   width: 50px;
@@ -57,6 +58,9 @@ body .dropdown-menu-container .menu .socials a {
   text-wrap: nowrap;
   gap: 7.5px;
   overflow: hidden;
+}
+body .dropdown-menu-container .menu .socials a:nth-of-type(1) {
+  padding-left: 8px;
 }
 body .dropdown-menu-container .menu .socials a:nth-of-type(3) {
   padding-left: 8px;
