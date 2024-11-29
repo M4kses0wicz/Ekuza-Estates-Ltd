@@ -37,8 +37,8 @@
       <div class="menu">
         <div>
           <div class="close">
-            <p>Close Menu</p>
-            <button class="x">
+            <!-- <p>Close Menu</p> -->
+            <button class="x" title="Close menu" aria-label="Close Menu">
               <span class="material-symbols-outlined"> close </span>
             </button>
           </div>
@@ -119,16 +119,19 @@
           </ol>
         </div>
         <div class="socials">
-          <a class="fb" title="Click to enter">
+          <a class="fb" title="Click to enter" target="_blank">
             <i class="fa-brands fa-facebook"></i>
           </a>
-          <a class="whatsapp" title="Click to copy">
-            <i class="fa-solid fa-phone"></i>
-          </a>
-          <a class="email" title="Click to enter">
+          <div class="wrapper">
+            <a class="whatsapp" title="Click to copy" onclick="copyPhone()">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+            <div class="toast">Copied!</div>
+          </div>
+          <a class="email" title="Click to enter" target="_blank">
             <i class="fa-solid fa-envelope"></i>
           </a>
-          <a class="linkedin" title="Click to enter">
+          <a class="linkedin" title="Click to enter" target="_blank">
             <i class="fa-brands fa-linkedin"></i>
           </a>
         </div>
