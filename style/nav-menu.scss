@@ -12,6 +12,8 @@ $white: #fdf8ef;
 $gold: #f2ab40;
 $black: #181113;
 
+$colors: #181113, #181113, #f2ab40, #f2ab40, #181113, #181113, #f2ab40, #f2ab40;
+
 @mixin FlexCenter($fd) {
   display: flex;
   justify-content: center;
@@ -32,26 +34,97 @@ $black: #181113;
 }
 
 body {
-  background: white;
+  background: $white;
+  .loader {
+    position: absolute;
+    z-index: 999;
+    height: 100svh;
+    width: 100svw;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background: $white;
+    opacity: 100%;
+    .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      height: 80px;
+      width: 80px;
+      transform: translate(-50%, -50%);
+      @for $i from 1 through 8 {
+        & .ball-#{$i} {
+          z-index: -#{$i};
+          background-color: nth($colors, $i);
+          animation-timing-function: cubic-bezier(0.5, 0.3 * $i, 0.9, 0.9);
+        }
+      }
+    }
+    [class^="ball-"] {
+      position: absolute;
+      display: block;
+      left: 30px;
+      width: 14px;
+      height: 14px;
+      border-radius: 10px;
+      transition: all 1s;
+      animation: circleRotate 3.5s both infinite;
+      transform-origin: 0 250% 0;
+    }
+    &.loaded {
+      animation: loader-remove 0.5s ease forwards;
+    }
+  }
   header {
     width: 100svw;
-    height: 100px;
+    height: 125px;
     border-bottom: 1px $black solid;
     @include FlexCenter(row);
+    background: white;
     nav {
-      @include FlexCenter(column);
-      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .logo-container {
+        height: 90%;
+        display: flex;
+        align-items: center;
+      }
+      img.logo {
+        height: 100%;
+        transform: translateX(40%);
+        z-index: 4;
+      }
+      img.text {
+        height: 60%;
+        transform: translateY(3px);
+        z-index: 2;
+      }
       &:hover {
         span {
           text-decoration: none;
         }
       }
-      i {
-        font-size: 50px;
-      }
-      span {
-        font-size: 15px;
-        text-decoration: underline;
+      .burger {
+        font-size: 37.5px;
+        cursor: pointer;
+        border-radius: 100px;
+        // border: 2px $black solid;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        @include FlexCenter(row);
+        gap: 4px;
+        span {
+          display: block;
+          height: 7px;
+          width: 7px;
+          background: $black;
+          border-radius: 100px;
+        }
       }
     }
   }
@@ -317,5 +390,23 @@ body {
   100% {
     opacity: 0%;
     margin-bottom: -34px;
+  }
+}
+
+@keyframes loader-remove {
+  99% {
+    opacity: 0%;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
   }
 }

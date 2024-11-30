@@ -51,6 +51,19 @@
   </head>
 
   <body>
+    <div class="loader">
+      <div class="spinner">
+        <span class="ball-1"></span>
+        <span class="ball-2"></span>
+        <span class="ball-3"></span>
+        <span class="ball-4"></span>
+        <span class="ball-5"></span>
+        <span class="ball-6"></span>
+        <span class="ball-7"></span>
+        <span class="ball-8"></span>
+      </div>
+    </div>
+
     <div class="dropdown-menu-container">
       <div class="filter">
         <div class="menu">
@@ -68,7 +81,7 @@
             </div>
             <ol>
               <li>
-                <a href="#" class="selected">
+                <a href="index.html" class="selected">
                   <span>H</span>
                   <span>o</span>
                   <span>m</span>
@@ -165,7 +178,13 @@
 
     <header>
       <nav>
-        <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        <!-- <a href="index.html" class="logo-container">
+          <img src="style/img/logo.png" alt="logo" class="logo" />
+          <img src="style/img/logo-text.jpeg" alt="logo" class="text" />
+        </a> -->
+        <div class="burger" onclick="openMenu()">
+          <span></span><span></span><span></span>
+        </div>
       </nav>
     </header>
 

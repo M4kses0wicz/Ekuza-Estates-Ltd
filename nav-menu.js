@@ -4,6 +4,8 @@ const menu = document.querySelector(".menu");
 const filter = document.querySelector(".filter");
 const container = document.querySelector(".dropdown-menu-container");
 
+const loader = document.querySelector(".loader");
+
 const copyPhone = () => {
   navigator.clipboard.writeText("+44 7949 940893");
   toast.classList.add("copied");
@@ -27,3 +29,9 @@ function openMenu() {
     filter.classList.add("opened");
   }, 10);
 }
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loader.classList.add("loaded");
+  }, 1000);
+});
