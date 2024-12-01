@@ -2,6 +2,13 @@
 
 body {
   background: $white;
+  .header-margin-block {
+    width: 100svw;
+    height: 125px;
+    @include mobile-w(600px) {
+      height: 90px;
+    }
+  }
   .loader {
     position: absolute;
     z-index: 999;

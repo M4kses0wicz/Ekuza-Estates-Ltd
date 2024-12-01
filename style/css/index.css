@@ -11,6 +11,15 @@
 body {
   background: #fcfaf6;
 }
+body .header-margin-block {
+  width: 100svw;
+  height: 125px;
+}
+@media (max-width: 600px) {
+  body .header-margin-block {
+    height: 90px;
+  }
+}
 body .loader {
   position: absolute;
   z-index: 999;
