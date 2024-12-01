@@ -12,8 +12,6 @@ $white: #fdf8ef;
 $gold: #f2ab40;
 $black: #181113;
 
-$colors: #181113, #181113, #f2ab40, #f2ab40, #181113, #181113, #f2ab40, #f2ab40;
-
 @mixin FlexCenter($fd) {
   display: flex;
   justify-content: center;
@@ -45,6 +43,7 @@ body {
     left: 0;
     background: $white;
     opacity: 100%;
+    @include FlexCenter(row);
     .spinner {
       position: absolute;
       top: 50%;
@@ -52,11 +51,12 @@ body {
       z-index: 1;
       height: 80px;
       width: 80px;
+      margin-left: 10px;
       transform: translate(-50%, -50%);
       @for $i from 1 through 8 {
         & .ball-#{$i} {
           z-index: -#{$i};
-          background-color: nth($colors, $i);
+          background-color: $gold;
           animation-timing-function: cubic-bezier(0.5, 0.3 * $i, 0.9, 0.9);
         }
       }
@@ -69,7 +69,7 @@ body {
       height: 14px;
       border-radius: 10px;
       transition: all 1s;
-      animation: circleRotate 3.5s both infinite;
+      animation: circleRotate 3.5s ease infinite;
       transform-origin: 0 250% 0;
     }
     &.loaded {
@@ -348,6 +348,17 @@ body {
         }
       }
     }
+  }
+  .center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    height: 400px;
+    width: 4px;
+    border-radius: 100%;
+    background: red;
+    transform: translate(-50%, -50%);
   }
 }
 

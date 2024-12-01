@@ -21,6 +21,10 @@ body .loader {
   left: 0;
   background: #fdf8ef;
   opacity: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 body .loader .spinner {
   position: absolute;
@@ -29,16 +33,17 @@ body .loader .spinner {
   z-index: 1;
   height: 80px;
   width: 80px;
+  margin-left: 10px;
   transform: translate(-50%, -50%);
 }
 body .loader .spinner .ball-1 {
   z-index: -1;
-  background-color: #181113;
+  background-color: #f2ab40;
   animation-timing-function: cubic-bezier(0.5, 0.3, 0.9, 0.9);
 }
 body .loader .spinner .ball-2 {
   z-index: -2;
-  background-color: #181113;
+  background-color: #f2ab40;
   animation-timing-function: cubic-bezier(0.5, 0.6, 0.9, 0.9);
 }
 body .loader .spinner .ball-3 {
@@ -53,12 +58,12 @@ body .loader .spinner .ball-4 {
 }
 body .loader .spinner .ball-5 {
   z-index: -5;
-  background-color: #181113;
+  background-color: #f2ab40;
   animation-timing-function: cubic-bezier(0.5, 1.5, 0.9, 0.9);
 }
 body .loader .spinner .ball-6 {
   z-index: -6;
-  background-color: #181113;
+  background-color: #f2ab40;
   animation-timing-function: cubic-bezier(0.5, 1.8, 0.9, 0.9);
 }
 body .loader .spinner .ball-7 {
@@ -79,7 +84,7 @@ body .loader [class^=ball-] {
   height: 14px;
   border-radius: 10px;
   transition: all 1s;
-  animation: circleRotate 3.5s both infinite;
+  animation: circleRotate 3.5s ease infinite;
   transform-origin: 0 250% 0;
 }
 body .loader.loaded {
@@ -440,6 +445,17 @@ body .dropdown-menu-container .menu ol li a span {
 body .dropdown-menu-container .menu ol li a span.space {
   height: 5px;
   width: 9px;
+}
+body .center-point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  height: 400px;
+  width: 4px;
+  border-radius: 100%;
+  background: red;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes nav-txt-anim {
