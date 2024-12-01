@@ -659,4 +659,13 @@ body .center-point {
   100% {
     transform: rotate(720deg);
   }
-}/*# sourceMappingURL=nav-menu.css.map */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 1vw;
+}/*# sourceMappingURL=index.css.map */

@@ -1,35 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  font-size: 1vw;
-}
-
-$white: #fcfaf6;
-$gold: #f2ab40;
-$black: #181113;
-
-@mixin FlexCenter($fd) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $fd;
-}
-
-@mixin mobile-w($w) {
-  @media (max-width: $w) {
-    @content;
-  }
-}
-
-@mixin mobile-h($h) {
-  @media (max-height: $h) {
-    @content;
-  }
-}
+@import "_base.scss";
 
 body {
   background: $white;
@@ -91,8 +60,16 @@ body {
       height: 100%;
       width: 100%;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
+      padding: 0px 5%;
+      @include mobile-w(1600px) {
+        padding: 0px 1%;
+        li {
+          font-size: 23px !important;
+          margin: 15px !important;
+        }
+      }
       .menu {
         @include mobile-w(1250px) {
           display: none;
@@ -104,8 +81,9 @@ body {
             width: 100%;
             cursor: pointer;
             padding: 20px 0px;
-            font-size: clamp(25px, 1.15rem, 100px);
+            font-size: clamp(25px, 1.15rem, 40px);
             margin: 25px;
+            font-family: "poppins";
             @include mobile-h(610px) {
               font-size: 20px;
               padding: 10px 0px;
