@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #fdf8ef;
+  background: #fcfaf6;
 }
 body .loader {
   position: absolute;
@@ -19,7 +19,7 @@ body .loader {
   overflow: hidden;
   top: 0;
   left: 0;
-  background: #fdf8ef;
+  background: #fcfaf6;
   opacity: 100%;
   display: flex;
   justify-content: center;
@@ -91,6 +91,8 @@ body .loader.loaded {
   animation: loader-remove 0.5s ease forwards;
 }
 body header {
+  position: fixed;
+  top: 0px;
   width: 100svw;
   height: 125px;
   border-bottom: 1px #181113 solid;
@@ -100,12 +102,140 @@ body header {
   flex-direction: row;
   background: white;
 }
+@media (max-width: 600px) {
+  body header {
+    height: 90px;
+  }
+}
 body header nav {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+@media (max-width: 1250px) {
+  body header nav .menu {
+    display: none;
+  }
+}
+body header nav .menu ol {
+  list-style-type: none;
+  display: flex;
+}
+body header nav .menu ol li {
+  width: 100%;
+  cursor: pointer;
+  padding: 20px 0px;
+  font-size: clamp(25px, 1.15rem, 100px);
+  margin: 25px;
+  font-weight: 500;
+}
+@media (max-height: 610px) {
+  body header nav .menu ol li {
+    font-size: 20px;
+    padding: 10px 0px;
+  }
+}
+body header nav .menu ol li:hover a span:nth-of-type(0) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(1) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.025s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(2) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.05s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(3) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.075s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(4) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.1s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(5) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.125s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(6) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.15s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(7) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.175s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(8) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.2s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(9) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.225s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(10) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.25s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(11) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.275s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(12) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.3s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(13) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.325s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(14) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.35s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(15) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.375s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(16) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.4s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(17) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.425s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(18) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.45s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(19) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.475s;
+}
+body header nav .menu ol li a {
+  text-decoration: none;
+  color: #181113;
+  display: flex;
+}
+body header nav .menu ol li a.selected {
+  font-weight: 700;
+}
+body header nav .menu ol li a.selected span:first-of-type {
+  border-left: #f2ab40 3px solid;
+  padding-left: 10px;
+}
+body header nav .menu ol li a span {
+  display: block;
+  transition: 0.1s;
+}
+body header nav .menu ol li a span.space {
+  height: 5px;
+  width: 9px;
 }
 body header nav .logo-container {
   height: 90%;
@@ -126,24 +256,30 @@ body header nav:hover span {
   text-decoration: none;
 }
 body header nav .burger {
-  font-size: 37.5px;
-  cursor: pointer;
-  border-radius: 100px;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 4px;
+  display: none;
 }
-body header nav .burger span {
-  display: block;
-  height: 7px;
-  width: 7px;
-  background: #181113;
-  border-radius: 100px;
+@media (max-width: 1250px) {
+  body header nav .burger {
+    display: block;
+    font-size: 37.5px;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 4px;
+  }
+  body header nav .burger span {
+    display: block;
+    height: 7px;
+    width: 7px;
+    background: #181113;
+    border-radius: 100px;
+  }
 }
 body .dropdown-menu-container {
   display: none !important;
@@ -175,7 +311,7 @@ body .dropdown-menu-container .filter.opened {
 }
 body .dropdown-menu-container .menu {
   width: 500px;
-  background: #fdf8ef;
+  background: #fcfaf6;
   padding: 0px 35px;
   display: flex;
   flex-direction: column;

@@ -8,7 +8,7 @@
   font-size: 1vw;
 }
 
-$white: #fdf8ef;
+$white: #fcfaf6;
 $gold: #f2ab40;
 $black: #181113;
 
@@ -77,22 +77,77 @@ body {
     }
   }
   header {
+    position: fixed;
+    top: 0px;
     width: 100svw;
     height: 125px;
     border-bottom: 1px $black solid;
     @include FlexCenter(row);
     background: white;
+    @include mobile-w(600px) {
+      height: 90px;
+    }
     nav {
       height: 100%;
       width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      .menu {
+        @include mobile-w(1250px) {
+          display: none;
+        }
+        ol {
+          list-style-type: none;
+          display: flex;
+          li {
+            width: 100%;
+            cursor: pointer;
+            padding: 20px 0px;
+            font-size: clamp(25px, 1.15rem, 100px);
+            margin: 25px;
+            @include mobile-h(610px) {
+              font-size: 20px;
+              padding: 10px 0px;
+            }
+            font-weight: 500;
+            @for $i from 0 to 20 {
+              &:hover {
+                a span:nth-of-type(#{$i}) {
+                  animation: nav-txt-anim 0.5s forwards;
+                  animation-delay: calc($i * 0.025s);
+                }
+              }
+            }
+            a {
+              text-decoration: none;
+              color: $black;
+              display: flex;
+              &.selected {
+                font-weight: 700;
+                span:first-of-type {
+                  border-left: #f2ab40 3px solid;
+                  padding-left: 10px;
+                }
+              }
+              span {
+                display: block;
+                transition: 0.1s;
+                &.space {
+                  height: 5px;
+                  width: 9px;
+                }
+              }
+            }
+          }
+        }
+      }
       .logo-container {
         height: 90%;
         display: flex;
         align-items: center;
       }
+
       img.logo {
         height: 100%;
         transform: translateX(40%);
@@ -109,21 +164,25 @@ body {
         }
       }
       .burger {
-        font-size: 37.5px;
-        cursor: pointer;
-        border-radius: 100px;
-        // border: 2px $black solid;
-        width: 60px;
-        height: 60px;
-        text-align: center;
-        @include FlexCenter(row);
-        gap: 4px;
-        span {
+        display: none;
+        @include mobile-w(1250px) {
           display: block;
-          height: 7px;
-          width: 7px;
-          background: $black;
+          font-size: 37.5px;
+          cursor: pointer;
           border-radius: 100px;
+          // border: 2px $black solid;
+          width: 60px;
+          height: 60px;
+          text-align: center;
+          @include FlexCenter(row);
+          gap: 4px;
+          span {
+            display: block;
+            height: 7px;
+            width: 7px;
+            background: $black;
+            border-radius: 100px;
+          }
         }
       }
     }
