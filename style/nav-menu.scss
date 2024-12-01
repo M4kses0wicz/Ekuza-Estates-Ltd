@@ -110,10 +110,7 @@ body {
               display: flex;
               &.selected {
                 font-weight: 700;
-                span:first-of-type {
-                  border-left: #f2ab40 3px solid;
-                  padding-left: 10px;
-                }
+                border-bottom: #f2ab40 3px solid;
               }
               span {
                 display: block;

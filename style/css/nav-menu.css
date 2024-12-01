@@ -244,10 +244,7 @@ body header nav .menu ol li a {
 }
 body header nav .menu ol li a.selected {
   font-weight: 700;
-}
-body header nav .menu ol li a.selected span:first-of-type {
-  border-left: #f2ab40 3px solid;
-  padding-left: 10px;
+  border-bottom: #f2ab40 3px solid;
 }
 body header nav .menu ol li a span {
   display: block;
