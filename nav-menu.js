@@ -33,5 +33,5 @@ function openMenu() {
 window.addEventListener("load", () => {
   setTimeout(() => {
     loader.classList.add("loaded");
-  }, 10000);
+  }, 1000);
 });
