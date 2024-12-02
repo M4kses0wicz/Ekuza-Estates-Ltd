@@ -111,6 +111,9 @@ main {
       @include mobile-w(550px) {
         font-size: 18px;
       }
+      @include mobile-h(800px) {
+        font-size: 15px;
+      }
       @include mobile-h(1000px) {
         margin: 20px 0px 35px 0px;
       }
@@ -127,6 +130,9 @@ main {
       @include mobile-w(550px) {
         font-size: 40px;
       }
+      @include mobile-h(800px) {
+        font-size: 30px;
+      }
     }
     a {
       background: $gold;
@@ -138,6 +144,9 @@ main {
       transition: 0.25s;
       @include mobile-w(550px) {
         font-size: 17px;
+      }
+      @include mobile-h(800px) {
+        font-size: 14px;
       }
       i {
         margin-left: 5px;
