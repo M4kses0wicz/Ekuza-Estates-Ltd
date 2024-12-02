@@ -22,6 +22,14 @@ main {
   }
   .swiper-button-prev {
     transform: translateX(5svw);
+    i {
+      transition: 0.2s;
+    }
+    &:active {
+      i {
+        transform: translateX(-5px);
+      }
+    }
     @include mobile-w(1330px) {
       transform: translateX(4svw);
     }
@@ -33,11 +41,21 @@ main {
       height: 100px;
     }
     @include mobile-w(650px) {
-      display: none !important;
+      position: absolute;
+      left: 0;
+      width: 35px;
     }
   }
   .swiper-button-next {
     transform: translateX(-4.25svw);
+    i {
+      transition: 0.2s;
+    }
+    &:active {
+      i {
+        transform: translateX(5px);
+      }
+    }
     @include mobile-w(1330px) {
       transform: translateX(-4svw);
     }
@@ -49,7 +67,9 @@ main {
       height: 100px;
     }
     @include mobile-w(650px) {
-      display: none !important;
+      position: absolute;
+      right: 0;
+      width: 35px;
     }
   }
 }

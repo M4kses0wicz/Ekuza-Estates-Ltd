@@ -701,6 +701,12 @@ main [class^=swiper-button]::after, main [class^=swiper-button]::before {
 main .swiper-button-prev {
   transform: translateX(5svw);
 }
+main .swiper-button-prev i {
+  transition: 0.2s;
+}
+main .swiper-button-prev:active i {
+  transform: translateX(-5px);
+}
 @media (max-width: 1330px) {
   main .swiper-button-prev {
     transform: translateX(4svw);
@@ -719,11 +725,19 @@ main .swiper-button-prev {
 }
 @media (max-width: 650px) {
   main .swiper-button-prev {
-    display: none !important;
+    position: absolute;
+    left: 0;
+    width: 35px;
   }
 }
 main .swiper-button-next {
   transform: translateX(-4.25svw);
+}
+main .swiper-button-next i {
+  transition: 0.2s;
+}
+main .swiper-button-next:active i {
+  transform: translateX(5px);
 }
 @media (max-width: 1330px) {
   main .swiper-button-next {
@@ -743,7 +757,9 @@ main .swiper-button-next {
 }
 @media (max-width: 650px) {
   main .swiper-button-next {
-    display: none !important;
+    position: absolute;
+    right: 0;
+    width: 35px;
   }
 }
 
