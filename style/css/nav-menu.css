@@ -10,6 +10,8 @@
 
 body {
   background: #fcfaf6;
+  width: 100svw;
+  overflow-x: hidden;
 }
 body .header-margin-block {
   width: 100svw;
@@ -101,6 +103,7 @@ body .loader.loaded {
 }
 body header {
   position: fixed;
+  z-index: 99;
   top: 0px;
   width: 100svw;
   height: 125px;

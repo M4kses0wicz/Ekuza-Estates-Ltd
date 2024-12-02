@@ -12,6 +12,9 @@ $white: #fcfaf6;
 $gold: #f2ab40;
 $black: #181113;
 
+$font-primary: "poppins";
+$font-secondary: "Georgia";
+
 @mixin FlexCenter($fd) {
   display: flex;
   justify-content: center;

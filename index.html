@@ -50,6 +50,12 @@
       sizes="16x16"
       href="style/img/ico/favicon-16x16.png"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <link rel="manifest" href="style/img/ico/site.webmanifest" />
   </head>
 
@@ -278,9 +284,145 @@
 
     <!-- header (do skopiowania dla każdego html-a)-->
 
-    <main></main>
+    <main>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="style/img/slider-img.jpg" alt="slider image" />
+            <div class="text-container">
+              <h3>Rent to rent deals</h3>
+              <p class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+                magni.
+              </p>
+              <a href="#">View <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="style/img/slider-img-1.jpg" alt="slider image" />
+            <div class="text-container">
+              <h3>HMO deals</h3>
+              <p class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit ipsam eligendi doloribus rerum! Ipsa deleniti ab
+                commodi enim velit eveniet culpa dicta.
+              </p>
+              <a href="#">View <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="style/img/slider-img.jpg" alt="slider image" />
+            <div class="text-container">
+              <h3>BRR deals</h3>
+              <p class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                deleniti animi, error, doloremque ullam a fuga dolorem
+                aspernatur corrupti saepe quos cumque.
+              </p>
+              <a href="#">View <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="style/img/slider-img-1.jpg" alt="slider image" />
+            <div class="text-container">
+              <h3>Bespoke deals</h3>
+              <p class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur, maxime sunt? Rerum dolorum quidem perferendis.
+              </p>
+              <a href="#"
+                >Book now <i class="fa-solid fa-arrow-right-long"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev">
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </div>
+      <div class="swiper-button-next">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+    </main>
+
+    <!-- <section class="sec-1">
+      <img src="" alt="" />
+      <div class="text-container">
+        <p>01.12.2024</p>
+        <h4>Huge new block of flats</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nisi
+          optio distinctio necessitatibus atque quidem odio autem eum expedita
+          consectetur ratione quibusdam nihil rem consequatur veniam praesentium
+          consequuntur, voluptas deserunt.
+        </p>
+        <a href="#">Learn more <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+    </section>
+    <section class="sec-2">
+      <img src="" alt="" />
+      <div class="text-container">
+        <p>12.11.2024</p>
+        <h4></h4>
+        <p></p>
+        <a href="#"></a>
+      </div>
+    </section>
+    <section class="sec-3">
+      <img src="" alt="" />
+      <div class="text-container">
+        <p>05.11.2024</p>
+        <h4></h4>
+        <p></p>
+        <a href="#"></a>
+      </div>
+    </section>
+    <section class="sec-4">
+      <img src="" alt="" />
+      <div class="text-container">
+        <p>28.10.2024</p>
+        <h4></h4>
+        <p></p>
+        <a href="#"></a>
+      </div>
+    </section>
+    <section class="sec-5">
+      <img src="" alt="" />
+      <div class="text-container">
+        <p>15.10.2024</p>
+        <h4></h4>
+        <p></p>
+        <a href="#"></a>
+      </div>
+    </section> -->
 
     <script src="js/nav-menu.js"></script>
     <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        speed: 700,
+        slidesPerView: 1,
+        spaceBetween: 1,
+
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+
+        // autoplay: {
+        //   delay: 8000,
+        // },
+      });
+    </script>
   </body>
 </html>
