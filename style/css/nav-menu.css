@@ -103,7 +103,7 @@ body .loader.loaded {
 }
 body header {
   position: fixed;
-  z-index: 99;
+  z-index: 89;
   top: 0px;
   width: 100svw;
   height: 125px;
@@ -135,6 +135,9 @@ body header nav {
     font-size: 23px !important;
     margin: 15px !important;
   }
+}
+body header nav .menu {
+  z-index: 199;
 }
 @media (max-width: 1250px) {
   body header nav .menu {
@@ -306,7 +309,7 @@ body .dropdown-menu-container {
   height: 100svh;
   position: absolute;
   overflow: hidden;
-  z-index: 9;
+  z-index: 99;
   right: 0;
   top: 0;
   width: 100%;

@@ -56,7 +56,7 @@ body {
   }
   header {
     position: fixed;
-    z-index: 99;
+    z-index: 89;
     top: 0px;
     width: 100svw;
     height: 125px;
@@ -84,6 +84,7 @@ body {
         @include mobile-w(1250px) {
           display: none;
         }
+        z-index: 199;
         ol {
           list-style-type: none;
           display: flex;
@@ -180,7 +181,7 @@ body {
     height: 100svh;
     position: absolute;
     overflow: hidden;
-    z-index: 9;
+    z-index: 99;
     right: 0;
     top: 0;
     width: 100%;
