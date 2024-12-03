@@ -4,6 +4,9 @@ body {
   background: $white;
   width: 100svw;
   overflow-x: hidden;
+  &.loading {
+    overflow-y: hidden;
+  }
   .header-margin-block {
     width: 100svw;
     height: 125px;

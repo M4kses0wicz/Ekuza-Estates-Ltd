@@ -13,6 +13,9 @@ body {
   width: 100svw;
   overflow-x: hidden;
 }
+body.loading {
+  overflow-y: hidden;
+}
 body .header-margin-block {
   width: 100svw;
   height: 125px;

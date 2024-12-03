@@ -32,6 +32,7 @@ function openMenu() {
 
 window.addEventListener("load", () => {
   setTimeout(() => {
+    document.querySelector("body").classList.remove("loading");
     loader.classList.add("loaded");
   }, 1000);
 });
