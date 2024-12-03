@@ -961,6 +961,12 @@ main .swiper-button-next:active i {
     height: 100svh !important;
   }
 }
+@media (max-width: 800px) {
+  .sections-container section {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+}
 @media (max-width: 900px) {
   .sections-container section {
     flex-direction: column;

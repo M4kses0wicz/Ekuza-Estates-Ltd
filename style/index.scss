@@ -213,6 +213,10 @@ main {
     padding-bottom: 150px;
     border-bottom: 1px #18111353 solid;
     margin-bottom: 150px;
+    @include mobile-w(800px) {
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
     display: flex;
     @include mobile-w(900px) {
       flex-direction: column;
