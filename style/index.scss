@@ -15,6 +15,7 @@ main {
     display: flex !important;
     justify-content: center;
     align-items: center;
+    border-radius: 3px;
     &::after,
     &::before {
       content: "";
@@ -131,7 +132,7 @@ main {
       @include mobile-w(550px) {
         font-size: 18px;
       }
-      @include mobile-h(800px) {
+      @include mobile-h(780px) {
         font-size: 15px;
       }
       @include mobile-h(1000px) {
@@ -150,7 +151,7 @@ main {
       @include mobile-w(550px) {
         font-size: 40px;
       }
-      @include mobile-h(800px) {
+      @include mobile-h(780px) {
         font-size: 30px;
       }
     }
@@ -165,7 +166,7 @@ main {
       @include mobile-w(550px) {
         font-size: 17px;
       }
-      @include mobile-h(800px) {
+      @include mobile-h(780px) {
         font-size: 14px;
       }
       i {
@@ -177,9 +178,198 @@ main {
       }
     }
   }
+  .swiper-pagination-bullet {
+    background-color: $black;
+    width: 7px;
+    height: 7px;
+    opacity: 1;
+    margin: 0 7px;
+    transition: background-color 0.25s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $gold;
+    transform: scale(1.2);
+  }
+  border-radius: 7px;
 }
 
 .sections-container {
   width: 100%;
-  padding: 0px 250px;
+  @include FlexCenter(column);
+  section {
+    width: 81%;
+    height: 1000px;
+    @include mobile-w(1950px) {
+      height: 800px;
+    }
+    @include mobile-h(800px) {
+      height: 650px;
+    }
+    @include mobile-w(900px) {
+      height: 100svh !important;
+    }
+    // border: red 2px dashed;
+    padding-bottom: 150px;
+    border-bottom: 1px #18111353 solid;
+    margin-bottom: 150px;
+    display: flex;
+    @include mobile-w(900px) {
+      flex-direction: column;
+    }
+    &.sec-1,
+    &.sec-3 {
+      p {
+        @include FlexCenter(row);
+        &:first-of-type {
+          &::after {
+            font-size: 17px;
+            content: "80 000£ - 450 000£";
+            color: rgba(0, 106, 0, 0.547);
+          }
+          span.line {
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: $black;
+            margin: 0px 25px;
+          }
+        }
+      }
+    }
+    &.sec-2,
+    &.sec-4 {
+      p {
+        @include FlexCenter(row);
+        &:first-of-type {
+          &::after {
+            font-size: 17px;
+            content: "45 000£";
+            color: rgba(0, 106, 0, 0.547);
+          }
+          span.line {
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: $black;
+            margin: 0px 25px;
+          }
+        }
+      }
+    }
+
+    img {
+      width: 35%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9) contrast(1.2) sepia(0.5);
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+      @include mobile-w(900px) {
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 0px;
+      }
+      @include mobile-w(900px) {
+        width: 100%;
+        height: 35%;
+      }
+    }
+    .text-container {
+      width: 65%;
+      height: 100%;
+      @include mobile-w(900px) {
+        width: 100%;
+        height: 65%;
+      }
+      padding: 0px 75px;
+      @include mobile-w(700px) {
+        padding: 0px 50px;
+      }
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+      @include mobile-w(900px) {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 7px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 7px;
+      }
+      background: white;
+      @include FlexCenter(column);
+      align-items: start;
+      h4 {
+        font-size: 45px;
+        @include mobile-h(780px) {
+          font-size: 35px;
+        }
+        @include mobile-w(700px) {
+          font-size: 25px;
+        }
+      }
+      h4,
+      a {
+        font-family: $font-primary;
+        margin: 25px 0 15px 0px;
+        @include mobile-w(700px) {
+          margin: 10px 0 2.5px 0px;
+        }
+      }
+      p {
+        font-family: $font-secondary;
+        font-size: 25px;
+        @include mobile-h(780px) {
+          font-size: 20px;
+        }
+        &:first-of-type {
+          color: #181113be;
+          @include mobile-w(700px) {
+            font-size: 14px;
+            &::after {
+              font-size: 12px;
+            }
+          }
+        }
+        &.desc {
+          @include mobile-w(700px) {
+            font-size: 17px;
+          }
+        }
+      }
+      a {
+        text-transform: uppercase;
+        font-size: 19px;
+        color: $black;
+        margin-top: 30px;
+        @include mobile-w(700px) {
+          font-size: 15px;
+          margin-top: 15px;
+        }
+        background: rgba(242, 171, 64, 0.65);
+        padding-left: 20px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          i {
+            transform: translateX(200%);
+            opacity: 100%;
+          }
+        }
+        i {
+          transition: 0.25s;
+          opacity: 0%;
+        }
+      }
+    }
+  }
+}
+footer {
+  width: 100%;
+  height: 300px;
+  background: $black;
+  color: $white;
+  @include FlexCenter(column);
+  p {
+    font-size: 45px;
+  }
 }

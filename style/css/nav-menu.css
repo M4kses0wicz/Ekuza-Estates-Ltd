@@ -8,8 +8,12 @@
   font-size: 1vw;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #fcfaf6;
+  background: #fbf6ed;
   width: 100svw;
   overflow-x: hidden;
 }
@@ -33,7 +37,7 @@ body .loader {
   overflow: hidden;
   top: 0;
   left: 0;
-  background: #fcfaf6;
+  background: #fbf6ed;
   opacity: 100%;
   display: flex;
   justify-content: center;
@@ -310,7 +314,7 @@ body header nav .burger {
 body .dropdown-menu-container {
   display: none !important;
   height: 100svh;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   z-index: 99;
   right: 0;
@@ -337,7 +341,7 @@ body .dropdown-menu-container .filter.opened {
 }
 body .dropdown-menu-container .menu {
   width: 500px;
-  background: #fcfaf6;
+  background: #fbf6ed;
   padding: 0px 35px;
   display: flex;
   flex-direction: column;

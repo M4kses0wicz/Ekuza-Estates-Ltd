@@ -8,7 +8,11 @@
   font-size: 1vw;
 }
 
-$white: #fcfaf6;
+html {
+  scroll-behavior: smooth;
+}
+
+$white: #fbf6ed;
 $gold: #f2ab40;
 $black: #181113;
 
