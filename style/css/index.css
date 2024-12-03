@@ -26,7 +26,7 @@ body .header-margin-block {
   }
 }
 body .loader {
-  position: absolute;
+  position: fixed;
   z-index: 999;
   height: 100svh;
   width: 100svw;
@@ -906,4 +906,9 @@ main .swiper-button-next:active i {
 .swiper .text-container a:hover {
   scale: 110%;
   color: #fcfaf6;
+}
+
+.sections-container {
+  width: 100%;
+  padding: 0px 250px;
 }/*# sourceMappingURL=index.css.map */
