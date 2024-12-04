@@ -146,8 +146,8 @@ body header nav {
 body header nav .menu {
   z-index: 199;
 }
-@media (max-width: 1250px) {
-  body header nav .menu {
+@media (max-width: 1350px) {
+  body header nav .menu li:not(li:last-of-type) {
     display: none;
   }
 }
@@ -162,6 +162,10 @@ body header nav .menu ol li {
   font-size: clamp(25px, 1.15rem, 40px);
   margin: 25px;
   font-family: "poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   font-weight: 500;
 }
 @media (max-height: 610px) {
@@ -285,31 +289,30 @@ body header nav img.text {
 body header nav:hover span {
   text-decoration: none;
 }
-body header nav .burger {
-  display: none;
+body header nav .line {
+  height: 100%;
+  width: 1px;
+  background: #181113;
 }
-@media (max-width: 1250px) {
-  body header nav .burger {
-    display: block;
-    font-size: 37.5px;
-    cursor: pointer;
-    border-radius: 100px;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 4px;
-  }
-  body header nav .burger span {
-    display: block;
-    height: 7px;
-    width: 7px;
-    background: #181113;
-    border-radius: 100px;
-  }
+body header nav .burger {
+  font-size: 37.5px;
+  cursor: pointer;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 4px;
+}
+body header nav .burger span {
+  display: block;
+  height: 7px;
+  width: 7px;
+  background: #181113;
+  border-radius: 100px;
 }
 body .dropdown-menu-container {
   display: none !important;

@@ -84,8 +84,10 @@ body {
         }
       }
       .menu {
-        @include mobile-w(1250px) {
-          display: none;
+        @include mobile-w(1350px) {
+          li:not(li:last-of-type) {
+            display: none;
+          }
         }
         z-index: 199;
         ol {
@@ -98,6 +100,7 @@ body {
             font-size: clamp(25px, 1.15rem, 40px);
             margin: 25px;
             font-family: $font-primary;
+            @include FlexCenter(row);
             @include mobile-h(610px) {
               font-size: 20px;
               padding: 10px 0px;
@@ -152,26 +155,28 @@ body {
           text-decoration: none;
         }
       }
+      .line {
+        height: 100%;
+        width: 1px;
+        background: $black;
+      }
       .burger {
-        display: none;
-        @include mobile-w(1250px) {
+        font-size: 37.5px;
+        cursor: pointer;
+        border-radius: 100px;
+        // border: 2px $black solid;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        @include FlexCenter(row);
+        gap: 4px;
+        // margin-left: 25px;
+        span {
           display: block;
-          font-size: 37.5px;
-          cursor: pointer;
+          height: 7px;
+          width: 7px;
+          background: $black;
           border-radius: 100px;
-          // border: 2px $black solid;
-          width: 60px;
-          height: 60px;
-          text-align: center;
-          @include FlexCenter(row);
-          gap: 4px;
-          span {
-            display: block;
-            height: 7px;
-            width: 7px;
-            background: $black;
-            border-radius: 100px;
-          }
         }
       }
     }
