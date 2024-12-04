@@ -300,9 +300,12 @@ body {
             content: "crazygmail@gmail.com";
             font-size: 17px;
           }
-          &.linkedin::after {
-            content: "fancylinkedinprofile";
+          &.ig::after {
+            content: "ekuza_estates";
             font-size: 17px;
+          }
+          i.ig {
+            font-size: 34px;
           }
 
           &:hover {
@@ -412,6 +415,80 @@ body {
     border-radius: 100%;
     background: red;
     transform: translate(-50%, -50%);
+  }
+  footer {
+    width: 100%;
+    height: 300px;
+    background: $black;
+    color: $white;
+    @include FlexCenter(column);
+    // section {
+    //   border: 2px dotted red;
+    // }
+    .container {
+      width: 100%;
+      height: 75%;
+      display: flex;
+      flex-direction: column;
+    }
+    .sec-1 {
+      width: 100%;
+      @include FlexCenter(column);
+      img {
+        height: 75px;
+        border-radius: 3px;
+        border: $gold 2px solid;
+      }
+    }
+    .sec-2 {
+      width: 100%;
+      @include FlexCenter(row);
+      justify-content: start;
+      ol {
+        list-style-type: none;
+        display: flex;
+        li {
+          margin: 0px 20px;
+          opacity: 80%;
+          a {
+            color: $white;
+          }
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .copy-container {
+      width: 100%;
+      height: 25%;
+      @include FlexCenter(column);
+      justify-content: space-between;
+      p {
+        font-size: 23px;
+      }
+      a {
+        font-size: 15px;
+        color: $white;
+        text-decoration: none;
+        opacity: 50%;
+        @include FlexCenter(row);
+        &:hover {
+          text-decoration: underline;
+        }
+        span {
+          margin: 0px 3.5px;
+        }
+        .klemensowicz {
+          text-decoration: underline;
+        }
+        .heart {
+          color: red;
+          font-size: 20px;
+        }
+      }
+    }
   }
 }
 

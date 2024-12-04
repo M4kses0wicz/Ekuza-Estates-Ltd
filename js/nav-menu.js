@@ -6,6 +6,8 @@ const container = document.querySelector(".dropdown-menu-container");
 
 const loader = document.querySelector(".loader");
 
+const currentYear = new Date().getFullYear();
+
 const copyPhone = () => {
   navigator.clipboard.writeText("+44 7949 940893");
   toast.classList.add("copied");
@@ -37,6 +39,8 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 
+// document.getElementById("date").textContent = currentYear;
+
 configObj = {
   buttonD:
     "M8 17.333h5.333v4C13.333 22.806 14.527 24 16 24c1.473 0 2.667-1.194 2.667-2.667v-4H24L16 8l-8 9.333z",
@@ -49,10 +53,10 @@ configObj = {
   buttonDToRight: "40px",
   selectedBackgroundColor: "#f2ab40",
   selectedIconColor: "#181113",
-  buttonWidth: "70px",
-  buttonHeight: "70px",
-  svgWidth: "65px",
-  svgHeight: "65px",
+  buttonWidth: "57.5px",
+  buttonHeight: "57.5px",
+  svgWidth: "55.5px",
+  svgHeight: "55.5px",
 };
 function createButton(obj, pageSimulator) {
   const body = document.querySelector("body");

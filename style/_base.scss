@@ -37,3 +37,15 @@ $font-secondary: "Georgia";
     @content;
   }
 }
+
+@mixin min-mobile-w($w) {
+  @media (min-width: $w) {
+    @content;
+  }
+}
+
+@mixin min-mobile-h($h) {
+  @media (min-height: $h) {
+    @content;
+  }
+}
