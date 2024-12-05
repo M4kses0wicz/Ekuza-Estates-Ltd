@@ -23,6 +23,8 @@ body.loading {
 body .header-margin-block {
   width: 100svw;
   height: 125px;
+  display: flex;
+  flex-wrap: wrap;
 }
 @media (max-width: 600px) {
   body .header-margin-block {
@@ -381,7 +383,7 @@ body .dropdown-menu-container .menu .socials .wrapper {
   }
 }
 body .dropdown-menu-container .menu .socials .wrapper a:hover {
-  width: 205px !important;
+  width: 185px !important;
 }
 body .dropdown-menu-container .menu .socials .toast {
   display: none;
@@ -412,7 +414,7 @@ body .dropdown-menu-container .menu .socials a {
   transition: 0.5s;
   color: #181113;
   text-decoration: none;
-  border: #181113 2px solid;
+  border: #181113 3px solid;
   text-wrap: nowrap;
   gap: 7.5px;
   overflow: hidden;
@@ -434,28 +436,28 @@ body .dropdown-menu-container .menu .socials a.fb::after {
   font-size: 17px;
 }
 body .dropdown-menu-container .menu .socials a.whatsapp::after {
-  content: "+44 7949 940893";
+  content: "07949 940 893";
   font-size: 17px;
 }
 body .dropdown-menu-container .menu .socials a.email::after {
-  content: "crazygmail@gmail.com";
+  content: "alex@ekuzaestates.co.uk";
   font-size: 17px;
 }
 body .dropdown-menu-container .menu .socials a.ig::after {
   content: "ekuza_estates";
   font-size: 17px;
 }
-body .dropdown-menu-container .menu .socials a i.ig {
-  font-size: 34px;
+body .dropdown-menu-container .menu .socials a.fb {
+  display: none !important;
 }
 body .dropdown-menu-container .menu .socials a:hover:nth-of-type(1) {
   width: 145px;
 }
 body .dropdown-menu-container .menu .socials a:hover:nth-of-type(2) {
-  width: 260px;
+  width: 275px;
 }
 body .dropdown-menu-container .menu .socials a:hover:nth-of-type(3) {
-  width: 222px;
+  width: 185px;
 }
 body .dropdown-menu-container .menu .socials a:hover {
   scale: 100%;
@@ -728,17 +730,14 @@ body footer .copy-container a .heart {
   0% {
     scale: 0%;
     opacity: 0%;
-    rotate: 10deg;
   }
   50% {
     scale: 110%;
     opacity: 100%;
-    rotate: -370deg;
   }
   100% {
     scale: 0%;
     opacity: 0%;
-    rotate: 10deg;
   }
 }
 @keyframes toast-anim-mobile {

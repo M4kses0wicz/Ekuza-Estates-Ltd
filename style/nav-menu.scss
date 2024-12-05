@@ -10,6 +10,8 @@ body {
   .header-margin-block {
     width: 100svw;
     height: 125px;
+    display: flex;
+    flex-wrap: wrap;
     @include mobile-w(600px) {
       height: 90px;
     }
@@ -239,7 +241,7 @@ body {
           }
           a {
             &:hover {
-              width: 205px !important ;
+              width: 185px !important ;
             }
           }
         }
@@ -274,7 +276,7 @@ body {
           transition: 0.5s;
           color: $black;
           text-decoration: none;
-          border: $black 2px solid;
+          border: $black 3px solid;
           text-wrap: nowrap;
           gap: 7.5px;
           overflow: hidden;
@@ -293,19 +295,19 @@ body {
             font-size: 17px;
           }
           &.whatsapp::after {
-            content: "+44 7949 940893";
+            content: "07949 940 893";
             font-size: 17px;
           }
           &.email::after {
-            content: "crazygmail@gmail.com";
+            content: "alex@ekuzaestates.co.uk";
             font-size: 17px;
           }
           &.ig::after {
             content: "ekuza_estates";
             font-size: 17px;
           }
-          i.ig {
-            font-size: 34px;
+          &.fb {
+            display: none !important;
           }
 
           &:hover {
@@ -313,10 +315,10 @@ body {
               width: 145px;
             }
             &:nth-of-type(2) {
-              width: 260px;
+              width: 275px;
             }
             &:nth-of-type(3) {
-              width: 222px;
+              width: 185px;
             }
           }
           &:hover {
@@ -505,17 +507,14 @@ body {
   0% {
     scale: 0%;
     opacity: 0%;
-    rotate: 10deg;
   }
   50% {
     scale: 110%;
     opacity: 100%;
-    rotate: -370deg;
   }
   100% {
     scale: 0%;
     opacity: 0%;
-    rotate: 10deg;
   }
 }
 

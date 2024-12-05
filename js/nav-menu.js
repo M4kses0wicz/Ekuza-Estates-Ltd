@@ -9,7 +9,7 @@ const loader = document.querySelector(".loader");
 const currentYear = new Date().getFullYear();
 
 const copyPhone = () => {
-  navigator.clipboard.writeText("+44 7949 940893");
+  navigator.clipboard.writeText("07949940893");
   toast.classList.add("copied");
   setTimeout(() => {
     toast.classList.remove("copied");
@@ -19,6 +19,7 @@ const copyPhone = () => {
 function closeMenu() {
   menu.classList.remove("opened");
   filter.classList.remove("opened");
+  document.querySelector("body").classList.remove("loading");
   setTimeout(() => {
     container.classList.remove("opened");
   }, 750);
@@ -27,6 +28,7 @@ function closeMenu() {
 function openMenu() {
   container.classList.add("opened");
   setTimeout(() => {
+    document.querySelector("body").classList.add("loading");
     menu.classList.add("opened");
     filter.classList.add("opened");
   }, 10);
@@ -55,8 +57,8 @@ configObj = {
   selectedIconColor: "#181113",
   buttonWidth: "57.5px",
   buttonHeight: "57.5px",
-  svgWidth: "55.5px",
-  svgHeight: "55.5px",
+  svgWidth: "53.5px",
+  svgHeight: "53.5px",
 };
 function createButton(obj, pageSimulator) {
   const body = document.querySelector("body");
