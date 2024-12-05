@@ -636,16 +636,41 @@ body footer {
   height: 300px;
   background: #181113;
   color: #fbf6ed;
+  padding: 0px 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+@media (max-width: 850px) {
+  body footer {
+    height: 500px;
+  }
+}
+@media (min-width: 1800px) {
+  body footer {
+    height: 500px;
+  }
+}
+@media (max-width: 1500px) {
+  body footer {
+    padding: 0px 115px;
+  }
+}
+@media (max-width: 850px) {
+  body footer {
+    padding: 0px 25px;
+  }
+}
 body footer .container {
   width: 100%;
-  height: 75%;
+  height: 92.5%;
   display: flex;
-  flex-direction: column;
+}
+@media (max-width: 850px) {
+  body footer .container {
+    flex-direction: column;
+  }
 }
 body footer .sec-1 {
   width: 100%;
@@ -653,49 +678,135 @@ body footer .sec-1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  align-items: start;
+}
+@media (max-width: 850px) {
+  body footer .sec-1 {
+    align-items: center;
+    margin: 50px 0px;
+  }
+}
+body footer .sec-1 p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+@media (max-width: 850px) {
+  body footer .sec-1 p {
+    text-align: center;
+  }
+}
+@media (min-width: 1800px) {
+  body footer .sec-1 p {
+    font-size: 24px;
+  }
 }
 body footer .sec-1 img {
-  height: 75px;
+  height: 150px;
   border-radius: 3px;
   border: #f2ab40 2px solid;
+}
+@media (min-width: 1800px) {
+  body footer .sec-1 img {
+    height: 200px;
+  }
 }
 body footer .sec-2 {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  justify-content: start;
+  flex-direction: column;
 }
-body footer .sec-2 ol {
-  list-style-type: none;
-  display: flex;
-}
-body footer .sec-2 ol li {
-  margin: 0px 20px;
-  opacity: 80%;
-  text-decoration: underline;
-}
-body footer .sec-2 ol li a {
-  color: #fbf6ed;
-}
-body footer .sec-2 ol li:hover {
-  text-decoration: none;
-}
-body footer .copy-container {
+body footer .sec-2 .socials {
   width: 100%;
-  height: 25%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: end;
 }
-body footer .copy-container p {
-  font-size: 23px;
+@media (max-width: 850px) {
+  body footer .sec-2 .socials {
+    align-items: center;
+  }
 }
-body footer .copy-container a {
-  font-size: 15px;
+body footer .sec-2 .socials a {
+  cursor: pointer;
+  color: #fbf6ed;
+  text-decoration: none;
+  margin: 7.5px 0px;
+}
+body footer .sec-2 .socials a:hover {
+  text-decoration: underline;
+}
+body footer .sec-2 .socials a i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials a i {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .whatsapp::after {
+  content: "07949 940 893";
+  font-size: 20px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials .whatsapp::after {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .email::after {
+  content: "alex@ekuzaestates.co.uk";
+  font-size: 20px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials .email::after {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .ig::after {
+  content: "ekuza_estates";
+  font-size: 20px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials .ig::after {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body footer .sec-2 .socials .wrapper .toast {
+  position: absolute;
+  font-size: 17px;
+  transform: translateX(250%);
+  opacity: 0%;
+}
+@media (max-width: 1500px) {
+  body footer .sec-2 .socials .wrapper .toast {
+    transform: translateX(225%) !important;
+  }
+}
+body footer .sec-2 .socials .wrapper .toast.copied {
+  animation: toast-anim-footer 2s cubic-bezier(1, 0, 0, 1) forwards;
+}
+body footer .km-container {
+  width: 100%;
+  height: 7.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+}
+body footer .km-container a {
+  font-size: 14px;
   color: #fbf6ed;
   text-decoration: none;
   opacity: 50%;
@@ -704,18 +815,29 @@ body footer .copy-container a {
   align-items: center;
   flex-direction: row;
 }
-body footer .copy-container a:hover {
+@media (max-width: 1500px) {
+  body footer .km-container a {
+    font-size: 13px;
+  }
+}
+@media (max-width: 850px) {
+  body footer .km-container a {
+    font-size: 12px;
+  }
+}
+body footer .km-container a:hover {
   text-decoration: underline;
 }
-body footer .copy-container a span {
+body footer .km-container a span,
+body footer .km-container a i {
   margin: 0px 3.5px;
 }
-body footer .copy-container a .klemensowicz {
+body footer .km-container a .klemensowicz {
   text-decoration: underline;
 }
-body footer .copy-container a .heart {
+body footer .km-container a .heart {
   color: red;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 @keyframes nav-txt-anim {
@@ -737,6 +859,17 @@ body footer .copy-container a .heart {
   }
   100% {
     scale: 0%;
+    opacity: 0%;
+  }
+}
+@keyframes toast-anim-footer {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 90%;
+  }
+  100% {
     opacity: 0%;
   }
 }

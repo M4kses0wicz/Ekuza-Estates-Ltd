@@ -309,7 +309,6 @@ body {
           &.fb {
             display: none !important;
           }
-
           &:hover {
             &:nth-of-type(1) {
               width: 145px;
@@ -421,57 +420,138 @@ body {
   footer {
     width: 100%;
     height: 300px;
+    @include mobile-w(850px) {
+      height: 500px;
+    }
+    @include min-mobile-w(1800px) {
+      height: 500px;
+    }
     background: $black;
     color: $white;
+    padding: 0px 250px;
+    @include mobile-w(1500px) {
+      padding: 0px 115px;
+    }
+    @include mobile-w(850px) {
+      padding: 0px 25px;
+    }
     @include FlexCenter(column);
     // section {
     //   border: 2px dotted red;
     // }
     .container {
       width: 100%;
-      height: 75%;
+      height: 92.5%;
       display: flex;
-      flex-direction: column;
+      @include mobile-w(850px) {
+        flex-direction: column;
+      }
     }
     .sec-1 {
       width: 100%;
       @include FlexCenter(column);
+      align-items: start;
+      @include mobile-w(850px) {
+        align-items: center;
+        margin: 50px 0px;
+      }
+      p {
+        font-size: 20px;
+        margin-top: 20px;
+        @include mobile-w(850px) {
+          text-align: center;
+        }
+        @include min-mobile-w(1800px) {
+          font-size: 24px;
+        }
+      }
       img {
-        height: 75px;
+        height: 150px;
+        @include min-mobile-w(1800px) {
+          height: 200px;
+        }
         border-radius: 3px;
         border: $gold 2px solid;
       }
     }
     .sec-2 {
       width: 100%;
-      @include FlexCenter(row);
-      justify-content: start;
-      ol {
-        list-style-type: none;
-        display: flex;
-        li {
-          margin: 0px 20px;
-          opacity: 80%;
-          a {
-            color: $white;
-          }
-          text-decoration: underline;
+      @include FlexCenter(column);
+      .socials {
+        width: 100%;
+        height: 100%;
+        @include FlexCenter(column);
+        align-items: end;
+        @include mobile-w(850px) {
+          align-items: center;
+        }
+        a {
+          cursor: pointer;
+          color: $white;
+          text-decoration: none;
+          margin: 7.5px 0px;
           &:hover {
-            text-decoration: none;
+            text-decoration: underline;
+          }
+          i {
+            font-size: 20px;
+            margin-right: 10px;
+            @include min-mobile-w(1800px) {
+              font-size: 24px;
+            }
+          }
+        }
+        .whatsapp::after {
+          content: "07949 940 893";
+          font-size: 20px;
+          @include min-mobile-w(1800px) {
+            font-size: 24px;
+          }
+        }
+        .email::after {
+          content: "alex@ekuzaestates.co.uk";
+          font-size: 20px;
+          @include min-mobile-w(1800px) {
+            font-size: 24px;
+          }
+        }
+        .ig::after {
+          content: "ekuza_estates";
+          font-size: 20px;
+          @include min-mobile-w(1800px) {
+            font-size: 24px;
+          }
+        }
+        .wrapper {
+          @include FlexCenter(row);
+          .toast {
+            position: absolute;
+            font-size: 17px;
+            transform: translateX(250%);
+            @include mobile-w(1500px) {
+              transform: translateX(225%) !important;
+            }
+            opacity: 0%;
+            &.copied {
+              animation: toast-anim-footer 2s cubic-bezier(1, 0, 0, 1) forwards;
+            }
           }
         }
       }
     }
-    .copy-container {
+    .km-container {
       width: 100%;
-      height: 25%;
+      height: 7.5%;
       @include FlexCenter(column);
-      justify-content: space-between;
-      p {
-        font-size: 23px;
-      }
+      justify-content: end;
       a {
-        font-size: 15px;
+        font-size: 14px;
+        @include mobile-w(1500px) {
+          font-size: 13px;
+        }
+        @include mobile-w(850px) {
+          font-size: 12px;
+        }
         color: $white;
         text-decoration: none;
         opacity: 50%;
@@ -479,7 +559,8 @@ body {
         &:hover {
           text-decoration: underline;
         }
-        span {
+        span,
+        i {
           margin: 0px 3.5px;
         }
         .klemensowicz {
@@ -487,7 +568,7 @@ body {
         }
         .heart {
           color: red;
-          font-size: 20px;
+          font-size: 12px;
         }
       }
     }
@@ -514,6 +595,18 @@ body {
   }
   100% {
     scale: 0%;
+    opacity: 0%;
+  }
+}
+
+@keyframes toast-anim-footer {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 90%;
+  }
+  100% {
     opacity: 0%;
   }
 }

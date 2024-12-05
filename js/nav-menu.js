@@ -1,4 +1,5 @@
 const toast = document.querySelector(".toast");
+const toastFooter = document.querySelector(".toast-footer");
 
 const menu = document.querySelector(".menu");
 const filter = document.querySelector(".filter");
@@ -13,6 +14,14 @@ const copyPhone = () => {
   toast.classList.add("copied");
   setTimeout(() => {
     toast.classList.remove("copied");
+  }, 2000);
+};
+
+const copyPhoneFooter = () => {
+  navigator.clipboard.writeText("07949940893");
+  toastFooter.classList.add("copied");
+  setTimeout(() => {
+    toastFooter.classList.remove("copied");
   }, 2000);
 };
 
@@ -41,7 +50,7 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 
-// document.getElementById("date").textContent = currentYear;
+document.getElementById("date").textContent = currentYear;
 
 configObj = {
   buttonD:
