@@ -1235,6 +1235,12 @@ main .swiper-button-next:active i {
     height: 800px;
   }
 }
+@media (max-width: 450px) {
+  .sections-container section {
+    margin-bottom: 120px !important;
+    padding-bottom: 0 !important;
+  }
+}
 @media (max-width: 800px) {
   .sections-container section {
     padding-bottom: 50px;

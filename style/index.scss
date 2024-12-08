@@ -240,6 +240,12 @@ main {
     }
     @include mobile-w(700px) {
       height: 800px;
+      // margin-bottom: 120px !important;
+      // padding-bottom: 0 !important;
+    }
+    @include mobile-w(450px) {
+      margin-bottom: 120px !important;
+      padding-bottom: 0 !important;
     }
     // border: red 2px dashed;
     padding-bottom: 100px;
