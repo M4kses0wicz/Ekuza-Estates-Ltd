@@ -1064,7 +1064,7 @@ main .swiper-button-next:active i {
   font-family: "poppins";
 }
 .swiper .text-container .desc {
-  font-family: "lato";
+  font-family: georgia;
   margin: 35px 0px 50px 0px;
   font-size: 27px;
 }
@@ -1362,7 +1362,7 @@ main .swiper-button-next:active i {
   }
 }
 .sections-container section .text-container p {
-  font-family: "lato";
+  font-family: georgia;
   font-size: 25px;
 }
 @media (max-height: 780px) {
