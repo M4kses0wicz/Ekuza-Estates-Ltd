@@ -475,6 +475,14 @@ body .dropdown-menu-container .menu .socials a:hover {
 body .dropdown-menu-container .menu .socials a i {
   font-size: 30px;
 }
+body .dropdown-menu-container .menu .socials a i.ig {
+  margin-left: -1px;
+}
+@media (min-width: 2000px) {
+  body .dropdown-menu-container .menu .socials a i.ig {
+    margin: 0 !important;
+  }
+}
 body .dropdown-menu-container .menu .close {
   display: flex;
   justify-content: end;

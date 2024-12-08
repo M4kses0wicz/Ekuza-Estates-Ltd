@@ -329,6 +329,12 @@ body {
           }
           i {
             font-size: 30px;
+            &.ig {
+              margin-left: -1px;
+              @include min-mobile-w(2000px) {
+                margin: 0 !important;
+              }
+            }
           }
         }
       }
