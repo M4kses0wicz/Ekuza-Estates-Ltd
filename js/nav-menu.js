@@ -44,10 +44,8 @@ function openMenu() {
 }
 
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.querySelector("body").classList.remove("loading");
-    loader.classList.add("loaded");
-  }, 1000);
+  document.querySelector("body").classList.remove("loading");
+  loader.classList.add("loaded");
 });
 
 document.getElementById("date").textContent = currentYear;
