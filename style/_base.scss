@@ -21,7 +21,7 @@ $gold: #f2ab40;
 $black: #181113;
 
 $font-primary: "poppins";
-$font-secondary: "Georgia";
+$font-secondary: "lato"; // georgia
 
 @mixin FlexCenter($fd) {
   display: flex;
