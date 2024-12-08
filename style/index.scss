@@ -76,6 +76,7 @@ main {
     width: 65%;
     object-fit: cover;
     filter: brightness(0.9) contrast(1.1) sepia(0.2);
+    object-position: center 75%;
     @include mobile-w(1150px) {
       width: 55%;
     }
@@ -116,9 +117,9 @@ main {
       @include mobile-w(550px) {
         font-size: 18px;
       }
-      @include mobile-h(780px) {
-        font-size: 15px;
-      }
+      // @include mobile-h(780px) {
+      //   font-size: 15px;
+      // }
       @include mobile-h(1000px) {
         margin: 20px 0px 35px 0px;
       }
@@ -138,9 +139,9 @@ main {
       @include mobile-w(550px) {
         font-size: 40px;
       }
-      @include mobile-h(780px) {
-        font-size: 30px;
-      }
+      // @include mobile-h(780px) {
+      //   font-size: 30px;
+      // }
       @include min-mobile-w(2200px) {
         font-size: 76px;
       }
@@ -156,9 +157,9 @@ main {
       @include mobile-w(550px) {
         font-size: 17px;
       }
-      @include mobile-h(780px) {
-        font-size: 14px;
-      }
+      // @include mobile-h(780px) {
+      //   font-size: 14px;
+      // }
       i {
         margin-left: 5px;
       }
@@ -249,8 +250,7 @@ main {
     @include mobile-w(900px) {
       flex-direction: column;
     }
-    &.sec-1,
-    &.sec-3 {
+    &.sec-1 {
       p {
         @include FlexCenter(row);
         &:first-of-type {
@@ -269,8 +269,7 @@ main {
         }
       }
     }
-    &.sec-2,
-    &.sec-4 {
+    &.sec-2 {
       p {
         @include FlexCenter(row);
         &:first-of-type {
@@ -347,6 +346,8 @@ main {
           }
         }
         &.desc {
+          word-spacing: 5px;
+          letter-spacing: 1px;
           @include mobile-w(700px) {
             font-size: 17px;
           }

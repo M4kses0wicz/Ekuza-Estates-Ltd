@@ -86,7 +86,7 @@ body {
         }
       }
       .menu {
-        @include mobile-w(1350px) {
+        @include mobile-w(1060px) {
           li:not(li:last-of-type) {
             display: none;
           }

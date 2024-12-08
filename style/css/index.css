@@ -10,6 +10,10 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -148,7 +152,7 @@ body header nav {
 body header nav .menu {
   z-index: 199;
 }
-@media (max-width: 1350px) {
+@media (max-width: 1060px) {
   body header nav .menu li:not(li:last-of-type) {
     display: none;
   }
@@ -915,6 +919,10 @@ body footer .km-container a .heart {
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 main {
@@ -995,6 +1003,7 @@ main .swiper-button-next:active i {
   width: 65%;
   object-fit: cover;
   filter: brightness(0.9) contrast(1.1) sepia(0.2);
+  object-position: center 75%;
 }
 @media (max-width: 1150px) {
   .swiper img {
@@ -1054,11 +1063,6 @@ main .swiper-button-next:active i {
     font-size: 18px;
   }
 }
-@media (max-height: 780px) {
-  .swiper .text-container .desc {
-    font-size: 15px;
-  }
-}
 @media (max-height: 1000px) {
   .swiper .text-container .desc {
     margin: 20px 0px 35px 0px;
@@ -1088,11 +1092,6 @@ main .swiper-button-next:active i {
     font-size: 40px;
   }
 }
-@media (max-height: 780px) {
-  .swiper .text-container h3 {
-    font-size: 30px;
-  }
-}
 @media (min-width: 2200px) {
   .swiper .text-container h3 {
     font-size: 76px;
@@ -1110,11 +1109,6 @@ main .swiper-button-next:active i {
 @media (max-width: 550px) {
   .swiper .text-container a {
     font-size: 17px;
-  }
-}
-@media (max-height: 780px) {
-  .swiper .text-container a {
-    font-size: 14px;
   }
 }
 .swiper .text-container a i {
@@ -1232,36 +1226,36 @@ main .swiper-button-next:active i {
     flex-direction: column;
   }
 }
-.sections-container section.sec-1 p, .sections-container section.sec-3 p {
+.sections-container section.sec-1 p {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.sections-container section.sec-1 p:first-of-type::after, .sections-container section.sec-3 p:first-of-type::after {
+.sections-container section.sec-1 p:first-of-type::after {
   font-size: 17px;
   content: "get to know us";
   color: rgba(0, 106, 0, 0.547);
 }
-.sections-container section.sec-1 p:first-of-type span.line, .sections-container section.sec-3 p:first-of-type span.line {
+.sections-container section.sec-1 p:first-of-type span.line {
   display: block;
   width: 20px;
   height: 1px;
   background: #181113;
   margin: 0px 25px;
 }
-.sections-container section.sec-2 p, .sections-container section.sec-4 p {
+.sections-container section.sec-2 p {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.sections-container section.sec-2 p:first-of-type::after, .sections-container section.sec-4 p:first-of-type::after {
+.sections-container section.sec-2 p:first-of-type::after {
   font-size: 17px;
   content: "find out what we do";
   color: rgba(0, 106, 0, 0.547);
 }
-.sections-container section.sec-2 p:first-of-type span.line, .sections-container section.sec-4 p:first-of-type span.line {
+.sections-container section.sec-2 p:first-of-type span.line {
   display: block;
   width: 20px;
   height: 1px;
@@ -1345,6 +1339,10 @@ main .swiper-button-next:active i {
   .sections-container section .text-container p:first-of-type::after {
     font-size: 12px;
   }
+}
+.sections-container section .text-container p.desc {
+  word-spacing: 5px;
+  letter-spacing: 1px;
 }
 @media (max-width: 700px) {
   .sections-container section .text-container p.desc {

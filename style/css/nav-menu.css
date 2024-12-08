@@ -10,6 +10,10 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -148,7 +152,7 @@ body header nav {
 body header nav .menu {
   z-index: 199;
 }
-@media (max-width: 1350px) {
+@media (max-width: 1060px) {
   body header nav .menu li:not(li:last-of-type) {
     display: none;
   }
