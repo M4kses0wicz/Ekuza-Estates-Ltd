@@ -444,7 +444,7 @@ body {
       height: 92.5%;
       display: flex;
       @include mobile-w(850px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
       }
     }
     .sec-1 {
@@ -453,16 +453,16 @@ body {
       align-items: start;
       @include mobile-w(850px) {
         align-items: center;
-        margin: 50px 0px;
+        margin: 75px 0px 10px 0px;
       }
       p {
-        font-size: 20px;
+        font-size: 16px;
         margin-top: 20px;
         @include mobile-w(850px) {
           text-align: center;
         }
         @include min-mobile-w(1800px) {
-          font-size: 24px;
+          font-size: 20px;
         }
       }
       img {
@@ -565,6 +565,7 @@ body {
         }
         .klemensowicz {
           text-decoration: underline;
+          margin-bottom: 1px;
         }
         .heart {
           color: red;

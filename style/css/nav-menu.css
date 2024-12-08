@@ -673,7 +673,7 @@ body footer .container {
 }
 @media (max-width: 850px) {
   body footer .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 body footer .sec-1 {
@@ -687,11 +687,11 @@ body footer .sec-1 {
 @media (max-width: 850px) {
   body footer .sec-1 {
     align-items: center;
-    margin: 50px 0px;
+    margin: 75px 0px 10px 0px;
   }
 }
 body footer .sec-1 p {
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 20px;
 }
 @media (max-width: 850px) {
@@ -701,7 +701,7 @@ body footer .sec-1 p {
 }
 @media (min-width: 1800px) {
   body footer .sec-1 p {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 body footer .sec-1 img {
@@ -838,6 +838,7 @@ body footer .km-container a i {
 }
 body footer .km-container a .klemensowicz {
   text-decoration: underline;
+  margin-bottom: 1px;
 }
 body footer .km-container a .heart {
   color: red;
