@@ -149,10 +149,16 @@ body header nav {
     margin: 15px !important;
   }
 }
+@media (max-width: 1600px) and (max-width: 1100px) {
+  body header nav li {
+    font-size: 22px !important;
+    margin: 12px !important;
+  }
+}
 body header nav .menu {
   z-index: 199;
 }
-@media (max-width: 1060px) {
+@media (max-width: 1000px) {
   body header nav .menu li:not(li:last-of-type) {
     display: none;
   }

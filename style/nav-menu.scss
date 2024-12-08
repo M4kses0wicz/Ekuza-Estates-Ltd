@@ -83,10 +83,14 @@ body {
         li {
           font-size: 23px !important;
           margin: 15px !important;
+          @include mobile-w(1100px) {
+            font-size: 22px !important;
+            margin: 12px !important;
+          }
         }
       }
       .menu {
-        @include mobile-w(1060px) {
+        @include mobile-w(1000px) {
           li:not(li:last-of-type) {
             display: none;
           }
