@@ -1,0 +1,941 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 1vw;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: #fbf6ed;
+  width: 100svw;
+  overflow-x: hidden;
+}
+body.loading {
+  overflow-y: hidden;
+}
+body .header-margin-block {
+  width: 100svw;
+  height: 125px;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  body .header-margin-block {
+    height: 90px;
+  }
+}
+body .loader {
+  position: fixed;
+  z-index: 999;
+  height: 100svh;
+  width: 100svw;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: #fbf6ed;
+  opacity: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body .loader .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  height: 80px;
+  width: 80px;
+  margin-left: 10px;
+  transform: translate(-50%, -50%);
+}
+body .loader .spinner .ball-1 {
+  z-index: -1;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 0.3, 0.9, 0.9);
+}
+body .loader .spinner .ball-2 {
+  z-index: -2;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 0.6, 0.9, 0.9);
+}
+body .loader .spinner .ball-3 {
+  z-index: -3;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 0.9, 0.9, 0.9);
+}
+body .loader .spinner .ball-4 {
+  z-index: -4;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 1.2, 0.9, 0.9);
+}
+body .loader .spinner .ball-5 {
+  z-index: -5;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 1.5, 0.9, 0.9);
+}
+body .loader .spinner .ball-6 {
+  z-index: -6;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 1.8, 0.9, 0.9);
+}
+body .loader .spinner .ball-7 {
+  z-index: -7;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 2.1, 0.9, 0.9);
+}
+body .loader .spinner .ball-8 {
+  z-index: -8;
+  background-color: #f2ab40;
+  animation-timing-function: cubic-bezier(0.5, 2.4, 0.9, 0.9);
+}
+body .loader [class^=ball-] {
+  position: absolute;
+  display: block;
+  left: 30px;
+  width: 14px;
+  height: 14px;
+  border-radius: 10px;
+  transition: all 1s;
+  animation: circleRotate 3.5s ease infinite;
+  transform-origin: 0 250% 0;
+}
+body .loader.loaded {
+  animation: loader-remove 0.5s ease forwards;
+}
+body header {
+  position: fixed;
+  z-index: 89;
+  top: 0px;
+  width: 100svw;
+  height: 125px;
+  border-bottom: 1px #181113 solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: white;
+}
+@media (max-width: 600px) {
+  body header {
+    height: 90px;
+  }
+}
+body header nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5%;
+}
+@media (max-width: 1600px) {
+  body header nav {
+    padding: 0px 1%;
+  }
+  body header nav li {
+    font-size: 23px !important;
+    margin: 15px !important;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1100px) {
+  body header nav li {
+    font-size: 22px !important;
+    margin: 12px !important;
+  }
+}
+body header nav .menu {
+  z-index: 199;
+}
+@media (max-width: 1000px) {
+  body header nav .menu li:not(li:last-of-type) {
+    display: none;
+  }
+}
+body header nav .menu ol {
+  list-style-type: none;
+  display: flex;
+}
+body header nav .menu ol li {
+  width: 100%;
+  cursor: pointer;
+  padding: 20px 0px;
+  font-size: clamp(25px, 1.15rem, 40px);
+  margin: 25px;
+  font-family: "poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 500;
+}
+@media (max-height: 610px) {
+  body header nav .menu ol li {
+    font-size: 20px;
+    padding: 10px 0px;
+  }
+}
+body header nav .menu ol li:hover a span:nth-of-type(0) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(1) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.025s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(2) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.05s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(3) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.075s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(4) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.1s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(5) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.125s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(6) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.15s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(7) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.175s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(8) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.2s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(9) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.225s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(10) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.25s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(11) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.275s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(12) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.3s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(13) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.325s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(14) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.35s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(15) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.375s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(16) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.4s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(17) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.425s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(18) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.45s;
+}
+body header nav .menu ol li:hover a span:nth-of-type(19) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.475s;
+}
+body header nav .menu ol li a {
+  text-decoration: none;
+  color: #181113;
+  display: flex;
+}
+body header nav .menu ol li a.selected {
+  font-weight: 700;
+  border-bottom: #f2ab40 3px solid;
+}
+body header nav .menu ol li a span {
+  display: block;
+  transition: 0.1s;
+}
+body header nav .menu ol li a span.space {
+  height: 5px;
+  width: 9px;
+}
+body header nav .logo-container {
+  height: 90%;
+  display: flex;
+  align-items: center;
+}
+body header nav img.logo {
+  height: 100%;
+  transform: translateX(40%);
+  z-index: 4;
+}
+body header nav img.text {
+  height: 60%;
+  transform: translateY(3px);
+  z-index: 2;
+}
+body header nav:hover span {
+  text-decoration: none;
+}
+body header nav .line {
+  height: 100%;
+  width: 1px;
+  background: #181113;
+}
+body header nav .burger {
+  font-size: 37.5px;
+  cursor: pointer;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 4px;
+}
+body header nav .burger span {
+  display: block;
+  height: 7px;
+  width: 7px;
+  background: #181113;
+  border-radius: 100px;
+}
+body .dropdown-menu-container {
+  display: none !important;
+  height: 100svh;
+  position: fixed;
+  overflow: hidden;
+  z-index: 99;
+  right: 0;
+  top: 0;
+  width: 100%;
+  font-family: "poppins";
+  display: flex;
+}
+body .dropdown-menu-container.opened {
+  display: block !important;
+}
+body .dropdown-menu-container .filter {
+  width: 100svw;
+  height: 100svh;
+  backdrop-filter: brightness(100%) blur(0px);
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+  transition: 0.5s;
+}
+body .dropdown-menu-container .filter.opened {
+  width: 100svw;
+  backdrop-filter: brightness(85%) blur(1px);
+}
+body .dropdown-menu-container .menu {
+  width: 500px;
+  background: #fbf6ed;
+  padding: 0px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 2px;
+  transition: 0.5s;
+  transform: translateX(500px);
+}
+body .dropdown-menu-container .menu.opened {
+  transform: translateX(0px);
+}
+body .dropdown-menu-container .menu .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 35px;
+  width: 100%;
+  padding-top: 35px;
+}
+@media (max-width: 600px) {
+  body .dropdown-menu-container .menu .socials {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+body .dropdown-menu-container .menu .socials .wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  body .dropdown-menu-container .menu .socials .wrapper {
+    width: 50px;
+  }
+}
+body .dropdown-menu-container .menu .socials .wrapper a:hover {
+  width: 185px !important;
+}
+body .dropdown-menu-container .menu .socials .toast {
+  display: none;
+}
+body .dropdown-menu-container .menu .socials .copied {
+  display: block !important;
+  font-size: 15px;
+  margin-left: 12px;
+  animation: toast-anim 2s cubic-bezier(1, 0, 0, 1) forwards;
+  animation-delay: -0.5s;
+}
+@media (max-width: 600px) {
+  body .dropdown-menu-container .menu .socials .copied {
+    position: absolute;
+    transform: translateX(-25%) translateY(-50px);
+    animation: toast-anim-mobile 2s cubic-bezier(1, 0, 0, 1) forwards;
+  }
+}
+body .dropdown-menu-container .menu .socials a {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 7.5px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: #181113;
+  text-decoration: none;
+  border: #181113 3px solid;
+  text-wrap: nowrap;
+  gap: 7.5px;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  body .dropdown-menu-container .menu .socials a {
+    width: 50px !important;
+  }
+}
+body .dropdown-menu-container .menu .socials a:nth-of-type(1) {
+  padding-left: 8px;
+}
+body .dropdown-menu-container .menu .socials a:nth-of-type(3) {
+  padding-left: 10.5px;
+  gap: 8.5px;
+}
+body .dropdown-menu-container .menu .socials a.fb::after {
+  content: "Alex Ekuza";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a.whatsapp::after {
+  content: "07949 940 893";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a.email::after {
+  content: "alex@ekuzaestates.co.uk";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a.ig::after {
+  content: "ekuza_estates";
+  font-size: 17px;
+}
+body .dropdown-menu-container .menu .socials a.fb {
+  display: none !important;
+}
+body .dropdown-menu-container .menu .socials a:hover:nth-of-type(1) {
+  width: 145px;
+}
+body .dropdown-menu-container .menu .socials a:hover:nth-of-type(2) {
+  width: 275px;
+}
+body .dropdown-menu-container .menu .socials a:hover:nth-of-type(3) {
+  width: 185px;
+}
+body .dropdown-menu-container .menu .socials a:hover {
+  scale: 100%;
+}
+body .dropdown-menu-container .menu .socials a i {
+  font-size: 30px;
+}
+body .dropdown-menu-container .menu .socials a i.ig {
+  margin-left: -1px;
+}
+@media (min-width: 2000px) {
+  body .dropdown-menu-container .menu .socials a i.ig {
+    margin: 0 !important;
+  }
+}
+body .dropdown-menu-container .menu .close {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  margin: 35px 0px;
+  font-size: clamp(20px, 0.9rem, 100px);
+}
+body .dropdown-menu-container .menu .close .x:hover p {
+  text-decoration: none;
+}
+body .dropdown-menu-container .menu .close p {
+  text-decoration: underline;
+  cursor: pointer;
+}
+body .dropdown-menu-container .menu .close p:hover {
+  text-decoration: none;
+}
+body .dropdown-menu-container .menu .close button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+body .dropdown-menu-container .menu .close button span {
+  font-size: clamp(37.5px, 1.5rem, 100px);
+}
+body .dropdown-menu-container .menu ol {
+  list-style-type: none;
+}
+body .dropdown-menu-container .menu ol li {
+  width: 100%;
+  cursor: pointer;
+  border-top: 1px rgba(24, 17, 19, 0.4196078431) solid;
+  padding: 20px 0px;
+  font-size: clamp(25px, 1.15rem, 100px);
+  font-weight: 500;
+}
+@media (max-height: 610px) {
+  body .dropdown-menu-container .menu ol li {
+    font-size: 20px;
+    padding: 10px 0px;
+  }
+}
+body .dropdown-menu-container .menu ol li:last-of-type {
+  border-bottom: 1px rgba(24, 17, 19, 0.4196078431) solid;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(0) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(1) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.025s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(2) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.05s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(3) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.075s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(4) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.1s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(5) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.125s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(6) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.15s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(7) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.175s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(8) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.2s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(9) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.225s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(10) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.25s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(11) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.275s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(12) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.3s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(13) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.325s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(14) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.35s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(15) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.375s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(16) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.4s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(17) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.425s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(18) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.45s;
+}
+body .dropdown-menu-container .menu ol li:hover a span:nth-of-type(19) {
+  animation: nav-txt-anim 0.5s forwards;
+  animation-delay: 0.475s;
+}
+body .dropdown-menu-container .menu ol li a {
+  text-decoration: none;
+  color: #181113;
+  display: flex;
+}
+body .dropdown-menu-container .menu ol li a.selected {
+  font-weight: 700;
+}
+body .dropdown-menu-container .menu ol li a.selected span:first-of-type {
+  border-left: #f2ab40 3px solid;
+  padding-left: 10px;
+}
+@media (max-width: 600px) {
+  body .dropdown-menu-container .menu ol li a {
+    justify-content: center;
+  }
+}
+body .dropdown-menu-container .menu ol li a span {
+  display: block;
+  transition: 0.1s;
+}
+body .dropdown-menu-container .menu ol li a span.space {
+  height: 5px;
+  width: 9px;
+}
+body .center-point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  height: 400px;
+  width: 4px;
+  border-radius: 100%;
+  background: red;
+  transform: translate(-50%, -50%);
+}
+body footer {
+  width: 100%;
+  height: 300px;
+  background: #181113;
+  color: #fbf6ed;
+  padding: 0px 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 850px) {
+  body footer {
+    height: 500px;
+  }
+}
+@media (min-width: 1800px) {
+  body footer {
+    height: 500px;
+  }
+}
+@media (max-width: 1500px) {
+  body footer {
+    padding: 0px 115px;
+  }
+}
+@media (max-width: 850px) {
+  body footer {
+    padding: 0px 25px;
+  }
+}
+body footer .container {
+  width: 100%;
+  height: 92.5%;
+  display: flex;
+}
+@media (max-width: 850px) {
+  body footer .container {
+    flex-direction: column-reverse;
+  }
+}
+body footer .sec-1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: start;
+}
+@media (max-width: 850px) {
+  body footer .sec-1 {
+    align-items: center;
+    margin: 75px 0px 10px 0px;
+  }
+}
+body footer .sec-1 p {
+  font-size: 16px;
+  margin-top: 20px;
+}
+@media (max-width: 850px) {
+  body footer .sec-1 p {
+    text-align: center;
+  }
+}
+@media (min-width: 1800px) {
+  body footer .sec-1 p {
+    font-size: 20px;
+  }
+}
+body footer .sec-1 img {
+  height: 150px;
+  border-radius: 3px;
+  border: #f2ab40 2px solid;
+}
+@media (min-width: 1800px) {
+  body footer .sec-1 img {
+    height: 200px;
+  }
+}
+body footer .sec-2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body footer .sec-2 .socials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: end;
+}
+@media (max-width: 850px) {
+  body footer .sec-2 .socials {
+    align-items: center;
+  }
+}
+body footer .sec-2 .socials a {
+  cursor: pointer;
+  color: #fbf6ed;
+  text-decoration: none;
+  margin: 7.5px 0px;
+}
+body footer .sec-2 .socials a:hover {
+  text-decoration: underline;
+}
+body footer .sec-2 .socials a i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials a i {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .whatsapp::after {
+  content: "07949 940 893";
+  font-size: 20px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials .whatsapp::after {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .email::after {
+  content: "alex@ekuzaestates.co.uk";
+  font-size: 20px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials .email::after {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .ig::after {
+  content: "ekuza_estates";
+  font-size: 20px;
+}
+@media (min-width: 1800px) {
+  body footer .sec-2 .socials .ig::after {
+    font-size: 24px;
+  }
+}
+body footer .sec-2 .socials .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body footer .sec-2 .socials .wrapper .toast {
+  position: absolute;
+  font-size: 17px;
+  transform: translateX(250%);
+  opacity: 0%;
+}
+@media (max-width: 1500px) {
+  body footer .sec-2 .socials .wrapper .toast {
+    transform: translateX(225%) !important;
+  }
+}
+body footer .sec-2 .socials .wrapper .toast.copied {
+  animation: toast-anim-footer 2s cubic-bezier(1, 0, 0, 1) forwards;
+}
+body footer .km-container {
+  width: 100%;
+  height: 7.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+}
+body footer .km-container a {
+  font-size: 14px;
+  color: #fbf6ed;
+  text-decoration: none;
+  opacity: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 1500px) {
+  body footer .km-container a {
+    font-size: 13px;
+  }
+}
+@media (max-width: 850px) {
+  body footer .km-container a {
+    font-size: 12px;
+  }
+}
+body footer .km-container a:hover {
+  text-decoration: underline;
+}
+body footer .km-container a span,
+body footer .km-container a i {
+  margin: 0px 3.5px;
+}
+body footer .km-container a .klemensowicz {
+  text-decoration: underline;
+  margin-bottom: 1px;
+}
+body footer .km-container a .heart {
+  color: red;
+  font-size: 12px;
+}
+
+@keyframes nav-txt-anim {
+  from {
+    color: #f2ab40;
+  }
+  to {
+    color: #181113;
+  }
+}
+@keyframes toast-anim {
+  0% {
+    scale: 0%;
+    opacity: 0%;
+  }
+  50% {
+    scale: 110%;
+    opacity: 100%;
+  }
+  100% {
+    scale: 0%;
+    opacity: 0%;
+  }
+}
+@keyframes toast-anim-footer {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 90%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+@keyframes toast-anim-mobile {
+  0% {
+    opacity: 0%;
+    margin-bottom: -34px;
+  }
+  50% {
+    opacity: 100%;
+    margin-bottom: 4px;
+  }
+  100% {
+    opacity: 0%;
+    margin-bottom: -34px;
+  }
+}
+@keyframes loader-remove {
+  99% {
+    opacity: 0%;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 1vw;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}/*# sourceMappingURL=bespoke.css.map */
