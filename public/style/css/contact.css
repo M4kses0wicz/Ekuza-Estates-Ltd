@@ -434,6 +434,14 @@ body .dropdown-menu-container .menu .socials a {
     width: 50px !important;
   }
 }
+@media (max-height: 690px) {
+  body .dropdown-menu-container .menu .socials a {
+    scale: 75%;
+  }
+  body .dropdown-menu-container .menu .socials a.email i, body .dropdown-menu-container .menu .socials a.ig i {
+    margin-left: -1px;
+  }
+}
 body .dropdown-menu-container .menu .socials a:nth-of-type(1) {
   padding-left: 8px;
 }
@@ -524,7 +532,7 @@ body .dropdown-menu-container .menu ol li {
   font-size: clamp(25px, 1.15rem, 100px);
   font-weight: 500;
 }
-@media (max-height: 610px) {
+@media (max-height: 690px) {
   body .dropdown-menu-container .menu ol li {
     font-size: 20px;
     padding: 10px 0px;

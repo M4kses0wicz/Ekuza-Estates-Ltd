@@ -1,5 +1,9 @@
 @import "_base.scss";
 
+// * {
+//   color: red; // test
+// }
+
 body {
   background: $white;
   width: 100svw;
@@ -287,6 +291,15 @@ body {
           @include mobile-w(600px) {
             width: 50px !important;
           }
+          @include mobile-h(690px) {
+            scale: 75%;
+            &.email,
+            &.ig {
+              i {
+                margin-left: -1px;
+              }
+            }
+          }
           &:nth-of-type(1) {
             padding-left: 8px;
           }
@@ -373,7 +386,7 @@ body {
           border-top: 1px #1811136b solid;
           padding: 20px 0px;
           font-size: clamp(25px, 1.15rem, 100px);
-          @include mobile-h(610px) {
+          @include mobile-h(690px) {
             font-size: 20px;
             padding: 10px 0px;
           }
