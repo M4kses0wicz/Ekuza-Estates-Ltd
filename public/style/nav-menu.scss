@@ -87,9 +87,11 @@ body {
         li {
           font-size: 23px !important;
           margin: 15px !important;
-          @include mobile-w(1100px) {
+          @include mobile-w(1215px) {
             font-size: 22px !important;
-            margin: 12px !important;
+            margin: 7px !important;
+            letter-spacing: -0.5px;
+            transform: translateX(-25px);
           }
         }
       }
@@ -148,6 +150,15 @@ body {
         height: 90%;
         display: flex;
         align-items: center;
+        @include mobile-w(1350px) {
+          // border: red dashed 1px;
+          height: 70%;
+          transform: translateX(-40px);
+        }
+        @include mobile-w(600px) {
+          height: 75%;
+          transform: translateX(-10px);
+        }
       }
 
       img.logo {
@@ -187,6 +198,9 @@ body {
           width: 7px;
           background: $black;
           border-radius: 100px;
+        }
+        @include mobile-w(1215px) {
+          transform: translateX(-10px);
         }
       }
     }

@@ -149,10 +149,12 @@ body header nav {
     margin: 15px !important;
   }
 }
-@media (max-width: 1600px) and (max-width: 1100px) {
+@media (max-width: 1600px) and (max-width: 1215px) {
   body header nav li {
     font-size: 22px !important;
-    margin: 12px !important;
+    margin: 7px !important;
+    letter-spacing: -0.5px;
+    transform: translateX(-25px);
   }
 }
 body header nav .menu {
@@ -288,6 +290,18 @@ body header nav .logo-container {
   display: flex;
   align-items: center;
 }
+@media (max-width: 1350px) {
+  body header nav .logo-container {
+    height: 70%;
+    transform: translateX(-40px);
+  }
+}
+@media (max-width: 600px) {
+  body header nav .logo-container {
+    height: 75%;
+    transform: translateX(-10px);
+  }
+}
 body header nav img.logo {
   height: 100%;
   transform: translateX(40%);
@@ -325,6 +339,11 @@ body header nav .burger span {
   width: 7px;
   background: #181113;
   border-radius: 100px;
+}
+@media (max-width: 1215px) {
+  body header nav .burger {
+    transform: translateX(-10px);
+  }
 }
 body .dropdown-menu-container {
   display: none !important;
@@ -1066,6 +1085,11 @@ main .swiper-button-next:active i {
     height: 55%;
   }
 }
+@media (max-width: 665px) {
+  .swiper .text-container {
+    padding: 15px 40px;
+  }
+}
 .swiper .text-container .date,
 .swiper .text-container h3,
 .swiper .text-container a {
@@ -1096,6 +1120,11 @@ main .swiper-button-next:active i {
     margin: 10px 0px 20px 0px;
   }
 }
+@media (max-width: 665px) {
+  .swiper .text-container .desc {
+    font-size: 17px;
+  }
+}
 @media (min-width: 2200px) {
   .swiper .text-container .desc {
     font-size: 36px;
@@ -1104,6 +1133,7 @@ main .swiper-button-next:active i {
 .swiper .text-container h3 {
   font-size: 62px;
   font-weight: 500;
+  line-height: 1;
 }
 @media (max-width: 1470px) {
   .swiper .text-container h3 {
@@ -1132,6 +1162,12 @@ main .swiper-button-next:active i {
 @media (max-width: 550px) {
   .swiper .text-container a {
     font-size: 17px;
+  }
+}
+@media (max-width: 665px) {
+  .swiper .text-container a {
+    font-size: 14px;
+    padding: 5px 12px;
   }
 }
 .swiper .text-container a i {
