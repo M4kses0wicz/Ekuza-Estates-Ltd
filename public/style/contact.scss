@@ -1,2 +1,18 @@
 @import "nav-menu.scss";
 @import "_base.scss";
+
+main {
+  width: 100svw;
+  padding: 50px 250px;
+  @include FlexCenter(row);
+  form {
+    width: 50%;
+  }
+  section {
+    width: 50%;
+    @include FlexCenter(column);
+    img {
+      width: 500px;
+    }
+  }
+}
