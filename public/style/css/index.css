@@ -1187,7 +1187,7 @@ main .swiper-button-next:active i {
 }
 .swiper .swiper-pagination-bullet-active {
   background-color: #f2ab40;
-  transform: scale(1.2);
+  transform: scale(1.35);
 }
 
 .title-container {
