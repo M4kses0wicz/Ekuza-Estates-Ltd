@@ -985,6 +985,14 @@ main section {
   align-items: center;
   flex-direction: column;
 }
-main section img {
-  width: 500px;
+main section h2 {
+  position: absolute;
+  font-size: 57px;
+  font-family: "poppins";
+  line-height: 55px;
+}
+main section h2 .line {
+  display: block;
+  width: 50px;
+  height: 2px;
 }/*# sourceMappingURL=contact.css.map */
