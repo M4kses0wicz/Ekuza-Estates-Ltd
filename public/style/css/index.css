@@ -992,6 +992,11 @@ main [class^=swiper-button] {
   border: rgba(255, 255, 255, 0.125) 1px solid;
   border-radius: 3px;
 }
+@media (max-width: 800px) {
+  main [class^=swiper-button] {
+    top: calc(50svh + 30px);
+  }
+}
 @media (max-width: 1350px) {
   main [class^=swiper-button] {
     width: 35px;
@@ -1003,7 +1008,7 @@ main [class^=swiper-button]::after, main [class^=swiper-button]::before {
   content: "";
 }
 main .swiper-button-prev {
-  left: 1px;
+  margin-left: 0.5px;
 }
 main .swiper-button-prev i {
   transition: 0.2s;
@@ -1012,7 +1017,7 @@ main .swiper-button-prev:active i {
   transform: translateX(-5px);
 }
 main .swiper-button-next {
-  right: 1px;
+  margin-right: 0.5px;
 }
 main .swiper-button-next i {
   transition: 0.2s;

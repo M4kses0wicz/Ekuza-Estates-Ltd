@@ -11,6 +11,9 @@ main {
     position: absolute;
     top: calc(50svh + 105px);
     transform: translateY(-50%);
+    @include mobile-w(800px) {
+      top: calc(50svh + 30px);
+    }
     z-index: 10;
     width: 50px;
     height: 75px;
@@ -33,7 +36,7 @@ main {
     }
   }
   .swiper-button-prev {
-    left: 1px;
+    margin-left: 0.5px;
     i {
       transition: 0.2s;
     }
@@ -44,7 +47,7 @@ main {
     }
   }
   .swiper-button-next {
-    right: 1px;
+    margin-right: 0.5px;
     i {
       transition: 0.2s;
     }
