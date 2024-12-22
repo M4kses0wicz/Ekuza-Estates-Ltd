@@ -977,6 +977,11 @@ main {
 }
 main form {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "poppins";
 }
 main section {
   width: 50%;
