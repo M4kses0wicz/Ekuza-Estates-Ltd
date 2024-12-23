@@ -4,17 +4,33 @@
 .message {
   width: 100svw;
   height: 1000px;
+  @include mobile-w(1000px) {
+    height: 750px;
+  }
   @include FlexCenter(column);
   &-content-container {
     background: white;
     border-radius: 17px;
     padding: 75px;
-    height: 350px;
+    height: 300px;
+    @include mobile-w(1200px) {
+      width: 500px;
+      padding: 35px;
+    }
+    @include mobile-w(575px) {
+      width: 90%;
+    }
     border: 2px $black solid;
     @include FlexCenter(column);
     font-family: $font-primary;
     h2 {
       font-size: 84px;
+      @include mobile-w(1200px) {
+        font-size: 54px;
+      }
+      @include mobile-w(575px) {
+        font-size: 36px;
+      }
       margin: 0px 0px 25px 0px;
       display: flex;
       span {
@@ -26,6 +42,9 @@
         }
         &.space {
           width: 25px;
+          @include mobile-w(575px) {
+            width: 15px;
+          }
         }
       }
     }
@@ -33,9 +52,25 @@
       text-align: center;
       font-family: $font-secondary;
       font-size: 24px;
+      @include mobile-w(1200px) {
+        font-size: 20px;
+      }
+      @include mobile-w(575px) {
+        font-size: 18px;
+      }
     }
     strong {
       color: rgb(104, 163, 16);
+    }
+    a {
+      color: $black;
+      background: #f2ab405a;
+      font-weight: 900;
+      margin-top: 25px;
+      font-size: 20px;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

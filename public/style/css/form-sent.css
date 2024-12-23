@@ -975,11 +975,16 @@ html {
   align-items: center;
   flex-direction: column;
 }
+@media (max-width: 1000px) {
+  .message {
+    height: 750px;
+  }
+}
 .message-content-container {
   background: white;
   border-radius: 17px;
   padding: 75px;
-  height: 350px;
+  height: 300px;
   border: 2px #181113 solid;
   display: flex;
   justify-content: center;
@@ -987,10 +992,31 @@ html {
   flex-direction: column;
   font-family: "poppins";
 }
+@media (max-width: 1200px) {
+  .message-content-container {
+    width: 500px;
+    padding: 35px;
+  }
+}
+@media (max-width: 575px) {
+  .message-content-container {
+    width: 90%;
+  }
+}
 .message-content-container h2 {
   font-size: 84px;
   margin: 0px 0px 25px 0px;
   display: flex;
+}
+@media (max-width: 1200px) {
+  .message-content-container h2 {
+    font-size: 54px;
+  }
+}
+@media (max-width: 575px) {
+  .message-content-container h2 {
+    font-size: 36px;
+  }
 }
 .message-content-container h2 span {
   display: block;
@@ -1037,13 +1063,38 @@ html {
 .message-content-container h2 span.space {
   width: 25px;
 }
+@media (max-width: 575px) {
+  .message-content-container h2 span.space {
+    width: 15px;
+  }
+}
 .message-content-container p {
   text-align: center;
   font-family: "lato";
   font-size: 24px;
 }
+@media (max-width: 1200px) {
+  .message-content-container p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .message-content-container p {
+    font-size: 18px;
+  }
+}
 .message-content-container strong {
   color: rgb(104, 163, 16);
+}
+.message-content-container a {
+  color: #181113;
+  background: rgba(242, 171, 64, 0.3529411765);
+  font-weight: 900;
+  margin-top: 25px;
+  font-size: 20px;
+}
+.message-content-container a:hover {
+  text-decoration: none;
 }
 
 @keyframes txt-anim {
