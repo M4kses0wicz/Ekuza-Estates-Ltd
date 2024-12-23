@@ -3,8 +3,6 @@ const label1 = document.querySelector(".l1");
 const input2 = document.querySelector(".inp2");
 const label2 = document.querySelector(".l2");
 const messageTitle = document.getElementById("title");
-const resize = document.getElementById("resize");
-const contactForm = document.getElementById("contact-form");
 
 const toggleClass = () => {
   if (input1.value.trim() || document.activeElement === input1) {
@@ -37,5 +35,3 @@ input1.addEventListener("input", () => {
     messageTitle.textContent = input1.value;
   }
 });
-
-resize.addEventListener("click", () => {});

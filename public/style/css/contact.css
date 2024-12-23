@@ -969,15 +969,25 @@ html {
 
 main {
   width: 100svw;
-  padding: 50px 250px;
+  padding: 150px 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 200px;
 }
+@media (max-width: 1000px) {
+  main {
+    padding: 50px 75px;
+  }
+}
+@media (max-width: 1000px) {
+  main {
+    padding: 50px 25px;
+  }
+}
 main form {
-  width: 50%;
+  width: 1200px;
   padding-bottom: 40px;
   border-radius: 17px;
   display: flex;
@@ -1001,7 +1011,7 @@ main form .header {
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
   background: #181113;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 main form .header i {
   font-size: 32px;
@@ -1050,22 +1060,24 @@ main form input {
 main form input:focus {
   outline: none;
   border-bottom: 3px #f2ab40 solid;
+  background: rgba(251, 246, 237, 0.4980392157);
 }
 main form textarea {
   width: 90%;
-  height: 100px;
+  height: 250px;
   padding: 10px;
   background: none;
   border: none;
   border-bottom: 3px #181113 solid;
   font-size: 18px;
   transition: 0.4s;
-  margin-bottom: 50px;
+  margin: 10px 0px 50px 0px;
   resize: none;
 }
 main form textarea:focus {
   outline: none;
   border-bottom: 3px #f2ab40 solid;
+  background: rgba(251, 246, 237, 0.4980392157);
 }
 main form button {
   align-self: center;

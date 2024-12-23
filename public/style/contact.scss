@@ -3,11 +3,17 @@
 
 main {
   width: 100svw;
-  padding: 50px 250px;
+  padding: 150px 250px;
+  @include mobile-w(1000px) {
+    padding: 50px 75px;
+  }
+  @include mobile-w(1000px) {
+    padding: 50px 25px;
+  }
   @include FlexCenter(row);
   gap: 200px;
   form {
-    width: 50%;
+    width: 1200px;
     padding-bottom: 40px;
     border-radius: 17px;
     @include FlexCenter(column);
@@ -24,7 +30,7 @@ main {
       border-top-left-radius: 17px;
       border-top-right-radius: 17px;
       background: $black;
-      margin-bottom: 25px;
+      margin-bottom: 50px;
       i {
         font-size: 32px;
         &:nth-of-type(2) {
@@ -72,22 +78,24 @@ main {
       &:focus {
         outline: none;
         border-bottom: 3px $gold solid;
+        background: #fbf6ed7f;
       }
     }
     textarea {
       width: 90%;
-      height: 100px;
+      height: 250px;
       padding: 10px;
       background: none;
       border: none;
       border-bottom: 3px $black solid;
       font-size: 18px;
       transition: 0.4s;
-      margin-bottom: 50px;
+      margin: 10px 0px 50px 0px;
       resize: none;
       &:focus {
         outline: none;
         border-bottom: 3px $gold solid;
+        background: #fbf6ed7f;
       }
     }
     button {
