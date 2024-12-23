@@ -1,0 +1,50 @@
+@import "nav-menu.scss";
+@import "_base.scss";
+
+.message {
+  width: 100svw;
+  height: 1000px;
+  @include FlexCenter(column);
+  &-content-container {
+    background: white;
+    border-radius: 17px;
+    padding: 75px;
+    height: 350px;
+    border: 2px $black solid;
+    @include FlexCenter(column);
+    font-family: $font-primary;
+    h2 {
+      font-size: 84px;
+      margin: 0px 0px 25px 0px;
+      display: flex;
+      span {
+        display: block;
+        @for $i from 1 through 13 {
+          &:nth-of-type(#{$i}) {
+            animation: txt-anim ease 7s calc(0.1s * $i) infinite;
+          }
+        }
+        &.space {
+          width: 25px;
+        }
+      }
+    }
+    p {
+      text-align: center;
+      font-family: $font-secondary;
+      font-size: 24px;
+    }
+    strong {
+      color: rgb(104, 163, 16);
+    }
+  }
+}
+
+@keyframes txt-anim {
+  10% {
+    color: $gold;
+  }
+  20% {
+    color: $black;
+  }
+}
