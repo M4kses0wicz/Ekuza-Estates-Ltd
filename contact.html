@@ -320,13 +320,26 @@
     </header>
 
     <main>
-      <form>
+      <form id="contact-form">
+        <div class="header">
+          <i class="fa-regular fa-envelope"></i>
+          <p id="title">Message</p>
+          <i
+            class="fa-solid fa-up-right-and-down-left-from-center"
+            id="resize"
+          ></i>
+        </div>
         <label for="title" class="l1">Title:</label>
         <input type="text" name="title" id="title" class="inp1" />
         <label for="email" class="l2">Email:</label>
         <input type="email" name="email" id="email" class="inp2" required />
         <label for="message" class="txtarea">Message:</label>
-        <textarea name="message" id="message" required></textarea>
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Type here..."
+          required
+        ></textarea>
         <button type="submit">SUBMIT</button>
       </form>
       <section>

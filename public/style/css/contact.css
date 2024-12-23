@@ -978,12 +978,50 @@ main {
 }
 main form {
   width: 50%;
+  padding-bottom: 40px;
+  border-radius: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  align-items: start;
   font-family: "poppins";
+  background: white;
+  border: 1px #181113 solid;
+}
+main form .header {
+  width: 100%;
+  height: 50px;
+  padding: 0px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: start;
+  color: #fbf6ed;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  background: #181113;
+  margin-bottom: 25px;
+}
+main form .header i {
+  font-size: 32px;
+}
+main form .header i:nth-of-type(2) {
+  font-size: 24px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+main form .header i:nth-of-type(2):hover {
+  color: #e8cc9a;
+}
+main form .header p {
+  font-size: 18px;
+  margin-left: 15px;
+  width: 90%;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 main form label {
   font-size: 22px;
@@ -995,13 +1033,14 @@ main form label.txtarea {
   transform: translateY(0px) !important;
 }
 main form label.selected {
-  transform: translateY(5px) scale(0.8) translateX(-6px);
+  transform: translateY(5px) scale(0.8);
 }
 main form input {
-  width: 100%;
+  width: 90%;
   height: 40px;
   padding: 10px;
   background: none;
+  text-align: center;
   border: none;
   border-bottom: 3px #181113 solid;
   font-size: 18px;
@@ -1013,7 +1052,7 @@ main form input:focus {
   border-bottom: 3px #f2ab40 solid;
 }
 main form textarea {
-  width: 100%;
+  width: 90%;
   height: 100px;
   padding: 10px;
   background: none;
@@ -1030,12 +1069,25 @@ main form textarea:focus {
 }
 main form button {
   align-self: center;
-  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 90%;
   height: 50px;
-  background: none;
-  border: 3px #181113 solid;
+  background: #181113;
+  border: none;
   border-radius: 7px;
   font-weight: 800;
+  color: #fbf6ed;
+  font-size: 17px;
+  box-shadow: 0px 10px 0px #6b4d18;
+}
+main form button:hover {
+  transform: translateY(2px);
+  box-shadow: 0px 8px 0px #6b4d18;
+}
+main form button:active {
+  transform: translateY(10px);
+  box-shadow: 0px 0px 0px #6b4d18;
 }
 main section {
   width: 50%;
