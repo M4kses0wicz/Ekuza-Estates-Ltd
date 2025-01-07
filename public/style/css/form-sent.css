@@ -977,7 +977,7 @@ html {
 }
 @media (max-width: 1000px) {
   .message {
-    height: 750px;
+    height: 500px;
   }
 }
 .message-content-container {

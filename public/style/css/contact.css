@@ -1098,7 +1098,7 @@ main form .checkboxes-container div {
   }
 }
 main form .checkboxes-container div:has(input:checked) label {
-  background: rgba(242, 171, 64, 0.5333333333);
+  background: rgba(242, 171, 64, 0.3803921569);
 }
 main form .checkboxes-container div input {
   height: 20px;
