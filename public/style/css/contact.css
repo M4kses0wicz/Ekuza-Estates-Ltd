@@ -1069,6 +1069,7 @@ main form p.i {
 main form .checkboxes-container {
   margin-bottom: 40px;
   border-bottom: 3px #181113 solid;
+  padding: 2.5px 0px;
   text-align: center;
   width: 80%;
   transition: 0.4s;
@@ -1076,6 +1077,7 @@ main form .checkboxes-container {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 main form .checkboxes-container:hover {
   outline: none;
@@ -1087,6 +1089,16 @@ main form .checkboxes-container div {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin: 1px;
+  padding-right: 5px;
+}
+@media (min-width: 1500px) {
+  main form .checkboxes-container div {
+    margin: 5px;
+  }
+}
+main form .checkboxes-container div:has(input:checked) label {
+  background: rgba(242, 171, 64, 0.5333333333);
 }
 main form .checkboxes-container div input {
   height: 20px;

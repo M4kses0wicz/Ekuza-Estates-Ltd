@@ -88,10 +88,12 @@ main {
     .checkboxes-container {
       margin-bottom: 40px;
       border-bottom: 3px $black solid;
+      padding: 2.5px 0px;
       text-align: center;
       width: 80%;
       transition: 0.4s;
       @include FlexCenter(row);
+      flex-wrap: wrap;
       &:hover {
         outline: none;
         border-bottom: 3px $gold solid;
@@ -99,6 +101,16 @@ main {
       }
       div {
         @include FlexCenter(row);
+        margin: 1px;
+        @include min-mobile-w(1500px) {
+          margin: 5px;
+        }
+        padding-right: 5px;
+        &:has(input:checked) {
+          label {
+            background: #f2ab4088;
+          }
+        }
         input {
           height: 20px;
           width: 20px;
