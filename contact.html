@@ -326,9 +326,22 @@
           <p id="title">Message</p>
         </div>
         <label for="title" class="l1">Title:</label>
-        <input type="text" name="title" id="title" class="inp1" />
+        <input
+          type="text"
+          name="title"
+          id="title"
+          class="inp1"
+          maxlength="30"
+        />
         <label for="email" class="l2">Email:</label>
         <input type="email" name="email" id="email" class="inp2" required />
+        <select name="interest" id="interest">
+          <option value="#">Im interested in...</option>
+          <option value="hmo">HMO</option>
+          <option value="rent-to-rent">Rent to rent</option>
+          <option value="brr">BRR</option>
+          <option value="guaranteed-rent">Guaranteed rent</option>
+        </select>
         <label for="message" class="txtarea">Message:</label>
         <textarea
           name="message"
