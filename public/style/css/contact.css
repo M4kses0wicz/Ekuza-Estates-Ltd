@@ -969,7 +969,7 @@ html {
 
 main {
   width: 100svw;
-  padding: 150px 250px;
+  padding: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1045,7 +1045,7 @@ main form label.txtarea {
 main form label.selected {
   transform: translateY(5px) scale(0.8);
 }
-main form input {
+main form input:not(.checkboxes-container input) {
   width: 90%;
   height: 40px;
   padding: 10px;
@@ -1057,10 +1057,59 @@ main form input {
   transition: 0.4s;
   margin-bottom: 50px;
 }
-main form input:focus {
+main form input:not(.checkboxes-container input):focus {
   outline: none;
   border-bottom: 3px #f2ab40 solid;
   background: rgba(251, 246, 237, 0.4980392157);
+}
+main form p.i {
+  font-size: 22px;
+  font-weight: 700;
+}
+main form .checkboxes-container {
+  margin-bottom: 40px;
+  border-bottom: 3px #181113 solid;
+  text-align: center;
+  width: 80%;
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+main form .checkboxes-container:hover {
+  outline: none;
+  border-bottom: 3px #f2ab40 solid;
+  background: rgba(251, 246, 237, 0.4980392157);
+}
+main form .checkboxes-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+main form .checkboxes-container div input {
+  height: 20px;
+  width: 20px;
+  border: 3px red solid !important;
+  margin: 5px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+main form .checkboxes-container div input:last-of-type {
+  margin: 5px !important;
+  margin-left: 0;
+}
+main form .checkboxes-container div input:hover {
+  border-color: #181113 !important;
+}
+main form .checkboxes-container div input:checked + label {
+  opacity: 100%;
+}
+main form .checkboxes-container div label {
+  font-size: 17px;
+  opacity: 80%;
+  transform: translateY(0px) !important;
 }
 main form textarea {
   width: 90%;
