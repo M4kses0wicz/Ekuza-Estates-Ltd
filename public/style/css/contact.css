@@ -989,8 +989,55 @@ main .container {
   display: flex;
   border: 1px #181113 solid;
 }
-main .container section {
-  width: 50%;
+@media (max-width: 750px) {
+  main .container {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+main .container section.img-container {
+  width: 55%;
+}
+@media (max-width: 1675px) {
+  main .container section.img-container {
+    width: 50%;
+  }
+}
+@media (max-width: 1000px) {
+  main .container section.img-container {
+    width: 40%;
+  }
+}
+@media (max-width: 750px) {
+  main .container section.img-container {
+    width: 0%;
+  }
+}
+main .container section.form-container {
+  width: 45%;
+}
+@media (max-width: 1675px) {
+  main .container section.form-container {
+    width: 50%;
+  }
+}
+@media (max-width: 1000px) {
+  main .container section.form-container {
+    width: 60%;
+  }
+}
+@media (max-width: 750px) {
+  main .container section.form-container {
+    width: 90%;
+  }
+}
+@media (max-width: 410px) {
+  main .container section.form-container {
+    width: 95%;
+  }
 }
 main .container section img {
   height: 100%;
@@ -1009,17 +1056,22 @@ main form {
   background: white;
   border-left: 1px #181113 solid;
 }
+@media (max-width: 750px) {
+  main form {
+    border: 1px #181113 solid;
+  }
+}
 main form .header {
   width: 100%;
   height: 50px;
+  background: #181113;
+  color: #fbf6ed;
   padding: 0px 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   justify-content: start;
-  color: #fbf6ed;
-  background: #181113;
   margin-bottom: 50px;
 }
 main form .header i {
