@@ -977,7 +977,7 @@ img {
 
 .message {
   width: 100svw;
-  height: 1000px;
+  height: calc(100svh - 125px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -992,7 +992,9 @@ img {
   background: white;
   border-radius: 17px;
   padding: 75px;
-  height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   border: 2px #181113 solid;
   display: flex;
   justify-content: center;
@@ -1000,20 +1002,11 @@ img {
   flex-direction: column;
   font-family: "poppins";
 }
-@media (max-width: 1200px) {
-  .message-content-container {
-    width: 500px;
-    padding: 35px;
-  }
-}
-@media (max-width: 575px) {
-  .message-content-container {
-    width: 90%;
-  }
+.message-content-container *:not(i) {
+  z-index: 2;
 }
 .message-content-container h2 {
   font-size: 84px;
-  margin: 0px 0px 25px 0px;
   display: flex;
 }
 @media (max-width: 1200px) {
@@ -1076,10 +1069,33 @@ img {
     width: 15px;
   }
 }
+.message-content-container i {
+  font-size: 500px;
+  left: -50px;
+  top: -110px;
+  color: #8f5a0a;
+  opacity: 10%;
+  position: absolute;
+  z-index: 1;
+}
+@media (max-width: 1200px) {
+  .message-content-container i {
+    font-size: 300px;
+    left: -25px;
+    top: -50px;
+  }
+}
+@media (max-width: 450px) {
+  .message-content-container i {
+    font-size: 250px;
+    left: -40px;
+  }
+}
 .message-content-container p {
   text-align: center;
   font-family: "lato";
   font-size: 24px;
+  margin: 15px 0px;
 }
 @media (max-width: 1200px) {
   .message-content-container p {
@@ -1097,8 +1113,9 @@ img {
 .message-content-container a {
   color: #181113;
   background: rgba(242, 171, 64, 0.3529411765);
-  font-weight: 900;
-  margin-top: 25px;
+  padding: 0px 10px;
+  font-weight: 800;
+  margin-top: 15px;
   font-size: 20px;
 }
 .message-content-container a:hover {
