@@ -15,6 +15,9 @@ main {
   .container {
     width: 100svw;
     height: 900px;
+    @include min-mobile-w(2000px) {
+      height: 1090px;
+    }
     margin: 50px 0px;
     // padding: 25px;
     display: flex;
@@ -129,6 +132,9 @@ main {
       font-size: 18px;
       transition: 0.4s;
       margin-bottom: 50px;
+      @include min-mobile-w(2000px) {
+        margin-bottom: 85px;
+      }
       &:focus {
         outline: none;
         border-bottom: 3px $gold solid;
@@ -141,9 +147,15 @@ main {
         font-size: 26px;
       }
       font-weight: 700;
+      @include min-mobile-w(2000px) {
+        margin-top: 15px;
+      }
     }
     .checkboxes-container {
       margin-bottom: 40px;
+      @include min-mobile-w(2000px) {
+        margin-bottom: 100px;
+      }
       border-bottom: 3px $black solid;
       padding: 2.5px 0px;
       text-align: center;
@@ -219,6 +231,10 @@ main {
       transition: 0.2s;
       width: 90%;
       height: 50px;
+      @include min-mobile-w(2000px) {
+        height: 65px;
+        font-size: 18px;
+      }
       background: $black;
       border: none;
       border-radius: 7px;

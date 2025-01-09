@@ -991,6 +991,11 @@ main .container {
   display: flex;
   border: 1px #181113 solid;
 }
+@media (min-width: 2000px) {
+  main .container {
+    height: 1090px;
+  }
+}
 @media (max-width: 750px) {
   main .container {
     border: none;
@@ -1125,6 +1130,11 @@ main form input:not(.checkboxes-container input) {
   transition: 0.4s;
   margin-bottom: 50px;
 }
+@media (min-width: 2000px) {
+  main form input:not(.checkboxes-container input) {
+    margin-bottom: 85px;
+  }
+}
 main form input:not(.checkboxes-container input):focus {
   outline: none;
   border-bottom: 3px #f2ab40 solid;
@@ -1139,6 +1149,11 @@ main form p.i {
     font-size: 26px;
   }
 }
+@media (min-width: 2000px) {
+  main form p.i {
+    margin-top: 15px;
+  }
+}
 main form .checkboxes-container {
   margin-bottom: 40px;
   border-bottom: 3px #181113 solid;
@@ -1151,6 +1166,11 @@ main form .checkboxes-container {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+}
+@media (min-width: 2000px) {
+  main form .checkboxes-container {
+    margin-bottom: 100px;
+  }
 }
 main form .checkboxes-container:hover {
   outline: none;
@@ -1231,6 +1251,12 @@ main form button {
   color: #fbf6ed;
   font-size: 17px;
   box-shadow: 0px 10px 0px #6b4d18;
+}
+@media (min-width: 2000px) {
+  main form button {
+    height: 65px;
+    font-size: 18px;
+  }
 }
 main form button:hover {
   transform: translateY(2px);
