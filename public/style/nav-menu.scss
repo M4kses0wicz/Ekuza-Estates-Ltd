@@ -165,11 +165,13 @@ body {
         height: 100%;
         transform: translateX(40%);
         z-index: 4;
+        filter: none !important;
       }
       img.text {
         height: 60%;
         transform: translateY(3px);
         z-index: 2;
+        filter: none !important;
       }
       &:hover {
         span {

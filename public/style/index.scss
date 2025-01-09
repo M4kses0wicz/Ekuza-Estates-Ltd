@@ -78,7 +78,6 @@ main {
     height: 100%;
     width: 65%;
     object-fit: cover;
-    filter: brightness(0.9) contrast(1.1) sepia(0.2);
     object-position: center 75%;
     @include mobile-w(1150px) {
       width: 55%;

@@ -310,11 +310,13 @@ body header nav img.logo {
   height: 100%;
   transform: translateX(40%);
   z-index: 4;
+  filter: none !important;
 }
 body header nav img.text {
   height: 60%;
   transform: translateY(3px);
   z-index: 2;
+  filter: none !important;
 }
 body header nav:hover span {
   text-decoration: none;
@@ -1057,7 +1059,6 @@ main .swiper-button-next:active i {
   height: 100%;
   width: 65%;
   object-fit: cover;
-  filter: brightness(0.9) contrast(1.1) sepia(0.2);
   object-position: center 75%;
 }
 @media (max-width: 1150px) {
