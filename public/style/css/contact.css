@@ -984,14 +984,22 @@ main {
 }
 main .container {
   width: 100svw;
+  height: 900px;
   margin: 50px 0px;
   display: flex;
+  border: 1px #181113 solid;
 }
 main .container section {
   width: 50%;
 }
+main .container section img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 main form {
   width: 100%;
+  height: 100%;
   padding-bottom: 40px;
   display: flex;
   justify-content: center;
@@ -999,7 +1007,7 @@ main form {
   flex-direction: column;
   font-family: "poppins";
   background: white;
-  border: 1px #181113 solid;
+  border-left: 1px #181113 solid;
 }
 main form .header {
   width: 100%;
@@ -1040,6 +1048,11 @@ main form label {
   transition: 0.2s;
   font-weight: 700;
 }
+@media (min-width: 2000px) {
+  main form label {
+    font-size: 28px;
+  }
+}
 main form label.txtarea {
   transform: translateY(0px) !important;
 }
@@ -1066,6 +1079,11 @@ main form input:not(.checkboxes-container input):focus {
 main form p.i {
   font-size: 22px;
   font-weight: 700;
+}
+@media (min-width: 2000px) {
+  main form p.i {
+    font-size: 26px;
+  }
 }
 main form .checkboxes-container {
   margin-bottom: 40px;
@@ -1123,6 +1141,11 @@ main form .checkboxes-container div label {
   font-size: 17px;
   opacity: 80%;
   transform: translateY(0px) !important;
+}
+@media (min-width: 2000px) {
+  main form .checkboxes-container div label {
+    font-size: 19px;
+  }
 }
 main form textarea {
   width: 90%;

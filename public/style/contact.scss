@@ -14,21 +14,30 @@ main {
   // gap: 200px;
   .container {
     width: 100svw;
+    height: 900px;
     margin: 50px 0px;
     // padding: 25px;
     display: flex;
+    border: 1px $black solid;
     section {
       width: 50%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        // object-position: 50%;
+      }
     }
   }
   form {
     width: 100%;
+    height: 100%;
     padding-bottom: 40px;
     // border-radius: 17px;
     @include FlexCenter(column);
     font-family: $font-primary;
     background: white;
-    border: 1px $black solid;
+    border-left: 1px $black solid;
     .header {
       width: 100%;
       height: 50px;
@@ -63,6 +72,9 @@ main {
     }
     label {
       font-size: 22px;
+      @include min-mobile-w(2000px) {
+        font-size: 28px;
+      }
       transform: translateY(33px);
       transition: 0.2s;
       font-weight: 700;
@@ -92,6 +104,9 @@ main {
     }
     p.i {
       font-size: 22px;
+      @include min-mobile-w(2000px) {
+        font-size: 26px;
+      }
       font-weight: 700;
     }
     .checkboxes-container {
@@ -140,6 +155,9 @@ main {
         }
         label {
           font-size: 17px;
+          @include min-mobile-w(2000px) {
+            font-size: 19px;
+          }
           opacity: 80%;
           transform: translateY(0px) !important;
         }
