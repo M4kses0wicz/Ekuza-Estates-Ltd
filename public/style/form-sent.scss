@@ -10,8 +10,11 @@
   @include FlexCenter(column);
   &-content-container {
     background: white;
-    border-radius: 17px;
-    padding: 75px;
+    // border-radius: 17px;
+    padding: 75px 30px;
+    @include mobile-w(450px) {
+      padding: 30px;
+    }
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -23,7 +26,8 @@
     //   width: 90%;
     //   padding: 25px;
     // }
-    border: 2px $black solid;
+    border-top: 2px $black solid;
+    border-bottom: 2px $black solid;
     @include FlexCenter(column);
     font-family: $font-primary;
     & *:not(i) {
@@ -54,9 +58,9 @@
       }
     }
     i {
-      font-size: 500px;
-      @include mobile-w(1200px) {
-        font-size: 300px;
+      font-size: 475px;
+      @include mobile-w(900px) {
+        font-size: 350px;
         left: -25px;
         top: -50px;
       }
@@ -66,7 +70,7 @@
       }
       left: -50px;
       top: -110px;
-      color: darken($color: $gold, $amount: 30);
+      color: darken($color: $gold, $amount: 25);
       opacity: 10%;
       position: absolute;
       z-index: 1;
