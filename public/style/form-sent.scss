@@ -15,6 +15,12 @@
     @include mobile-w(450px) {
       padding: 30px;
     }
+    @include min-mobile-w(1600px) {
+      padding: 105px 30px;
+    }
+    @include min-mobile-w(2000px) {
+      padding: 175px 30px;
+    }
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -67,6 +73,12 @@
       @include mobile-w(450px) {
         font-size: 250px;
         left: -40px;
+      }
+      @include min-mobile-w(1600px) {
+        font-size: 530px;
+      }
+      @include min-mobile-w(2000px) {
+        font-size: 670px;
       }
       left: -50px;
       top: -110px;

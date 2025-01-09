@@ -1007,6 +1007,16 @@ img {
     padding: 30px;
   }
 }
+@media (min-width: 1600px) {
+  .message-content-container {
+    padding: 105px 30px;
+  }
+}
+@media (min-width: 2000px) {
+  .message-content-container {
+    padding: 175px 30px;
+  }
+}
 .message-content-container *:not(i) {
   z-index: 2;
 }
@@ -1094,6 +1104,16 @@ img {
   .message-content-container i {
     font-size: 250px;
     left: -40px;
+  }
+}
+@media (min-width: 1600px) {
+  .message-content-container i {
+    font-size: 530px;
+  }
+}
+@media (min-width: 2000px) {
+  .message-content-container i {
+    font-size: 670px;
   }
 }
 .message-content-container p {
