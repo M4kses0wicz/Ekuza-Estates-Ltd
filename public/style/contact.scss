@@ -3,19 +3,28 @@
 
 main {
   width: 100svw;
-  padding: 150px;
-  @include mobile-w(1000px) {
-    padding: 50px 75px;
-  }
-  @include mobile-w(1000px) {
-    padding: 50px 25px;
-  }
+  // padding: 150px;
+  // @include mobile-w(1000px) {
+  //   padding: 50px 75px;
+  // }
+  // @include mobile-w(1000px) {
+  //   padding: 50px 25px;
+  // }
   @include FlexCenter(row);
-  gap: 200px;
+  // gap: 200px;
+  .container {
+    width: 100svw;
+    margin: 50px 0px;
+    // padding: 25px;
+    display: flex;
+    section {
+      width: 50%;
+    }
+  }
   form {
-    width: 800px;
+    width: 100%;
     padding-bottom: 40px;
-    border-radius: 17px;
+    // border-radius: 17px;
     @include FlexCenter(column);
     font-family: $font-primary;
     background: white;
@@ -27,8 +36,8 @@ main {
       @include FlexCenter(row);
       justify-content: start;
       color: $white;
-      border-top-left-radius: 17px;
-      border-top-right-radius: 17px;
+      // border-top-left-radius: 17px;
+      // border-top-right-radius: 17px;
       background: $black;
       margin-bottom: 50px;
       i {

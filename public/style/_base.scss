@@ -53,3 +53,7 @@ $font-secondary: "lato"; // georgia
     @content;
   }
 }
+
+img {
+  filter: brightness(0.9) contrast(1.2) sepia(0.5);
+}

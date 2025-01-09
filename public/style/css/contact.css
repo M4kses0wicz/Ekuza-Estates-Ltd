@@ -16,6 +16,10 @@ html {
   text-size-adjust: 100%;
 }
 
+img {
+  filter: brightness(0.9) contrast(1.2) sepia(0.5);
+}
+
 body {
   background: #fbf6ed;
   width: 100svw;
@@ -967,29 +971,28 @@ html {
   text-size-adjust: 100%;
 }
 
+img {
+  filter: brightness(0.9) contrast(1.2) sepia(0.5);
+}
+
 main {
   width: 100svw;
-  padding: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 200px;
 }
-@media (max-width: 1000px) {
-  main {
-    padding: 50px 75px;
-  }
+main .container {
+  width: 100svw;
+  margin: 50px 0px;
+  display: flex;
 }
-@media (max-width: 1000px) {
-  main {
-    padding: 50px 25px;
-  }
+main .container section {
+  width: 50%;
 }
 main form {
-  width: 800px;
+  width: 100%;
   padding-bottom: 40px;
-  border-radius: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1008,8 +1011,6 @@ main form .header {
   flex-direction: row;
   justify-content: start;
   color: #fbf6ed;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
   background: #181113;
   margin-bottom: 50px;
 }

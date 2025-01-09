@@ -16,6 +16,10 @@ html {
   text-size-adjust: 100%;
 }
 
+img {
+  filter: brightness(0.9) contrast(1.2) sepia(0.5);
+}
+
 body {
   background: #fbf6ed;
   width: 100svw;
@@ -965,4 +969,8 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+
+img {
+  filter: brightness(0.9) contrast(1.2) sepia(0.5);
 }/*# sourceMappingURL=HMO.css.map */
