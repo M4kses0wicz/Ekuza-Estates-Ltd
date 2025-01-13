@@ -235,6 +235,10 @@ body {
         width: 100svw;
         backdrop-filter: brightness(85%) blur(1px);
       }
+      .event-listener {
+        height: 100svh;
+        width: calc(100svw - 500px);
+      }
     }
     .menu {
       width: 500px;

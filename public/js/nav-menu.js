@@ -5,6 +5,8 @@ const menu = document.querySelector(".menu");
 const filter = document.querySelector(".filter");
 const container = document.querySelector(".dropdown-menu-container");
 
+const listener = document.querySelector(".event-listener");
+
 const loader = document.querySelector(".loader");
 
 const currentYear = new Date().getFullYear();
@@ -33,6 +35,8 @@ function closeMenu() {
     container.classList.remove("opened");
   }, 750);
 }
+
+listener.addEventListener("click", closeMenu);
 
 function openMenu() {
   container.classList.add("opened");
