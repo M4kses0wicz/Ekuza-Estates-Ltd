@@ -18,7 +18,7 @@ main {
     width: 50px;
     height: 75px;
     font-size: 17px;
-    @include mobile-w(1350px) {
+    @include mobile-w(1500px) {
       width: 35px;
       height: 50px;
       font-size: 15px;

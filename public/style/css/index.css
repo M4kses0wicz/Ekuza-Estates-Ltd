@@ -1031,7 +1031,7 @@ main [class^=swiper-button] {
     top: calc(50svh + 30px);
   }
 }
-@media (max-width: 1350px) {
+@media (max-width: 1500px) {
   main [class^=swiper-button] {
     width: 35px;
     height: 50px;
