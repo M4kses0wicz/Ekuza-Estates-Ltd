@@ -1040,6 +1040,11 @@ img {
     font-size: 36px;
   }
 }
+@media (min-width: 2000px) {
+  .message-content-container h2 {
+    font-size: 127.5px;
+  }
+}
 .message-content-container h2 span {
   display: block;
 }
@@ -1119,7 +1124,7 @@ img {
 }
 @media (min-width: 2000px) {
   .message-content-container i {
-    font-size: 670px;
+    font-size: 675px;
   }
 }
 .message-content-container p {
@@ -1138,6 +1143,11 @@ img {
     font-size: 18px;
   }
 }
+@media (min-width: 2000px) {
+  .message-content-container p {
+    font-size: 32px;
+  }
+}
 .message-content-container strong {
   color: rgb(104, 163, 16);
 }
@@ -1151,6 +1161,11 @@ img {
 }
 .message-content-container a:hover {
   text-decoration: none;
+}
+@media (min-width: 2000px) {
+  .message-content-container a {
+    font-size: 30px;
+  }
 }
 
 @keyframes txt-anim {

@@ -47,6 +47,9 @@
       @include mobile-w(575px) {
         font-size: 36px;
       }
+      @include min-mobile-w(2000px) {
+        font-size: 127.5px;
+      }
       display: flex;
       span {
         display: block;
@@ -78,7 +81,7 @@
         font-size: 530px;
       }
       @include min-mobile-w(2000px) {
-        font-size: 670px;
+        font-size: 675px;
       }
       left: -50px;
       top: -110px;
@@ -98,6 +101,9 @@
       @include mobile-w(575px) {
         font-size: 18px;
       }
+      @include min-mobile-w(2000px) {
+        font-size: 32px;
+      }
     }
     strong {
       color: rgb(104, 163, 16);
@@ -111,6 +117,9 @@
       font-size: 20px;
       &:hover {
         text-decoration: none;
+      }
+      @include min-mobile-w(2000px) {
+        font-size: 30px;
       }
     }
   }
