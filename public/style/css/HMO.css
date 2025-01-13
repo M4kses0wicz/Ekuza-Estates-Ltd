@@ -16,6 +16,16 @@ html {
   text-size-adjust: 100%;
 }
 
+::-webkit-scrollbar {
+  background: white;
+  outline: 1px solid #181113;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f2ab40;
+  border-radius: 2px;
+}
+
 img {
   filter: brightness(0.9) contrast(1.2) sepia(0.5);
 }
@@ -975,6 +985,16 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  background: white;
+  outline: 1px solid #181113;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f2ab40;
+  border-radius: 2px;
 }
 
 img {

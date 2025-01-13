@@ -8,6 +8,13 @@
   font-size: 1vw;
 }
 
+$white: #fbf6ed;
+$gold: #f2ab40;
+$black: #181113;
+
+$font-primary: "poppins";
+$font-secondary: "lato"; // georgia
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -16,12 +23,15 @@ html {
   text-size-adjust: 100%;
 }
 
-$white: #fbf6ed;
-$gold: #f2ab40;
-$black: #181113;
+::-webkit-scrollbar {
+  background: white;
+  outline: 1px solid $black;
+}
 
-$font-primary: "poppins";
-$font-secondary: "lato"; // georgia
+::-webkit-scrollbar-thumb {
+  background: $gold;
+  border-radius: 2px;
+}
 
 @mixin FlexCenter($fd) {
   display: flex;
