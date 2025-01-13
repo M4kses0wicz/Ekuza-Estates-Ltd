@@ -379,6 +379,10 @@ body .dropdown-menu-container .filter.opened {
   width: 100svw;
   backdrop-filter: brightness(85%) blur(1px);
 }
+body .dropdown-menu-container .filter .event-listener {
+  height: 100svh;
+  width: calc(100svw - 500px);
+}
 body .dropdown-menu-container .menu {
   width: 500px;
   background: #fbf6ed;
