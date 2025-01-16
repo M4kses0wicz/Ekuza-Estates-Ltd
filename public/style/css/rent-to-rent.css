@@ -32,6 +32,14 @@ img {
   filter: brightness(0.9) contrast(1.2) sepia(0.5);
 }
 
+@media (max-width: 1000px) {
+  .softr-back-to-top-button {
+    scale: 75%;
+    margin-right: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
 body {
   background: #fbf6ed;
   width: 100svw;
@@ -1005,12 +1013,25 @@ img {
   filter: brightness(0.9) contrast(1.2) sepia(0.5);
 }
 
+@media (max-width: 1000px) {
+  .softr-back-to-top-button {
+    scale: 75%;
+    margin-right: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
 main {
   width: 100svw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+@media (max-width: 500px) {
+  main {
+    height: 1170px;
+  }
 }
 main .container {
   width: 100svw;
@@ -1129,6 +1150,32 @@ main form .header p {
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
+main form .inputs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+  main form .inputs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+main form .inputs-container .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  main form .inputs-container .content {
+    width: calc(100% - 50px);
+  }
+}
 main form label {
   font-size: 22px;
   transform: translateY(33px);
@@ -1147,7 +1194,7 @@ main form label.selected {
   transform: translateY(5px) scale(0.8);
 }
 main form input:not(.datetime-container input) {
-  width: 90%;
+  width: 300px;
   height: 40px;
   padding: 10px;
   background: none;
@@ -1156,11 +1203,35 @@ main form input:not(.datetime-container input) {
   border-bottom: 3px #181113 solid;
   font-size: 18px;
   transition: 0.4s;
-  margin-bottom: 50px;
+  margin: 0px 25px 50px 25px;
 }
 @media (min-width: 2000px) {
   main form input:not(.datetime-container input) {
     margin-bottom: 85px;
+    width: 400px;
+  }
+}
+@media (max-width: 1400px) {
+  main form input:not(.datetime-container input) {
+    width: 250px;
+  }
+}
+@media (max-width: 1200px) {
+  main form input:not(.datetime-container input) {
+    width: 200px;
+    margin: 0px 17.5px 50px 17.5px;
+  }
+}
+@media (max-width: 800px) {
+  main form input:not(.datetime-container input) {
+    width: 190px;
+    margin: 0px 17.5px 50px 17.5px;
+  }
+}
+@media (max-width: 500px) {
+  main form input:not(.datetime-container input) {
+    margin-bottom: 35px;
+    width: 100%;
   }
 }
 main form input:not(.datetime-container input):focus {

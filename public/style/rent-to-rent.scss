@@ -12,6 +12,9 @@ main {
   // }
   @include FlexCenter(row);
   // gap: 200px;
+  @include mobile-w(500px) {
+    height: 1170px;
+  }
   .container {
     width: 100svw;
     height: 900px;
@@ -106,6 +109,19 @@ main {
         text-overflow: ellipsis;
       }
     }
+    .inputs-container {
+      width: 100%;
+      @include FlexCenter(row);
+      @include mobile-w(500px) {
+        @include FlexCenter(column);
+      }
+      .content {
+        @include FlexCenter(column);
+        @include mobile-w(500px) {
+          width: calc(100% - 50px);
+        }
+      }
+    }
     label {
       font-size: 22px;
       @include min-mobile-w(2000px) {
@@ -122,7 +138,7 @@ main {
       }
     }
     input:not(.datetime-container input) {
-      width: 90%;
+      width: 300px;
       height: 40px;
       padding: 10px;
       background: none;
@@ -131,9 +147,25 @@ main {
       border-bottom: 3px $black solid;
       font-size: 18px;
       transition: 0.4s;
-      margin-bottom: 50px;
+      margin: 0px 25px 50px 25px;
       @include min-mobile-w(2000px) {
         margin-bottom: 85px;
+        width: 400px;
+      }
+      @include mobile-w(1400px) {
+        width: 250px;
+      }
+      @include mobile-w(1200px) {
+        width: 200px;
+        margin: 0px 17.5px 50px 17.5px;
+      }
+      @include mobile-w(800px) {
+        width: 190px;
+        margin: 0px 17.5px 50px 17.5px;
+      }
+      @include mobile-w(500px) {
+        margin-bottom: 35px;
+        width: 100%;
       }
       &:focus {
         outline: none;

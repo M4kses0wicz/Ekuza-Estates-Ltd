@@ -32,6 +32,14 @@ img {
   filter: brightness(0.9) contrast(1.2) sepia(0.5);
 }
 
+@media (max-width: 1000px) {
+  .softr-back-to-top-button {
+    scale: 75%;
+    margin-right: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
 body {
   background: #fbf6ed;
   width: 100svw;
@@ -1003,6 +1011,14 @@ html {
 
 img {
   filter: brightness(0.9) contrast(1.2) sepia(0.5);
+}
+
+@media (max-width: 1000px) {
+  .softr-back-to-top-button {
+    scale: 75%;
+    margin-right: 20px !important;
+    margin-bottom: 20px !important;
+  }
 }
 
 .message {
