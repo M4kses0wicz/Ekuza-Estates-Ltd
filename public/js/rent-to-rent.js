@@ -27,11 +27,3 @@ input1.addEventListener("blur", toggleClass);
 input2.addEventListener("focus", toggleClass2);
 input2.addEventListener("input", toggleClass2);
 input2.addEventListener("blur", toggleClass2);
-
-input1.addEventListener("input", () => {
-  if (input1.value == "") {
-    messageTitle.textContent = "Message";
-  } else {
-    messageTitle.textContent = input1.value;
-  }
-});
