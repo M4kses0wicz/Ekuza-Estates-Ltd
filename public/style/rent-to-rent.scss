@@ -173,6 +173,81 @@ main {
         background: #fbf6ed7f;
       }
     }
+
+    .budget-p {
+      @extend label;
+      transform: none !important;
+    }
+
+    .custom-select-wrapper {
+      position: relative;
+      width: 350px;
+      @include mobile-w(500px) {
+        width: 275px;
+      }
+      margin: 2px 0px 35px 0px;
+      text-align: center;
+    }
+
+    .custom-select {
+      position: relative;
+      cursor: pointer;
+      font-size: 16px;
+      user-select: none;
+
+      &-trigger {
+        display: block;
+        background: none;
+        padding: 10px 15px;
+        border-bottom: 3px solid $black;
+        width: 100%;
+        box-sizing: border-box;
+        transition: 0.4s;
+        &:hover {
+          border-bottom: 3px $gold solid;
+          background: #fbf6ed7f;
+        }
+      }
+
+      &.opened .custom-options {
+        @include FlexCenter(column);
+        text-align: center;
+      }
+    }
+
+    .custom-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      margin-top: 5px;
+      // border: 1px dashed $black;
+      // border-bottom: 1px solid $black;
+      // border-top: none;
+      max-height: 200px;
+      display: none;
+      z-index: 5;
+      .custom-option {
+        padding: 10px 15px;
+        margin-top: 5px;
+        cursor: pointer;
+        background: #fffaf2;
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px #f2ab4044 solid;
+        transition: 0.2s;
+        &:hover {
+          background: #ffefd6;
+          border-bottom: 1px solid $gold;
+        }
+        &.selection {
+          background: #f2ab4061;
+          font-weight: bold;
+        }
+      }
+    }
+
     textarea {
       width: 90%;
       height: 150px;

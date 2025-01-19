@@ -31,3 +31,65 @@ const toggleClass = (input, label) => {
     label.classList.remove("selected");
   }
 };
+
+const customSelectElements = document.querySelectorAll("select");
+
+customSelectElements.forEach(function (select) {
+  const classes = select.className;
+  const id = select.id;
+  const name = select.name;
+  const placeholder = select.getAttribute("placeholder") || "Select an option";
+
+  const customSelect = document.createElement("div");
+  customSelect.className = `custom-select ${classes}`;
+
+  const customTrigger = document.createElement("span");
+  customTrigger.className = "custom-select-trigger";
+  customTrigger.textContent = placeholder;
+  customSelect.appendChild(customTrigger);
+
+  const customOptions = document.createElement("div");
+  customOptions.className = "custom-options";
+
+  Array.from(select.options).forEach(function (option) {
+    const customOption = document.createElement("span");
+    customOption.className = `custom-option ${option.className}`;
+    customOption.textContent = option.textContent;
+    customOption.setAttribute("data-value", option.value);
+
+    customOption.addEventListener("click", function () {
+      select.value = this.getAttribute("data-value");
+      customOptions
+        .querySelectorAll(".custom-option")
+        .forEach((opt) => opt.classList.remove("selection"));
+      this.classList.add("selection");
+      customTrigger.textContent = this.textContent;
+      customSelect.classList.remove("opened");
+    });
+
+    customOptions.appendChild(customOption);
+  });
+
+  customSelect.appendChild(customOptions);
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "custom-select-wrapper";
+  select.style.display = "none";
+  select.parentNode.insertBefore(wrapper, select);
+  wrapper.appendChild(select);
+  wrapper.appendChild(customSelect);
+
+  customTrigger.addEventListener("click", function (event) {
+    document
+      .querySelectorAll(".custom-select")
+      .forEach((el) => el.classList.remove("opened"));
+    customSelect.classList.toggle("opened");
+    event.stopPropagation();
+  });
+});
+
+document.addEventListener("click", function () {
+  document
+    .querySelectorAll(".custom-select")
+    .forEach((el) => el.classList.remove("opened"));
+});
