@@ -366,11 +366,6 @@ body header nav .burger span {
   background: #181113;
   border-radius: 100px;
 }
-@media (max-width: 1215px) {
-  body header nav .burger {
-    transform: translateX(-10px);
-  }
-}
 body .dropdown-menu-container {
   display: none !important;
   height: 100svh;
