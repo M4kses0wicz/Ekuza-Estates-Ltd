@@ -1234,49 +1234,6 @@ main form input:not(.datetime-container input):focus {
   border-bottom: 3px #f2ab40 solid;
   background: rgba(251, 246, 237, 0.4980392157);
 }
-main form p.i {
-  font-size: 22px;
-  font-weight: 700;
-}
-@media (min-width: 2000px) {
-  main form p.i {
-    font-size: 26px;
-  }
-}
-@media (min-width: 2000px) {
-  main form p.i {
-    margin-top: 15px;
-  }
-}
-main form .datetime-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-main form .datetime-container input {
-  width: 175px;
-  height: 40px;
-  padding: 10px;
-  background: none;
-  text-align: center;
-  border: none;
-  border-bottom: 3px #181113 solid;
-  font-size: 18px;
-  transition: 0.4s;
-  margin: 0px 20px 50px 20px;
-}
-@media (min-width: 2000px) {
-  main form .datetime-container input {
-    margin-bottom: 85px;
-  }
-}
-main form .datetime-container input:focus {
-  outline: none;
-  border-bottom: 3px #f2ab40 solid;
-  background: rgba(251, 246, 237, 0.4980392157);
-}
 main form textarea {
   width: 90%;
   height: 150px;
