@@ -209,7 +209,7 @@ main {
     }
     textarea {
       width: 90%;
-      height: 250px;
+      height: 150px;
       padding: 10px;
       background: none;
       border: none;
@@ -223,6 +223,18 @@ main {
         border-bottom: 3px $gold solid;
         background: #fbf6ed7f;
       }
+    }
+    .txtarea::after {
+      content: "(optional)";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 25px);
+      @include min-mobile-w(2000px) {
+        transform: translate(-50%, 32px);
+      }
+      color: #18111381;
+      font-size: 10px;
+      letter-spacing: 1px;
     }
     button {
       align-self: center;

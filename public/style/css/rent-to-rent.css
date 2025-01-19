@@ -1284,7 +1284,7 @@ main form .datetime-container input:focus {
 }
 main form textarea {
   width: 90%;
-  height: 250px;
+  height: 150px;
   padding: 10px;
   background: none;
   border: none;
@@ -1298,6 +1298,20 @@ main form textarea:focus {
   outline: none;
   border-bottom: 3px #f2ab40 solid;
   background: rgba(251, 246, 237, 0.4980392157);
+}
+main form .txtarea::after {
+  content: "(optional)";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 25px);
+  color: rgba(24, 17, 19, 0.5058823529);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+@media (min-width: 2000px) {
+  main form .txtarea::after {
+    transform: translate(-50%, 32px);
+  }
 }
 main form button {
   align-self: center;
