@@ -260,11 +260,18 @@ body {
           flex-direction: row;
           justify-content: center;
         }
+        @include mobile-h(800px) {
+          flex-direction: row;
+          justify-content: center;
+        }
         .wrapper {
           display: flex;
           align-items: center;
           width: 100%;
           @include mobile-w(600px) {
+            width: 50px;
+          }
+          @include mobile-h(800px) {
             width: 50px;
           }
           a {
@@ -283,6 +290,11 @@ body {
           animation: toast-anim 2s cubic-bezier(1, 0, 0, 1) forwards;
           animation-delay: -0.5s;
           @include mobile-w(600px) {
+            position: absolute;
+            transform: translateX(-25%) translateY(-50px);
+            animation: toast-anim-mobile 2s cubic-bezier(1, 0, 0, 1) forwards;
+          }
+          @include mobile-h(800px) {
             position: absolute;
             transform: translateX(-25%) translateY(-50px);
             animation: toast-anim-mobile 2s cubic-bezier(1, 0, 0, 1) forwards;
@@ -309,6 +321,9 @@ body {
           gap: 7.5px;
           overflow: hidden;
           @include mobile-w(600px) {
+            width: 50px !important;
+          }
+          @include mobile-h(800px) {
             width: 50px !important;
           }
           @include mobile-h(690px) {
