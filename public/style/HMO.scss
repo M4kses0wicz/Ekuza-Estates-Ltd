@@ -17,9 +17,9 @@ main {
   }
   .container {
     width: 100svw;
-    height: 900px;
+    height: 797.5px;
     @include min-mobile-w(2000px) {
-      height: 1090px;
+      height: 900px;
     }
     margin: 50px 0px;
     // padding: 25px;

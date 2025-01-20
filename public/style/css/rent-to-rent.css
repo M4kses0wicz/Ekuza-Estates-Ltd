@@ -1053,14 +1053,14 @@ main {
 }
 main .container {
   width: 100svw;
-  height: 900px;
+  height: 797.5px;
   margin: 50px 0px;
   display: flex;
   border: 1px #181113 solid;
 }
 @media (min-width: 2000px) {
   main .container {
-    height: 1090px;
+    height: 900px;
   }
 }
 @media (max-width: 750px) {
