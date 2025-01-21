@@ -169,13 +169,6 @@ main {
       text-wrap: nowrap;
       height: 45px;
       width: 285px;
-      span {
-        display: block;
-        &.space {
-          height: 5px;
-          width: 7px;
-        }
-      }
       &:hover {
         width: 335px;
         i {

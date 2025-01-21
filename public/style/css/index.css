@@ -1241,13 +1241,6 @@ main .swiper-button-next:active i {
   height: 45px;
   width: 285px;
 }
-.swiper .text-container a span {
-  display: block;
-}
-.swiper .text-container a span.space {
-  height: 5px;
-  width: 7px;
-}
 .swiper .text-container a:hover {
   width: 335px;
 }
