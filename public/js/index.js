@@ -1,1 +1,1 @@
-console.log("made by Maksymilian Klemensowicz");
+// js gsap

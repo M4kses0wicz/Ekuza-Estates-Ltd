@@ -131,3 +131,5 @@ function createButton(obj, pageSimulator) {
 document.addEventListener("DOMContentLoaded", function () {
   createButton(configObj, null);
 });
+
+console.log("made by Maksymilian Klemensowicz (klemensowicz.pl)");

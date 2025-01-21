@@ -111,7 +111,8 @@ main {
     h3,
     a {
       font-family: $font-primary;
-      @include FlexCenter(row);
+      display: flex;
+      align-items: center;
     }
     .desc {
       font-family: $font-secondary;
@@ -160,10 +161,35 @@ main {
       background: $gold;
       text-decoration: none;
       color: $black;
-      padding: 7.5px 15px;
+      padding: 0px 15px;
       border-radius: 7px;
-      font-size: 22px;
+      font-size: 25px;
       transition: 0.25s;
+      overflow: hidden;
+      text-wrap: nowrap;
+      height: 45px;
+      width: 285px;
+      span {
+        display: block;
+        &.space {
+          height: 5px;
+          width: 7px;
+        }
+      }
+      &:hover {
+        width: 335px;
+        i {
+          transition-delay: 0.2s;
+          border-left: 4px solid rgb(255, 255, 255);
+          animation: arrow-anim 0.5s 0.75s ease-in-out forwards;
+        }
+      }
+      &.long {
+        width: 435px;
+        &:hover {
+          width: 483px;
+        }
+      }
       @include mobile-w(550px) {
         font-size: 17px;
       }
@@ -177,9 +203,15 @@ main {
       i {
         margin-left: 15px;
         font-size: 20px;
+        height: 100%;
+        padding-left: 11px;
+        transition: 0.4s;
+        @include FlexCenter(column);
+        border-left: 4px solid rgba(255, 255, 255, 0);
       }
       &:hover {
         color: $white;
+        background: darken($color: $gold, $amount: 10);
       }
     }
   }
@@ -411,5 +443,17 @@ main {
         }
       }
     }
+  }
+}
+
+@keyframes arrow-anim {
+  0% {
+    padding-left: 11px;
+  }
+  50% {
+    padding-left: 17px;
+  }
+  100% {
+    padding-left: 11px;
   }
 }

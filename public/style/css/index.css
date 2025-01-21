@@ -1171,9 +1171,7 @@ main .swiper-button-next:active i {
 .swiper .text-container a {
   font-family: "poppins";
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: row;
 }
 .swiper .text-container .desc {
   font-family: "lato";
@@ -1234,10 +1232,35 @@ main .swiper-button-next:active i {
   background: #f2ab40;
   text-decoration: none;
   color: #181113;
-  padding: 7.5px 15px;
+  padding: 0px 15px;
   border-radius: 7px;
-  font-size: 22px;
+  font-size: 25px;
   transition: 0.25s;
+  overflow: hidden;
+  text-wrap: nowrap;
+  height: 45px;
+  width: 285px;
+}
+.swiper .text-container a span {
+  display: block;
+}
+.swiper .text-container a span.space {
+  height: 5px;
+  width: 7px;
+}
+.swiper .text-container a:hover {
+  width: 335px;
+}
+.swiper .text-container a:hover i {
+  transition-delay: 0.2s;
+  border-left: 4px solid rgb(255, 255, 255);
+  animation: arrow-anim 0.5s 0.75s ease-in-out forwards;
+}
+.swiper .text-container a.long {
+  width: 435px;
+}
+.swiper .text-container a.long:hover {
+  width: 483px;
 }
 @media (max-width: 550px) {
   .swiper .text-container a {
@@ -1253,9 +1276,18 @@ main .swiper-button-next:active i {
 .swiper .text-container a i {
   margin-left: 15px;
   font-size: 20px;
+  height: 100%;
+  padding-left: 11px;
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-left: 4px solid rgba(255, 255, 255, 0);
 }
 .swiper .text-container a:hover {
   color: #fbf6ed;
+  background: #ef9610;
 }
 .swiper .swiper-pagination-bullet {
   background-color: #181113;
@@ -1543,4 +1575,16 @@ main .swiper-button-next:active i {
 .sections-container section .text-container a i {
   transition: 0.25s;
   opacity: 0%;
+}
+
+@keyframes arrow-anim {
+  0% {
+    padding-left: 11px;
+  }
+  50% {
+    padding-left: 17px;
+  }
+  100% {
+    padding-left: 11px;
+  }
 }/*# sourceMappingURL=index.css.map */
