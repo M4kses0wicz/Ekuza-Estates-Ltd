@@ -79,7 +79,7 @@ main {
     width: 65%;
     object-fit: cover;
     object-position: center 75%;
-    @include mobile-w(1150px) {
+    @include mobile-w(1350px) {
       width: 55%;
     }
     @include mobile-w(777px) {
@@ -93,11 +93,17 @@ main {
     background: white;
     padding: 0px 150px 0px 75px;
     @include mobile-w(1550px) {
-      padding: 20px 50px;
+      padding: 20px 40px 20px 30px;
+    }
+    @include mobile-w(1350px) {
+      padding: 50px 75px;
+    }
+    @include mobile-w(1100px) {
+      padding: 20px 40px 20px 30px;
     }
     @include FlexCenter(column);
     align-items: start;
-    @include mobile-w(1150px) {
+    @include mobile-w(1350px) {
       width: 45%;
     }
     @include mobile-w(777px) {
@@ -164,23 +170,38 @@ main {
       padding: 0px 15px;
       border-radius: 7px;
       font-size: 25px;
+      @include mobile-w(1670px) {
+        font-size: 20px;
+      }
       transition: 0.25s;
       overflow: hidden;
       text-wrap: nowrap;
       height: 45px;
       width: 285px;
+      @include mobile-w(1670px) {
+        width: 235px;
+      }
+      &.long {
+        width: 435px;
+        @include mobile-w(1670px) {
+          width: 352.5px;
+        }
+        &:hover {
+          width: 483px;
+          @include mobile-w(1670px) {
+            width: 400px;
+          }
+        }
+      }
       &:hover {
         width: 335px;
+        @include mobile-w(1670px) {
+          width: 282.5px;
+        }
         i {
           transition-delay: 0.2s;
           border-left: 4px solid rgb(255, 255, 255);
           animation: arrow-anim 0.5s 0.75s ease-in-out forwards;
-        }
-      }
-      &.long {
-        width: 435px;
-        &:hover {
-          width: 483px;
         }
       }
       @include mobile-w(550px) {

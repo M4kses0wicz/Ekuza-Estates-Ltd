@@ -1123,7 +1123,7 @@ main .swiper-button-next:active i {
   object-fit: cover;
   object-position: center 75%;
 }
-@media (max-width: 1150px) {
+@media (max-width: 1350px) {
   .swiper img {
     width: 55%;
   }
@@ -1147,10 +1147,20 @@ main .swiper-button-next:active i {
 }
 @media (max-width: 1550px) {
   .swiper .text-container {
-    padding: 20px 50px;
+    padding: 20px 40px 20px 30px;
   }
 }
-@media (max-width: 1150px) {
+@media (max-width: 1350px) {
+  .swiper .text-container {
+    padding: 50px 75px;
+  }
+}
+@media (max-width: 1100px) {
+  .swiper .text-container {
+    padding: 20px 40px 20px 30px;
+  }
+}
+@media (max-width: 1350px) {
   .swiper .text-container {
     width: 45%;
   }
@@ -1241,19 +1251,44 @@ main .swiper-button-next:active i {
   height: 45px;
   width: 285px;
 }
+@media (max-width: 1670px) {
+  .swiper .text-container a {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1670px) {
+  .swiper .text-container a {
+    width: 235px;
+  }
+}
+.swiper .text-container a.long {
+  width: 435px;
+}
+@media (max-width: 1670px) {
+  .swiper .text-container a.long {
+    width: 352.5px;
+  }
+}
+.swiper .text-container a.long:hover {
+  width: 483px;
+}
+@media (max-width: 1670px) {
+  .swiper .text-container a.long:hover {
+    width: 400px;
+  }
+}
 .swiper .text-container a:hover {
   width: 335px;
+}
+@media (max-width: 1670px) {
+  .swiper .text-container a:hover {
+    width: 282.5px;
+  }
 }
 .swiper .text-container a:hover i {
   transition-delay: 0.2s;
   border-left: 4px solid rgb(255, 255, 255);
   animation: arrow-anim 0.5s 0.75s ease-in-out forwards;
-}
-.swiper .text-container a.long {
-  width: 435px;
-}
-.swiper .text-container a.long:hover {
-  width: 483px;
 }
 @media (max-width: 550px) {
   .swiper .text-container a {
