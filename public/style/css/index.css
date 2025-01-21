@@ -1170,6 +1170,10 @@ main .swiper-button-next:active i {
 .swiper .text-container h3,
 .swiper .text-container a {
   font-family: "poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 .swiper .text-container .desc {
   font-family: "lato";
@@ -1247,10 +1251,10 @@ main .swiper-button-next:active i {
   }
 }
 .swiper .text-container a i {
-  margin-left: 5px;
+  margin-left: 15px;
+  font-size: 20px;
 }
 .swiper .text-container a:hover {
-  scale: 110%;
   color: #fbf6ed;
 }
 .swiper .swiper-pagination-bullet {

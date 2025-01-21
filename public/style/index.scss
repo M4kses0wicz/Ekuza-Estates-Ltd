@@ -111,6 +111,7 @@ main {
     h3,
     a {
       font-family: $font-primary;
+      @include FlexCenter(row);
     }
     .desc {
       font-family: $font-secondary;
@@ -174,10 +175,10 @@ main {
       //   font-size: 14px;
       // }
       i {
-        margin-left: 5px;
+        margin-left: 15px;
+        font-size: 20px;
       }
       &:hover {
-        scale: 110%;
         color: $white;
       }
     }
