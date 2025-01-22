@@ -1230,7 +1230,7 @@ main .swiper-button-next:active i {
 }
 @media (max-width: 550px) {
   .swiper .text-container h3 {
-    font-size: 40px;
+    font-size: 47.5px;
   }
 }
 @media (min-width: 2200px) {
@@ -1256,9 +1256,25 @@ main .swiper-button-next:active i {
     font-size: 20px;
   }
 }
+@media (max-width: 1100px) {
+  .swiper .text-container a {
+    padding: 0px 9px;
+    font-size: 17px;
+  }
+}
 @media (max-width: 1670px) {
   .swiper .text-container a {
     width: 235px;
+  }
+}
+@media (max-width: 1100px) {
+  .swiper .text-container a {
+    width: 190px;
+  }
+}
+@media (max-width: 350px) {
+  .swiper .text-container a {
+    transform: translateX(-5%) scale(90%);
   }
 }
 .swiper .text-container a.long {
@@ -1269,12 +1285,27 @@ main .swiper-button-next:active i {
     width: 352.5px;
   }
 }
+@media (max-width: 1670px) {
+  .swiper .text-container a.long {
+    width: 292.5px;
+  }
+}
 .swiper .text-container a.long:hover {
   width: 483px;
 }
 @media (max-width: 1670px) {
   .swiper .text-container a.long:hover {
     width: 400px;
+  }
+}
+@media (max-width: 1670px) {
+  .swiper .text-container a.long:hover {
+    width: 345px;
+  }
+}
+@media (max-width: 400px) {
+  .swiper .text-container a.long:hover {
+    width: 292.5px;
   }
 }
 .swiper .text-container a:hover {
@@ -1285,6 +1316,11 @@ main .swiper-button-next:active i {
     width: 282.5px;
   }
 }
+@media (max-width: 1100px) {
+  .swiper .text-container a:hover {
+    width: 245px;
+  }
+}
 .swiper .text-container a:hover i {
   transition-delay: 0.2s;
   border-left: 4px solid rgb(255, 255, 255);
@@ -1293,12 +1329,6 @@ main .swiper-button-next:active i {
 @media (max-width: 550px) {
   .swiper .text-container a {
     font-size: 17px;
-  }
-}
-@media (max-width: 665px) {
-  .swiper .text-container a {
-    font-size: 14px;
-    padding: 5px 12px;
   }
 }
 .swiper .text-container a i {
