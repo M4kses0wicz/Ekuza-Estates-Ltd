@@ -1195,21 +1195,21 @@ main form .inputs-container .content {
     width: calc(100% - 50px);
   }
 }
-main form label {
+main form label, main form p {
   font-size: 22px;
   transform: translateY(33px);
   transition: 0.2s;
   font-weight: 700;
 }
 @media (min-width: 2000px) {
-  main form label {
+  main form label, main form p {
     font-size: 28px;
   }
 }
-main form label.txtarea {
+main form label.txtarea, main form p.txtarea {
   transform: translateY(0px) !important;
 }
-main form label.selected {
+main form label.selected, main form p.selected {
   transform: translateY(5px) scale(0.8);
 }
 main form input:not(.datetime-container input) {
@@ -1254,6 +1254,43 @@ main form input:not(.datetime-container input) {
   }
 }
 main form input:not(.datetime-container input):focus {
+  outline: none;
+  border-bottom: 3px #f2ab40 solid;
+  background: rgba(251, 246, 237, 0.4980392157);
+}
+main form p {
+  transform: none !important;
+}
+main form .datetime-container {
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+  main form .datetime-container {
+    padding: 20px;
+  }
+}
+main form .datetime-container input {
+  width: 175px;
+  height: 40px;
+  margin: 0px 25px;
+  padding: 10px;
+  background: none;
+  text-align: center;
+  border: none;
+  border-bottom: 3px #181113 solid;
+  font-size: 18px;
+}
+@media (max-width: 500px) {
+  main form .datetime-container input {
+    margin: 0px 10px;
+  }
+}
+main form .datetime-container input:focus {
   outline: none;
   border-bottom: 3px #f2ab40 solid;
   background: rgba(251, 246, 237, 0.4980392157);

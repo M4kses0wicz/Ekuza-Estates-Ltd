@@ -1,2 +1,279 @@
 @import "nav-menu.scss";
 @import "_base.scss";
+
+main {
+  width: 100svw;
+  // padding: 150px;
+  // @include mobile-w(1000px) {
+  //   padding: 50px 75px;
+  // }
+  // @include mobile-w(1000px) {
+  //   padding: 50px 25px;
+  // }
+  @include FlexCenter(row);
+  // gap: 200px;
+  @include mobile-w(500px) {
+    height: 1170px;
+  }
+  .container {
+    width: 100svw;
+    height: 797.5px;
+    @include min-mobile-w(2000px) {
+      height: 900px;
+    }
+    margin: 50px 0px;
+    // padding: 25px;
+    display: flex;
+    border: 1px $black solid;
+    @include mobile-w(750px) {
+      border: none;
+      @include FlexCenter(row);
+    }
+    section {
+      &.img-container {
+        width: 55%;
+        @include mobile-w(1675px) {
+          width: 50%;
+        }
+        @include mobile-w(1000px) {
+          width: 40%;
+        }
+        @include mobile-w(750px) {
+          width: 0%;
+        }
+      }
+      &.form-container {
+        width: 45%;
+        @include mobile-w(1675px) {
+          width: 50%;
+        }
+        @include mobile-w(1000px) {
+          width: 60%;
+        }
+        @include mobile-w(750px) {
+          width: 90%;
+        }
+        @include mobile-w(410px) {
+          width: 95%;
+        }
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(1.1) contrast(1.1) sepia(0.6);
+        // object-position: 50%;
+      }
+    }
+  }
+  form {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40px;
+    // border-radius: 17px;
+    @include FlexCenter(column);
+    font-family: $font-primary;
+    background: white;
+    border-left: 1px $black solid;
+    @include mobile-w(750px) {
+      border: 1px $black solid;
+    }
+    .header {
+      width: 100%;
+      height: 50px;
+      background: $black;
+      color: $white;
+      padding: 0px 5%;
+      @include FlexCenter(row);
+      justify-content: start;
+      // border-top-left-radius: 17px;
+      // border-top-right-radius: 17px;
+      margin-bottom: 50px;
+      i {
+        font-size: 32px;
+        &:nth-of-type(2) {
+          font-size: 24px;
+          margin-left: 20px;
+          cursor: pointer;
+          transition: 0.2s;
+          &:hover {
+            color: darken($color: $white, $amount: 20);
+          }
+        }
+      }
+      p {
+        font-size: 18px;
+        margin-left: 15px;
+        width: 90%;
+        overflow: hidden;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    .inputs-container {
+      width: 100%;
+      @include FlexCenter(row);
+      @include mobile-w(500px) {
+        @include FlexCenter(column);
+      }
+      .content {
+        @include FlexCenter(column);
+        @include mobile-w(500px) {
+          width: calc(100% - 50px);
+        }
+      }
+    }
+    label {
+      font-size: 22px;
+      @include min-mobile-w(2000px) {
+        font-size: 28px;
+      }
+      transform: translateY(33px);
+      transition: 0.2s;
+      font-weight: 700;
+      &.txtarea {
+        transform: translateY(0px) !important;
+      }
+      &.selected {
+        transform: translateY(5px) scale(0.8);
+      }
+    }
+    input:not(.datetime-container input) {
+      width: 300px;
+      height: 40px;
+      padding: 10px;
+      background: none;
+      text-align: center;
+      border: none;
+      border-bottom: 3px $black solid;
+      font-size: 18px;
+      transition: 0.4s;
+      margin: 0px 25px 50px 25px;
+      @include min-mobile-w(2000px) {
+        margin-bottom: 85px;
+        width: 400px;
+      }
+      @include mobile-w(1400px) {
+        width: 250px;
+      }
+      @include mobile-w(1200px) {
+        width: 200px;
+        margin: 0px 17.5px 50px 17.5px;
+      }
+      @include mobile-w(800px) {
+        width: 190px;
+        margin: 0px 17.5px 50px 17.5px;
+      }
+      @include mobile-w(500px) {
+        margin-bottom: 35px;
+        width: 100%;
+      }
+      &:focus {
+        outline: none;
+        border-bottom: 3px $gold solid;
+        background: #fbf6ed7f;
+      }
+    }
+    p {
+      @extend label;
+      transform: none !important;
+    }
+    .datetime-container {
+      width: 100%;
+      margin-bottom: 50px;
+      @include FlexCenter(row);
+      @include mobile-w(500px) {
+        padding: 20px;
+      }
+      input {
+        width: 175px;
+        height: 40px;
+        margin: 0px 25px;
+        @include mobile-w(500px) {
+          margin: 0px 10px;
+        }
+        padding: 10px;
+        background: none;
+        text-align: center;
+        border: none;
+        border-bottom: 3px $black solid;
+        font-size: 18px;
+        &:focus {
+          outline: none;
+          border-bottom: 3px $gold solid;
+          background: #fbf6ed7f;
+        }
+      }
+    }
+    textarea {
+      width: 90%;
+      height: 150px;
+      padding: 10px;
+      background: none;
+      border: none;
+      border-bottom: 3px $black solid;
+      font-size: 18px;
+      transition: 0.4s;
+      margin: 10px 0px 50px 0px;
+      resize: none;
+      &:focus {
+        outline: none;
+        border-bottom: 3px $gold solid;
+        background: #fbf6ed7f;
+      }
+    }
+    .txtarea::after {
+      content: "(optional)";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 25px);
+      @include min-mobile-w(2000px) {
+        transform: translate(-50%, 32px);
+      }
+      color: #18111381;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+    button {
+      align-self: center;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 90%;
+      height: 50px;
+      @include min-mobile-w(2000px) {
+        height: 65px;
+        font-size: 18px;
+      }
+      background: $black;
+      border: none;
+      border-radius: 7px;
+      font-weight: 800;
+      color: $white;
+      font-size: 17px;
+      box-shadow: 0px 10px 0px darken($color: $white, $amount: 70);
+      &:hover {
+        transform: translateY(2px);
+        box-shadow: 0px 8px 0px darken($color: $white, $amount: 70);
+      }
+      &:active {
+        transform: translateY(10px);
+        box-shadow: 0px 0px 0px darken($color: $white, $amount: 70);
+      }
+    }
+  }
+  section {
+    width: 50%;
+    @include FlexCenter(column);
+    h2 {
+      position: absolute;
+      font-size: 57px;
+      font-family: $font-primary;
+      line-height: 55px;
+      .line {
+        display: block;
+        width: 50px;
+        height: 2px;
+      }
+    }
+  }
+}
