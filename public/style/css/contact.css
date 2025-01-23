@@ -1144,7 +1144,7 @@ main form .header {
   margin-bottom: 50px;
 }
 main form .header i {
-  font-size: 32px;
+  font-size: 36px;
 }
 main form .header i:nth-of-type(2) {
   font-size: 24px;
@@ -1156,7 +1156,7 @@ main form .header i:nth-of-type(2):hover {
   color: #e8cc9a;
 }
 main form .header p {
-  font-size: 18px;
+  font-size: 22px;
   margin-left: 15px;
   width: 90%;
   overflow: hidden;
