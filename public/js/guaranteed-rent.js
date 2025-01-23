@@ -93,3 +93,9 @@ document.addEventListener("click", function () {
     .querySelectorAll(".custom-select")
     .forEach((el) => el.classList.remove("opened"));
 });
+
+const twoWeeksFromNow = new Date();
+twoWeeksFromNow.setDate(twoWeeksFromNow.getDate() + 14);
+document.getElementById("date").min = twoWeeksFromNow
+  .toISOString()
+  .split("T")[0];
