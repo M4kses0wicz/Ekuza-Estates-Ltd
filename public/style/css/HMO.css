@@ -1402,4 +1402,288 @@ main section h2 .line {
   display: block;
   width: 50px;
   height: 2px;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 125px 0px;
+}
+@media (max-width: 1950px) {
+  .title-container {
+    margin: 80px 0px;
+  }
+}
+@media (max-width: 1000px) {
+  .title-container {
+    margin: 50px 0px;
+  }
+}
+.title-container .line {
+  width: 20%;
+  height: 2px;
+  background: #181113;
+  border-radius: 5px;
+}
+@media (max-width: 1950px) {
+  .title-container .line {
+    width: 15%;
+  }
+}
+@media (max-width: 1650px) {
+  .title-container .line {
+    width: 10%;
+  }
+}
+@media (max-width: 1320px) {
+  .title-container .line {
+    width: 20%;
+  }
+}
+@media (max-width: 1000px) {
+  .title-container .line {
+    width: 10%;
+  }
+}
+.title-container p {
+  font-family: "poppins";
+  font-size: 70px;
+  letter-spacing: 25px;
+  margin: 40px;
+  text-align: center;
+}
+@media (max-width: 1650px) {
+  .title-container p {
+    font-size: 60px;
+  }
+}
+@media (max-width: 1320px) {
+  .title-container p {
+    font-size: 50px;
+    letter-spacing: 10px;
+    text-align: center;
+    width: 470px;
+  }
+}
+@media (max-width: 770px) {
+  .title-container p {
+    width: 350px;
+    font-size: 42px;
+    letter-spacing: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .title-container p {
+    width: 200px;
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin: 20px;
+  }
+}
+
+section.sec-desc {
+  width: 100%;
+  height: 1000px;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+  display: flex;
+}
+@media (max-width: 1950px) {
+  section.sec-desc {
+    height: 800px;
+  }
+}
+@media (max-height: 1000px) {
+  section.sec-desc {
+    height: 1250px;
+  }
+}
+@media (max-width: 900px) {
+  section.sec-desc {
+    height: 1300px;
+  }
+}
+@media (max-width: 700px) {
+  section.sec-desc {
+    height: 800px;
+  }
+}
+@media (max-width: 600px) {
+  section.sec-desc {
+    height: 1000px;
+  }
+}
+@media (max-width: 450px) {
+  section.sec-desc {
+    height: 1200px;
+  }
+}
+@media (max-width: 800px) {
+  section.sec-desc {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 900px) {
+  section.sec-desc {
+    flex-direction: column;
+  }
+}
+section.sec-desc p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+section.sec-desc p:first-of-type::after {
+  font-size: 17px;
+  content: "maximize rental income";
+  color: rgba(0, 106, 0, 0.547);
+}
+section.sec-desc p:first-of-type span.line {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: #181113;
+  margin: 0px 25px;
+}
+section.sec-desc img {
+  width: 35%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 2000px) {
+  section.sec-desc img {
+    width: 42.5%;
+  }
+}
+@media (max-width: 900px) {
+  section.sec-desc img {
+    width: 100%;
+    height: 40%;
+  }
+}
+@media (max-width: 450px) {
+  section.sec-desc img {
+    height: 25%;
+  }
+}
+section.sec-desc .text-container {
+  width: 65%;
+  height: 100%;
+  padding: 0px 75px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: start;
+}
+@media (min-width: 2000px) {
+  section.sec-desc .text-container {
+    width: 57.5%;
+  }
+}
+@media (max-width: 900px) {
+  section.sec-desc .text-container {
+    width: 100%;
+    height: 60%;
+  }
+}
+@media (max-width: 700px) {
+  section.sec-desc .text-container {
+    padding: 0px 50px;
+  }
+}
+@media (max-width: 380px) {
+  section.sec-desc .text-container {
+    padding: 0px 35px;
+  }
+}
+section.sec-desc .text-container h4 {
+  font-size: 45px;
+}
+@media (max-height: 780px) {
+  section.sec-desc .text-container h4 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 700px) {
+  section.sec-desc .text-container h4 {
+    font-size: 25px;
+  }
+}
+section.sec-desc .text-container h4,
+section.sec-desc .text-container a {
+  font-family: "poppins";
+  margin: 25px 0 15px 0px;
+}
+@media (max-width: 700px) {
+  section.sec-desc .text-container h4,
+  section.sec-desc .text-container a {
+    margin: 10px 0 2.5px 0px;
+  }
+}
+section.sec-desc .text-container p {
+  font-family: "lato";
+  font-size: 25px;
+}
+@media (max-height: 780px) {
+  section.sec-desc .text-container p {
+    font-size: 20px;
+  }
+}
+section.sec-desc .text-container p:first-of-type {
+  color: rgba(24, 17, 19, 0.7450980392);
+}
+@media (max-width: 700px) {
+  section.sec-desc .text-container p:first-of-type {
+    font-size: 14px;
+  }
+  section.sec-desc .text-container p:first-of-type::after {
+    font-size: 12px;
+  }
+}
+section.sec-desc .text-container p.desc {
+  word-spacing: 5px;
+  letter-spacing: 1px;
+}
+@media (max-width: 700px) {
+  section.sec-desc .text-container p.desc {
+    font-size: 17px;
+  }
+}
+@media (max-width: 370px) {
+  section.sec-desc .text-container p.desc {
+    font-size: 15px;
+  }
+}
+section.sec-desc .text-container a {
+  text-transform: uppercase;
+  font-size: 19px;
+  color: #181113;
+  margin-top: 30px;
+  background: rgba(242, 171, 64, 0.65);
+  padding-left: 20px;
+  text-decoration: none;
+}
+@media (max-width: 700px) {
+  section.sec-desc .text-container a {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+}
+section.sec-desc .text-container a:hover {
+  text-decoration: underline;
+}
+section.sec-desc .text-container a:hover i {
+  transform: translateX(200%);
+  opacity: 100%;
+}
+section.sec-desc .text-container a i {
+  transition: 0.25s;
+  opacity: 0%;
 }/*# sourceMappingURL=HMO.css.map */
