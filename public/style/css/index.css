@@ -1413,6 +1413,12 @@ main .swiper-button-next:active i {
     margin-right: 27.5px;
   }
 }
+@media (max-width: 360px) {
+  .title-container p {
+    letter-spacing: 7px;
+    font-size: 27px;
+  }
+}
 
 .sections-container {
   width: 100%;

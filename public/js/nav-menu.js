@@ -132,4 +132,4 @@ document.addEventListener("DOMContentLoaded", function () {
   createButton(configObj, null);
 });
 
-console.log("made by Maksymilian Klemensowicz (klemensowicz.pl)");
+console.log("† - made by Maksymilian Klemensowicz (klemensowicz.pl)");

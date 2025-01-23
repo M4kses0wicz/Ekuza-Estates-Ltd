@@ -302,6 +302,10 @@ main {
       letter-spacing: 10px;
       margin-right: 27.5px;
     }
+    @include mobile-w(360px) {
+      letter-spacing: 7px;
+      font-size: 27px;
+    }
   }
 }
 
