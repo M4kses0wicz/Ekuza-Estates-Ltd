@@ -21,7 +21,7 @@ main {
     @include min-mobile-w(2000px) {
       height: 900px;
     }
-    margin: 50px 0px;
+    margin-top: 50px;
     // padding: 25px;
     display: flex;
     border: 1px $black solid;
@@ -317,6 +317,45 @@ main {
         width: 50px;
         height: 2px;
       }
+    }
+  }
+}
+
+.title-container {
+  width: 100%;
+  @include FlexCenter(row);
+  margin: 125px 0px;
+  @include mobile-w(1950px) {
+    margin: 80px 0px;
+  }
+  @include mobile-w(1000px) {
+    margin: 50px 0px;
+  }
+  .line {
+    width: 20%;
+    height: 2px;
+    background: $black;
+    border-radius: 5px;
+    @include mobile-w(1950px) {
+      width: 20%;
+    }
+    @include mobile-w(1000px) {
+      width: 10%;
+    }
+  }
+  p {
+    font-family: $font-primary;
+    font-size: 70px;
+    letter-spacing: 25px;
+    margin: 40px;
+    margin-right: 18px;
+    @include mobile-w(1000px) {
+      font-size: 50px;
+    }
+    @include mobile-w(600px) {
+      font-size: 30px;
+      letter-spacing: 10px;
+      margin-right: 27.5px;
     }
   }
 }
