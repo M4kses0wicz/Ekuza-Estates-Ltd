@@ -381,14 +381,14 @@ main {
 section.sec-desc {
   width: 100%;
   height: 800px;
-  @include mobile-w(1750px) {
-    height: 1000px;
-  }
   @include mobile-h(1000px) {
     height: 1250px;
   }
-  @include mobile-w(900px) {
-    height: 1300px;
+  @include mobile-w(1050px) {
+    height: 1000px;
+  }
+  @include mobile-w(1050px) {
+    height: 1100px;
   }
   @include mobile-w(700px) {
     height: 800px;
@@ -396,10 +396,10 @@ section.sec-desc {
     // padding-bottom: 0 !important;
   }
   @include mobile-w(600px) {
-    height: 1000px;
+    height: 800px;
   }
   @include mobile-w(450px) {
-    height: 1200px;
+    height: 900px;
   }
   // border: red 2px dashed;
   padding-bottom: 100px;
