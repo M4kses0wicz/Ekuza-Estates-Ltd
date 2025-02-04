@@ -99,3 +99,17 @@ twoWeeksFromNow.setDate(twoWeeksFromNow.getDate() + 14);
 document.getElementById("date").min = twoWeeksFromNow
   .toISOString()
   .split("T")[0];
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dateInput = document.getElementById("date");
+  if (dateInput) {
+    const today = new Date();
+    today.setDate(today.getDate() + 14);
+
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+
+    dateInput.value = `${yyyy}-${mm}-${dd}`;
+  }
+});
