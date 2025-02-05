@@ -1264,6 +1264,7 @@ main form p {
 main form .datetime-container {
   width: 100%;
   margin-bottom: 50px;
+  gap: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1272,12 +1273,12 @@ main form .datetime-container {
 @media (max-width: 500px) {
   main form .datetime-container {
     padding: 20px;
+    gap: 0px;
   }
 }
 main form .datetime-container input {
   width: 175px;
-  height: 40px;
-  margin: 0px 25px;
+  height: 48px;
   padding: 10px;
   background: none;
   text-align: center;
@@ -1371,6 +1372,73 @@ main section h2 .line {
   display: block;
   width: 50px;
   height: 2px;
+}
+main section .custom-select-wrapper {
+  position: relative;
+  width: 175px;
+  text-align: center;
+}
+main section .custom-select {
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+main section .custom-select-trigger {
+  display: block;
+  background: none;
+  padding: 10px 15px;
+  border-bottom: 3px solid #181113;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+main section .custom-select-trigger:hover {
+  border-bottom: 3px #f2ab40 solid;
+  background: rgba(251, 246, 237, 0.4980392157);
+}
+main section .custom-select.opened .custom-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+}
+main section .custom-select.opened .custom-options::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 0;
+}
+main section .custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  margin-top: 5px;
+  max-height: 500px;
+  overflow-y: auto;
+  max-height: 200px;
+  display: none;
+  z-index: 5;
+}
+main section .custom-options .custom-option {
+  padding: 10px 15px;
+  margin-top: 5px;
+  cursor: pointer;
+  background: #fffaf2;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px rgba(242, 171, 64, 0.2666666667) solid;
+  transition: 0.2s;
+}
+main section .custom-options .custom-option:hover {
+  background: #ffefd6;
+  border-bottom: 1px solid #f2ab40;
+}
+main section .custom-options .custom-option.selection {
+  background: rgba(242, 171, 64, 0.3803921569);
+  font-weight: bold;
 }
 
 .title-container {

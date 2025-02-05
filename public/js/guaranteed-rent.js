@@ -113,3 +113,105 @@ document.addEventListener("DOMContentLoaded", function () {
     dateInput.value = `${yyyy}-${mm}-${dd}`;
   }
 });
+
+const timeSelect = document.getElementById("time");
+
+function formatTime(hours, minutes) {
+  const period = hours >= 12 ? "PM" : "AM";
+  const displayHours = hours % 12 || 12;
+  return `${displayHours}:${minutes.toString().padStart(2, "0")} ${period}`;
+}
+
+function generateTimeSlots(startHour, startMin, endHour, endMin) {
+  const slots = [];
+  let currentHour = startHour;
+  let currentMin = startMin;
+
+  while (
+    currentHour < endHour ||
+    (currentHour === endHour && currentMin <= endMin)
+  ) {
+    slots.push(formatTime(currentHour, currentMin));
+    currentMin += 15;
+    if (currentMin >= 60) {
+      currentMin = 0;
+      currentHour++;
+    }
+  }
+  return slots;
+}
+
+function getAvailableTimeSlots(dayOfWeek) {
+  switch (dayOfWeek) {
+    case 2: // Tuesday
+      return generateTimeSlots(9, 30, 15, 0);
+    case 3: // Wednesday
+      return [
+        ...generateTimeSlots(10, 0, 12, 30),
+        ...generateTimeSlots(15, 0, 17, 0),
+      ];
+    case 4: // Thursday
+      return generateTimeSlots(9, 30, 17, 30);
+    case 5: // Friday
+      return generateTimeSlots(10, 0, 14, 0);
+    default:
+      return []; // Monday, Saturday, Sunday
+  }
+}
+
+function updateTimeSlots() {
+  const dateInput = document.getElementById("date");
+  const selectedDate = new Date(dateInput.value);
+  const dayOfWeek = selectedDate.getDay();
+  const availableSlots = getAvailableTimeSlots(dayOfWeek);
+
+  timeSelect.innerHTML = "";
+
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "Select time";
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  timeSelect.appendChild(defaultOption);
+
+  availableSlots.forEach((slot) => {
+    const option = document.createElement("option");
+    option.value = slot;
+    option.textContent = slot;
+    timeSelect.appendChild(option);
+  });
+
+  const customTrigger = document.querySelector(".custom-select-trigger");
+  if (customTrigger) {
+    customTrigger.textContent = "Select time";
+  }
+
+  const customOptionsContainer = document.querySelector(".custom-options");
+  if (customOptionsContainer) {
+    customOptionsContainer.innerHTML = "";
+    availableSlots.forEach((slot) => {
+      const customOption = document.createElement("span");
+      customOption.className = "custom-option";
+      customOption.textContent = slot;
+      customOption.setAttribute("data-value", slot);
+
+      customOption.addEventListener("click", function () {
+        timeSelect.value = this.getAttribute("data-value");
+        customOptionsContainer
+          .querySelectorAll(".custom-option")
+          .forEach((opt) => opt.classList.remove("selection"));
+        this.classList.add("selection");
+        customTrigger.textContent = this.textContent;
+        document.querySelector(".custom-select").classList.remove("opened");
+      });
+
+      customOptionsContainer.appendChild(customOption);
+    });
+  }
+}
+
+document.getElementById("date").addEventListener("change", updateTimeSlots);
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateTimeSlots();
+});

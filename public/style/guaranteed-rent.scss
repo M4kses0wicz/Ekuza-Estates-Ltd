@@ -181,13 +181,15 @@ main {
     .datetime-container {
       width: 100%;
       margin-bottom: 50px;
+      gap: 35px;
       @include FlexCenter(row);
       @include mobile-w(500px) {
         padding: 20px;
+        gap: 0px;
       }
       input {
         width: 175px;
-        height: 40px;
+        height: 48px;
         margin: 0px 25px;
         @include mobile-w(500px) {
           margin: 0px 10px;
@@ -258,6 +260,77 @@ main {
       &:active {
         transform: translateY(10px);
         box-shadow: 0px 0px 0px darken($color: $white, $amount: 70);
+      }
+    }
+    .custom-select-wrapper {
+      position: relative;
+      width: 175px;
+      text-align: center;
+    }
+
+    .custom-select {
+      position: relative;
+      cursor: pointer;
+      font-size: 16px;
+      user-select: none;
+
+      &-trigger {
+        display: block;
+        background: none;
+        padding: 10px 15px;
+        border-bottom: 3px solid $black;
+        width: 100%;
+        box-sizing: border-box;
+        transition: 0.4s;
+        &:hover {
+          border-bottom: 3px $gold solid;
+          background: #fbf6ed7f;
+        }
+      }
+
+      &.opened .custom-options {
+        @include FlexCenter(column);
+        justify-content: start;
+        text-align: center;
+        &::-webkit-scrollbar {
+          width: 5px;
+          border-radius: 0;
+        }
+      }
+    }
+
+    .custom-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      margin-top: 5px;
+      max-height: 500px;
+      overflow-y: auto;
+      // border: 1px dashed $black;
+      // border-bottom: 1px solid $black;
+      // border-top: none;
+      max-height: 200px;
+      display: none;
+      z-index: 5;
+      .custom-option {
+        padding: 10px 15px;
+        margin-top: 5px;
+        cursor: pointer;
+        background: #fffaf2;
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px #f2ab4044 solid;
+        transition: 0.2s;
+        &:hover {
+          background: #ffefd6;
+          border-bottom: 1px solid $gold;
+        }
+        &.selection {
+          background: #f2ab4061;
+          font-weight: bold;
+        }
       }
     }
   }
