@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ekuza Estates LTD :</title>
 
-    <link rel="stylesheet" href="public/style/css/index.css" />
+    <link rel="stylesheet" href="style/css/index.css" />
 
     <meta
       name="description"
-      content="Welcome to the community where you will be privy to great opportunities with high return on investment. 
+      content="Welcome to the community where you will be privy to great opportunities with high return on investment.
       We focus on finding the best Rent to Serviced Accommodation and BRR deals so you don't have to."
     />
 
@@ -47,24 +47,24 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="public/img/ico/apple-touch-icon.png"
+      href="img/ico/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="public/img/ico/favicon-32x32.png"
+      href="img/ico/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="public/img/ico/favicon-16x16.png"
+      href="img/ico/favicon-16x16.png"
     />
 
     <link
       rel="shortcut icon"
-      href="public/img/ico/favicon.ico"
+      href="img/ico/favicon.ico"
       type="image/x-icon"
     />
 
@@ -73,7 +73,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-    <link rel="manifest" href="public/img/ico/site.webmanifest" />
+    <link rel="manifest" href="img/ico/site.webmanifest" />
   </head>
 
   <body class="loading">
@@ -131,7 +131,7 @@
             </div>
             <ol>
               <li>
-                <a href="index.html">
+                <a href="/">
                   <span>H</span>
                   <span>o</span>
                   <span>m</span>
@@ -139,7 +139,7 @@
                 </a>
               </li>
               <li>
-                <a href="rent-to-rent.html">
+                <a href="rent-to-rent">
                   <span>R</span>
                   <span>e</span>
                   <span>n</span>
@@ -155,21 +155,21 @@
                 </a>
               </li>
               <li>
-                <a href="HMO.html">
+                <a href="HMO">
                   <span>H</span>
                   <span>M</span>
                   <span>O</span>
                 </a>
               </li>
               <li>
-                <a href="BRR.html">
+                <a href="BRR">
                   <span>B</span>
                   <span>R</span>
                   <span>R</span>
                 </a>
               </li>
               <li>
-                <a href="bespoke.html">
+                <a href="bespoke">
                   <span>B</span>
                   <span>e</span>
                   <span>s</span>
@@ -180,7 +180,7 @@
                 </a>
               </li>
               <li>
-                <a href="guaranteed-rent.html">
+                <a href="guaranteed-rent">
                   <span>G</span>
                   <span>u</span>
                   <span>a</span>
@@ -233,14 +233,14 @@
 
     <header>
       <nav>
-        <a href="index.html" class="logo-container">
-          <img src="public/img/logo.png" alt="logo" class="logo" />
-          <img src="public/img/logo-text.jpeg" alt="logo" class="text" />
+        <a href="/" class="logo-container">
+          <img src="img/logo.png" alt="logo" class="logo" />
+          <img src="img/logo-text.jpeg" alt="logo" class="text" />
         </a>
         <div class="menu">
           <ol>
             <li>
-              <a href="index.html">
+              <a href="/">
                 <span>H</span>
                 <span>o</span>
                 <span>m</span>
@@ -248,7 +248,7 @@
               </a>
             </li>
             <li>
-              <a href="rent-to-rent.html">
+              <a href="rent-to-rent">
                 <span>R</span>
                 <span>e</span>
                 <span>n</span>
@@ -264,21 +264,21 @@
               </a>
             </li>
             <li>
-              <a href="HMO.html">
+              <a href="HMO">
                 <span>H</span>
                 <span>M</span>
                 <span>O</span>
               </a>
             </li>
             <li>
-              <a href="BRR.html">
+              <a href="BRR">
                 <span>B</span>
                 <span>R</span>
                 <span>R</span>
               </a>
             </li>
             <li>
-              <a href="bespoke.html">
+              <a href="bespoke">
                 <span>B</span>
                 <span>e</span>
                 <span>s</span>
@@ -289,7 +289,7 @@
               </a>
             </li>
             <li>
-              <a href="guaranteed-rent.html">
+              <a href="guaranteed-rent">
                 <span>G</span>
                 <span>u</span>
                 <span>a</span>
@@ -323,7 +323,7 @@
     <footer>
       <div class="container">
         <section class="sec-1">
-          <img src="public/img/full-logo.jpeg" alt="logo" />
+          <img src="img/full-logo.jpeg" alt="logo" />
           <p>
             Copyright &copy; <span id="date"></span> Ekuza Estates LTD. All
             rights reserved.
@@ -371,6 +371,6 @@
       </div>
     </footer>
 
-    <script src="public/js/nav-menu.js"></script>
+    <script src="js/nav-menu.js"></script>
   </body>
 </html>
