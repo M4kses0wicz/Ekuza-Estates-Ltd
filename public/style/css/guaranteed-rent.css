@@ -1604,6 +1604,7 @@ section.sec-desc img {
 section.sec-desc .text-container {
   width: 65%;
   height: 100%;
+  overflow: hidden;
   padding: 0px 75px;
   background: white;
   display: flex;

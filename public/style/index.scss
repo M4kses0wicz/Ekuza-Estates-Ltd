@@ -401,6 +401,7 @@ main {
     .text-container {
       width: 65%;
       height: 100%;
+      overflow: hidden;
       @include min-mobile-w(2000px) {
         width: 57.5%;
       }
