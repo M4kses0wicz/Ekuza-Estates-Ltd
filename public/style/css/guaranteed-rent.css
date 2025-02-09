@@ -1570,7 +1570,7 @@ section.sec-desc p {
 }
 section.sec-desc p:first-of-type::after {
   font-size: 17px;
-  content: "ffixed income, stress-free";
+  content: "fixed income, stress-free";
   color: rgba(0, 106, 0, 0.547);
 }
 section.sec-desc p:first-of-type span.line {

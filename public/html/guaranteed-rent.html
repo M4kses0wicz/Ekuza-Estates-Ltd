@@ -17,6 +17,8 @@
     <meta property="og:title" content="Ekuza Estates LTD" />
     <meta property="og:site_name" content="Ekuza Estates LTD" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close"
@@ -62,11 +64,7 @@
       href="img/ico/favicon-16x16.png"
     />
 
-    <link
-      rel="shortcut icon"
-      href="img/ico/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/ico/favicon.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -404,9 +402,13 @@
     <section class="sec-desc">
       <img src="img/guaranteed.jpg" alt="guaranteed rent" />
       <div class="text-container">
-        <p>Guaranteed Rent <span class="line"></span></p>
-        <h4>Enjoy Stress-Free Income with Guaranteed Rent</h4>
-        <p class="desc">
+        <p data-aos="fade-left">
+          Guaranteed Rent <span class="line" data-aos="fade-left"></span>
+        </p>
+        <h4 data-aos="fade-left">
+          Enjoy Stress-Free Income with Guaranteed Rent
+        </h4>
+        <p class="desc" data-aos="fade-left">
           We offer landlords the ultimate hassle-free income solution. With our
           guaranteed rent, you enjoy stress-free, reliable passive income while
           we take care of everything. Your property will benefit from regular
@@ -414,7 +416,7 @@
           upgrades. Say goodbye to tenant troubles and agency
           headaches-experience true peace of mind with pure passive income.
         </p>
-        <a href="#contact-form"
+        <a href="#contact-form" data-aos="fade-left"
           >Contact us <i class="fa-solid fa-arrow-up-long"></i
         ></a>
       </div>
@@ -473,5 +475,10 @@
 
     <script src="js/nav-menu.js"></script>
     <script src="js/guaranteed-rent.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

@@ -17,6 +17,8 @@
     <meta property="og:title" content="Ekuza Estates LTD" />
     <meta property="og:site_name" content="Ekuza Estates LTD" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close"
@@ -62,11 +64,7 @@
       href="img/ico/favicon-16x16.png"
     />
 
-    <link
-      rel="shortcut icon"
-      href="img/ico/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/ico/favicon.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -408,9 +406,11 @@
     <section class="sec-desc">
       <img src="img/hmo.jpg" alt="h m o" />
       <div class="text-container">
-        <p>HMO deals <span class="line"></span></p>
-        <h4>High-Yield Opportunities with HMO Deals</h4>
-        <p class="desc">
+        <p data-aos="fade-left">
+          HMO deals <span class="line" data-aos="fade-left"></span>
+        </p>
+        <h4 data-aos="fade-left">High-Yield Opportunities with HMO Deals</h4>
+        <p class="desc" data-aos="fade-left">
           Unlock the earning potential of Houses in Multiple Occupation (HMO)
           deals. HMOs offer an excellent way to maximize rental income from a
           single property by accommodating multiple tenants under one roof. We
@@ -418,7 +418,7 @@
           the best properties in prime locations. Start building a profitable
           portfolio with expertly chosen HMO deals today!
         </p>
-        <a href="#contact-form"
+        <a href="#contact-form" data-aos="fade-left"
           >Contact us <i class="fa-solid fa-arrow-up-long"></i
         ></a>
       </div>
@@ -477,5 +477,10 @@
 
     <script src="js/nav-menu.js"></script>
     <script src="js/HMO.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
