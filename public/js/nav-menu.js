@@ -47,11 +47,6 @@ function openMenu() {
   }, 10);
 }
 
-const burger = document.querySelector(".burger");
-const x = document.querySelector(".x");
-burger.addEventListener("click", openMenu);
-x.addEventListener("click", closeMenu);
-
 window.addEventListener("load", () => {
   document.querySelector("body").classList.remove("loading");
   loader.classList.add("loaded");
@@ -138,3 +133,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 console.log("† - made by Maksymilian Klemensowicz (klemensowicz.pl)");
+
+const burger = document.querySelector(".burger");
+const x = document.querySelector(".x");
+const phone = document.querySelector(".whatsapp");
+const phonef = document.querySelector(".cws");
+burger.addEventListener("click", openMenu);
+x.addEventListener("click", closeMenu);
+phone.addEventListener("click", copyPhone);
+phonef.addEventListener("click", copyPhoneFooter);
