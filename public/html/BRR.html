@@ -17,6 +17,8 @@
     <meta property="og:title" content="Ekuza Estates LTD" />
     <meta property="og:site_name" content="Ekuza Estates LTD" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close"
@@ -62,11 +64,7 @@
       href="img/ico/favicon-16x16.png"
     />
 
-    <link
-      rel="shortcut icon"
-      href="img/ico/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/ico/favicon.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -408,16 +406,21 @@
     <section class="sec-desc">
       <img src="img/brr.jpg" alt="b r r" />
       <div class="text-container">
-        <p>BRR Deals <span class="line"></span></p>
-        <h4>Build Wealth with BRR Deals</h4>
-        <p class="desc">
+        <p data-aos="fade-left">
+          BRR Deals <span class="line" data-aos="fade-left"></span>
+        </p>
+        <h4 data-aos="fade-left">Build Wealth with BRR Deals</h4>
+        <p class="desc" data-aos="fade-left">
           Buy, Refurbish, Refinance (BRR) deals are the ultimate strategy for
           property investors looking to grow their portfolio efficiently. This
           method allows you to add value to properties, extract equity, and
           reinvest for future opportunities. Our team sources the best BRR
-          deals, identifying properties with untapped potential. From purchase to project management we can help find the perfect project to meet your investment needs! Transform properties into profitable assets with our expertly tailored BRR opportunities!
+          deals, identifying properties with untapped potential. From purchase
+          to project management we can help find the perfect project to meet
+          your investment needs! Transform properties into profitable assets
+          with our expertly tailored BRR opportunities!
         </p>
-        <a href="#contact-form"
+        <a href="#contact-form" data-aos="fade-left"
           >Contact us <i class="fa-solid fa-arrow-up-long"></i
         ></a>
       </div>
@@ -476,5 +479,10 @@
 
     <script src="js/nav-menu.js"></script>
     <script src="js/BRR.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

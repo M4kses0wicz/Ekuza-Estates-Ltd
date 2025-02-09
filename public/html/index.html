@@ -17,6 +17,8 @@
     <meta property="og:title" content="Ekuza Estates LTD" />
     <meta property="og:site_name" content="Ekuza Estates LTD" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close"
@@ -62,11 +64,7 @@
       href="img/ico/favicon-16x16.png"
     />
 
-    <link
-      rel="shortcut icon"
-      href="img/ico/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/ico/favicon.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -398,7 +396,7 @@
       </div>
     </main>
 
-    <div class="title-container">
+    <div class="title-container" data-aos="fade">
       <div class="line"></div>
       <p>About us</p>
       <div class="line"></div>
@@ -408,9 +406,11 @@
       <section class="sec-1">
         <img src="img/info.jpg" alt="informations about us" />
         <div class="text-container">
-          <p>About us <span class="line"></span></p>
-          <h4>A few words about us</h4>
-          <p class="desc">
+          <p data-aos="fade-left">
+            About us <span class="line" data-aos="fade-left"></span>
+          </p>
+          <h4 data-aos="fade-left">A few words about us</h4>
+          <p class="desc" data-aos="fade-left">
             London and Greater London property sourcing experts with a trusted
             network of agents, builders, and designers. Backed by decades of
             experience, we deliver tailored property solutions to meet your
@@ -418,7 +418,7 @@
             countries in 4 continents we know what separates the good and the
             bad accomodation.
           </p>
-          <a href="contact"
+          <a href="contact" data-aos="fade-left"
             >Contact us <i class="fa-solid fa-arrow-right-long"></i
           ></a>
         </div>
@@ -429,9 +429,11 @@
           alt="informations about what do we do"
         />
         <div class="text-container">
-          <p>About us <span class="line"></span></p>
-          <h4>What do we do?</h4>
-          <p class="desc">
+          <p data-aos="fade-left">
+            About us <span class="line" data-aos="fade-left"></span>
+          </p>
+          <h4 data-aos="fade-left">What do we do?</h4>
+          <p class="desc" data-aos="fade-left">
             At Ekuza Estates we specialize in sourcing profitable property deals
             that deliver exceptional returns. We focus on finding the best Rent
             to Serviced Accommodation and BRR deals so you don't have to. We are
@@ -439,7 +441,7 @@
             while simplifying the investment process, ensuring opportunities
             align with your goals for success for you.
           </p>
-          <a href="contact"
+          <a href="contact" data-aos="fade-left"
             >Contact us <i class="fa-solid fa-arrow-right-long"></i
           ></a>
         </div>
@@ -532,6 +534,10 @@
         "telephone": "07949 940 893",
         "email": "alex@ekuzaestates.co.uk"
       }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>

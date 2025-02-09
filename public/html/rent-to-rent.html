@@ -17,6 +17,8 @@
     <meta property="og:title" content="Ekuza Estates LTD" />
     <meta property="og:site_name" content="Ekuza Estates LTD" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close"
@@ -62,11 +64,7 @@
       href="img/ico/favicon-16x16.png"
     />
 
-    <link
-      rel="shortcut icon"
-      href="img/ico/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/ico/favicon.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -323,10 +321,7 @@
     <main>
       <div class="container">
         <section class="img-container">
-          <img
-            src="img/little-house-in-hand.jpg"
-            alt="Rent to rent image"
-          />
+          <img src="img/little-house-in-hand.jpg" alt="Rent to rent image" />
         </section>
 
         <section class="form-container" id="form-container">
@@ -411,17 +406,19 @@
     <section class="sec-desc">
       <img src="img/rent-to-rent.jpg" alt="rent to rent image" />
       <div class="text-container">
-        <p>Rent to Rent <span class="line"></span></p>
-        <h4>Unlock the Potential of Rent-to-Rent Deals</h4>
-        <p class="desc">
+        <p data-aos="fade-left">
+          Rent to Rent <span class="line" data-aos="fade-left"></span>
+        </p>
+        <h4 data-aos="fade-left">Unlock the Potential of Rent-to-Rent Deals</h4>
+        <p class="desc" data-aos="fade-left">
           Rent-to-rent is a smart and innovative way to generate income from
           property without the need for ownership. We specialize in finding the
-          best opportunities, allowing you to profit from managing high-quality accommodations. Our team handles
-          all the hard work — sourcing, negotiating, and preparing properties —
-          so you can focus on growing your portfolio and achieving financial
-          freedom.
+          best opportunities, allowing you to profit from managing high-quality
+          accommodations. Our team handles all the hard work — sourcing,
+          negotiating, and preparing properties — so you can focus on growing
+          your portfolio and achieving financial freedom.
         </p>
-        <a href="#form-container"
+        <a href="#form-container" data-aos="fade-left"
           >Contact us <i class="fa-solid fa-arrow-up-long"></i
         ></a>
       </div>
@@ -480,5 +477,9 @@
 
     <script src="js/nav-menu.js"></script>
     <script src="js/rent-to-rent.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
