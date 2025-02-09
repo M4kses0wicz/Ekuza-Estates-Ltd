@@ -47,6 +47,11 @@ function openMenu() {
   }, 10);
 }
 
+const burger = document.querySelector(".burger");
+const x = document.querySelector(".x");
+burger.addEventListener("click", openMenu);
+x.addEventListener("click", closeMenu);
+
 window.addEventListener("load", () => {
   document.querySelector("body").classList.remove("loading");
   loader.classList.add("loaded");
