@@ -62,11 +62,7 @@
       href="img/ico/favicon-16x16.png"
     />
 
-    <link
-      rel="shortcut icon"
-      href="img/ico/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/ico/favicon.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -74,6 +70,8 @@
     />
 
     <link rel="manifest" href="img/ico/site.webmanifest" />
+
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   </head>
 
   <body class="loading">
@@ -378,6 +376,10 @@
               placeholder="Type here..."
               required
             ></textarea>
+            <div
+              class="h-captcha"
+              data-sitekey="10000000-ffff-ffff-ffff-000000000001"
+            ></div>
             <button type="submit">SUBMIT</button>
           </form>
         </section>

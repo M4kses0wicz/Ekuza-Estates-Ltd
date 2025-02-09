@@ -41,6 +41,8 @@ const config = {
           "https://cdnjs.cloudflare.com",
           "https://cdn.jsdelivr.net",
           "https://unpkg.com",
+          "https://hcaptcha.com",
+          "https://*.hcaptcha.com",
         ],
         scriptSrc: [
           "'self'",
@@ -49,6 +51,8 @@ const config = {
           "https://cdnjs.cloudflare.com",
           "https://cdn.jsdelivr.net",
           "https://unpkg.com",
+          "https://hcaptcha.com",
+          "https://*.hcaptcha.com",
         ],
         fontSrc: [
           "'self'",
@@ -57,7 +61,12 @@ const config = {
           "data:",
         ],
         imgSrc: ["'self'", "data:", "https:"],
-        connectSrc: ["'self'"],
+        connectSrc: [
+          "'self'",
+          "https://hcaptcha.com",
+          "https://*.hcaptcha.com",
+        ],
+        frameSrc: ["https://hcaptcha.com", "https://*.hcaptcha.com"],
       },
     },
 

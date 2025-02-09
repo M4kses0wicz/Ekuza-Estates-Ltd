@@ -93,3 +93,48 @@ document.addEventListener("click", function () {
     .querySelectorAll(".custom-select")
     .forEach((el) => el.classList.remove("opened"));
 });
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const hcaptchaToken = hcaptcha.getResponse();
+  if (!hcaptchaToken) {
+    alert("Please complete the captcha");
+    return;
+  }
+
+  const formData = {
+    firstName: document.getElementById("first-name").value,
+    lastName: document.getElementById("last-name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    budget: document.getElementById("budget").value,
+    message: document.getElementById("message").value,
+    hcaptchaToken,
+  };
+
+  try {
+    const response = await fetch("/api/BRR", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      window.location.href = "/form-sent";
+    } else {
+      alert(data.error || "Failed to send message. Please try again.");
+      hcaptcha.reset();
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Failed to send message. Please try again.");
+    hcaptcha.reset();
+  }
+});
