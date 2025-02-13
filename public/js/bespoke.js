@@ -215,3 +215,48 @@ document.getElementById("date").addEventListener("change", updateTimeSlots);
 document.addEventListener("DOMContentLoaded", function () {
   updateTimeSlots();
 });
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  const data = {
+    firstName: formData.get("first-name"),
+    lastName: formData.get("last-name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    date: formData.get("date"),
+    time: formData.get("time"),
+    message: formData.get("message"),
+  };
+
+  if (!data.date) {
+    alert("Please select a date.");
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/form-sent", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      alert("Form sent successfully!");
+      console.log(result);
+      form.reset();
+    } else {
+      const error = await response.json();
+      alert(`Error: ${error.message}`);
+    }
+  } catch (error) {
+    console.error("Error sending form:", error);
+    alert("There was an error submitting the form. Please try again.");
+  }
+});

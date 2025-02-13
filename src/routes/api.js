@@ -3,6 +3,7 @@ const Mailgun = require("mailgun.js");
 const formData = require("form-data");
 const mailgun = new Mailgun(formData);
 const router = express.Router();
+const { google } = require('googleapis');
 const axios = require("axios");
 
 const verifyHCaptcha = async (token) => {
@@ -24,6 +25,16 @@ const mg = mailgun.client({
   username: "api",
   key: process.env.API_KEY,
 });
+
+const SCOPES = ['https://www.googleapis.com/auth/calendar'];
+const calendar = google.calendar('v3');
+
+
+const auth = new google.auth.GoogleAuth({
+  keyFile: 'gkeys.json',
+  scopes: SCOPES,
+});
+
 
 router.post("/contact", async (req, res) => {
   try {
@@ -285,6 +296,77 @@ router.post("/BRR", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Failed to send message" });
+  }
+});
+
+router.post("/form-sent", async (req, res) => {
+  const { firstName, lastName, email, phone, date, time, message } = req.body;
+
+  // Walidacja danych (przykładowa)
+  if (!date || !time || !email) {
+    return res.status(400).json({ message: "Missing required fields." });
+  }
+
+  try {
+    // Inicjalizacja Google Calendar API
+    const auth = new google.auth.GoogleAuth({
+      keyFile: "gkeys.json", // Ścieżka do klucza JSON
+      scopes: ["https://www.googleapis.com/auth/calendar"],
+    });
+
+    const calendar = google.calendar({ version: "v3", auth });
+
+    // Sprawdzenie dostępności terminu
+    const [timeString, meridian] = time.split(" "); // Oddzielamy "2:00" i "PM"
+    let [hours, minutes] = timeString.split(":").map(Number); // Wyciągamy godziny i minuty jako liczby
+
+    if (meridian === "PM" && hours !== 12) hours += 12; // Konwersja na 24-godzinny format
+    if (meridian === "AM" && hours === 12) hours = 0;
+
+    const startDateTime = new Date(date);
+    startDateTime.setHours(hours, minutes);
+
+    const endDateTime = new Date(startDateTime.getTime() + 30 * 60000);
+
+    console.log(startDateTime, endDateTime);
+
+    const events = await calendar.events.list({
+      calendarId: "primary",
+      timeMin: startDateTime.toISOString(),
+      timeMax: endDateTime.toISOString(),
+      singleEvents: true,
+    });
+
+    if (events.data.items.length > 0) {
+      return res
+          .status(400)
+          .json({ message: "Selected time slot is already taken." });
+    }
+
+    // Tworzenie nowego wydarzenia w kalendarzu
+    const event = {
+      summary: `Meeting with ${firstName} ${lastName}`,
+      description: message,
+      start: {
+        dateTime: startDateTime.toISOString(),
+        timeZone: "Europe/Warsaw", // Zmień na swoją strefę czasową
+      },
+      end: {
+        dateTime: endDateTime.toISOString(),
+        timeZone: "Europe/Warsaw",
+      },
+      attendees: [{ email }], // Zaproszenie dla klienta
+    };
+
+    const createdEvent = await calendar.events.insert({
+      calendarId: "primary",
+      resource: event,
+    });
+
+    res.status(200).json({ message: "Event created successfully.", event: createdEvent.data });
+  } catch (error) {
+    console.error("Error creating event:", error);
+    res.status(500).json({ message: "Failed to create event." });
   }
 });
 
