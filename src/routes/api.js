@@ -1,10 +1,10 @@
 const express = require("express");
-const Mailgun = require("mailgun.js");
-const formData = require("form-data");
-const mailgun = new Mailgun(formData);
+const sgMail = require("@sendgrid/mail");
 const router = express.Router();
-const { google } = require('googleapis');
 const axios = require("axios");
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 
 const verifyHCaptcha = async (token) => {
   try {
@@ -21,21 +21,6 @@ const verifyHCaptcha = async (token) => {
   }
 };
 
-const mg = mailgun.client({
-  username: "api",
-  key: process.env.API_KEY,
-});
-
-const SCOPES = ['https://www.googleapis.com/auth/calendar'];
-const calendar = google.calendar('v3');
-
-
-const auth = new google.auth.GoogleAuth({
-  keyFile: 'gkeys.json',
-  scopes: SCOPES,
-});
-
-
 router.post("/contact", async (req, res) => {
   try {
     const { title, email, message, hcaptchaToken, interests } = req.body;
@@ -50,37 +35,35 @@ router.post("/contact", async (req, res) => {
     }
 
     const selectedInterests = Object.entries(interests || {})
-      .filter(([_, val]) => val)
-      .map(([key]) => key)
-      .join(", ");
+        .filter(([_, val]) => val)
+        .map(([key]) => key)
+        .join(", ");
 
     const emailData = {
-      from: `Contact Form <mailgun@${process.env.MAILGUN_DOMAIN}>`,
       to: process.env.RECIPIENT_EMAIL,
+      from: process.env.RECIPIENT_EMAIL,
       subject: `New Contact Form Submission: ${title || "No Title"}`,
       text: `
-          New message from contact form:
+        New message from contact form:
 
-          Title: ${title || "No Title"}
-          Email: ${email}
-          Interests: ${selectedInterests || "None selected"}
+        Title: ${title || "No Title"}
+        Email: ${email}
+        Interests: ${selectedInterests || "None selected"}
 
-          Message:
-          ${message}
-        `,
+        Message:
+        ${message}
+      `,
       html: `
-          <h2>New message from contact form</h2>
-          <p><strong>Title:</strong> ${title || "No Title"}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Interests:</strong> ${
-            selectedInterests || "None selected"
-          }</p>
-          <h3>Message:</h3>
-          <p>${message.replace(/\n/g, "<br>")}</p>
-        `,
+        <h2>New message from contact form</h2>
+        <p><strong>Title:</strong> ${title || "No Title"}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Interests:</strong> ${selectedInterests || "None selected"}</p>
+        <h3>Message:</h3>
+        <p>${message.replace(/\n/g, "<br>")}</p>
+      `,
     };
 
-    await mg.messages.create(process.env.MAILGUN_DOMAIN, emailData);
+    await sgMail.send(emailData);
 
     res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
@@ -111,7 +94,7 @@ router.post("/rent-to-rent", async (req, res) => {
     }
 
     const emailData = {
-      from: `Contact Form <mailgun@${process.env.MAILGUN_DOMAIN}>`,
+      from: process.env.RECIPIENT_EMAIL,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New Rent to Rent Contact Form Submission!`,
       text: `
@@ -150,7 +133,7 @@ router.post("/rent-to-rent", async (req, res) => {
           `,
     };
 
-    await mg.messages.create(process.env.MAILGUN_DOMAIN, emailData);
+    await sgMail.send(emailData);
 
     res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
@@ -181,7 +164,7 @@ router.post("/HMO", async (req, res) => {
     }
 
     const emailData = {
-      from: `Contact Form <mailgun@${process.env.MAILGUN_DOMAIN}>`,
+      from: process.env.RECIPIENT_EMAIL,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New HMO Contact Form Submission!`,
       text: `
@@ -220,7 +203,7 @@ router.post("/HMO", async (req, res) => {
             `,
     };
 
-    await mg.messages.create(process.env.MAILGUN_DOMAIN, emailData);
+    await sgMail.send(emailData);
 
     res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
@@ -251,7 +234,7 @@ router.post("/BRR", async (req, res) => {
     }
 
     const emailData = {
-      from: `Contact Form <mailgun@${process.env.MAILGUN_DOMAIN}>`,
+      from: process.env.RECIPIENT_EMAIL,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New BRR Contact Form Submission!`,
       text: `
@@ -290,7 +273,7 @@ router.post("/BRR", async (req, res) => {
               `,
     };
 
-    await mg.messages.create(process.env.MAILGUN_DOMAIN, emailData);
+    await sgMail.send(emailData);
 
     res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
@@ -299,74 +282,99 @@ router.post("/BRR", async (req, res) => {
   }
 });
 
-router.post("/form-sent", async (req, res) => {
-  const { firstName, lastName, email, phone, date, time, message } = req.body;
-
-  // Walidacja danych (przykładowa)
-  if (!date || !time || !email) {
-    return res.status(400).json({ message: "Missing required fields." });
-  }
-
+router.post("/bespoke", async (req, res) => {
   try {
-    // Inicjalizacja Google Calendar API
-    const auth = new google.auth.GoogleAuth({
-      keyFile: "gkeys.json", // Ścieżka do klucza JSON
-      scopes: ["https://www.googleapis.com/auth/calendar"],
-    });
+    const { title, email, message, hcaptchaToken, interests, date, time } = req.body;
 
-    const calendar = google.calendar({ version: "v3", auth });
+    // const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
+    // if (!isHCaptchaValid) {
+    //   return res.status(400).json({ error: "Invalid captcha" });
+    // }
 
-    // Sprawdzenie dostępności terminu
-    const [timeString, meridian] = time.split(" "); // Oddzielamy "2:00" i "PM"
-    let [hours, minutes] = timeString.split(":").map(Number); // Wyciągamy godziny i minuty jako liczby
+    if (!email || !message || !date || !time) {
+      return res.status(400).json({ error: "Email, message, date, and time are required" });
+    }
 
-    if (meridian === "PM" && hours !== 12) hours += 12; // Konwersja na 24-godzinny format
+    const [timeString, meridian] = time.split(" ");
+    let [hours, minutes] = timeString.split(":").map(Number);
+    if (meridian === "PM" && hours !== 12) hours += 12;
     if (meridian === "AM" && hours === 12) hours = 0;
 
     const startDateTime = new Date(date);
     startDateTime.setHours(hours, minutes);
-
     const endDateTime = new Date(startDateTime.getTime() + 30 * 60000);
 
-    console.log(startDateTime, endDateTime);
+    const formatDateTime = (date) => date.toISOString().replace(/[-:]/g, "").split(".")[0];
+    const googleCalendarLink = `https://www.google.com/calendar/render?text=${encodeURIComponent(
+        title || "Meeting"
+    )}&action=TEMPLATE&dates=${formatDateTime(startDateTime)}Z/${formatDateTime(endDateTime)}Z`;
 
-    const events = await calendar.events.list({
-      calendarId: "primary",
-      timeMin: startDateTime.toISOString(),
-      timeMax: endDateTime.toISOString(),
-      singleEvents: true,
-    });
+    const selectedInterests = Object.entries(interests || {})
+        .filter(([_, val]) => val)
+        .map(([key]) => key)
+        .join(", ");
 
-    if (events.data.items.length > 0) {
-      return res
-          .status(400)
-          .json({ message: "Selected time slot is already taken." });
-    }
+    const clientEmailData = {
+      to: email,
+      from: process.env.RECIPIENT_EMAIL,
+      subject: "We have received your request",
+      text: `
+        Thank you for reaching out to us! We will contact you shortly.
 
-    // Tworzenie nowego wydarzenia w kalendarzu
-    const event = {
-      summary: `Meeting with ${firstName} ${lastName}`,
-      description: message,
-      start: {
-        dateTime: startDateTime.toISOString(),
-        timeZone: "Europe/Warsaw", // Zmień na swoją strefę czasową
-      },
-      end: {
-        dateTime: endDateTime.toISOString(),
-        timeZone: "Europe/Warsaw",
-      },
-      attendees: [{ email }], // Zaproszenie dla klienta
+        Your message:
+        ${message}
+
+        If you would like to schedule a meeting, use the following link:
+        ${googleCalendarLink}
+      `,
+      html: `
+        <p>Thank you for reaching out to us! We will contact you shortly.</p>
+        <h3>Your message:</h3>
+        <p>${message.replace(/\n/g, "<br>")}</p>
+        <p>If you would like to schedule a meeting, use the following link:</p>
+        <a href="${googleCalendarLink}" target="_blank">${googleCalendarLink}</a>
+      `,
     };
 
-    const createdEvent = await calendar.events.insert({
-      calendarId: "primary",
-      resource: event,
-    });
+    const adminEmailData = {
+      to: process.env.RECIPIENT_EMAIL,
+      from: process.env.RECIPIENT_EMAIL,
+      subject: `New Contact Form Submission: ${title || "No Title"}`,
+      text: `
+        New message from contact form:
 
-    res.status(200).json({ message: "Event created successfully.", event: createdEvent.data });
+        Title: ${title || "No Title"}
+        Email: ${email}
+        Interests: ${selectedInterests || "None selected"}
+        Date: ${date}
+        Time: ${time}
+        Google Calendar Link: ${googleCalendarLink}
+
+        Message:
+        ${message}
+      `,
+      html: `
+        <h2>New message from contact form</h2>
+        <p><strong>Title:</strong> ${title || "No Title"}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Interests:</strong> ${selectedInterests || "None selected"}</p>
+        <p><strong>Date:</strong> ${date}</p>
+        <p><strong>Time:</strong> ${time}</p>
+        <p><strong>Google Calendar Link:</strong> <a href="${googleCalendarLink}" target="_blank">${googleCalendarLink}</a></p>
+        <h3>Message:</h3>
+        <p>${message.replace(/\n/g, "<br>")}</p>
+      `,
+    };
+
+    await Promise.all([
+      sgMail.send(clientEmailData),
+      sgMail.send(adminEmailData),
+    ]);
+
+    res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
-    console.error("Error creating event:", error);
-    res.status(500).json({ message: "Failed to create event." });
+    console.error(error);
+    res.status(500).json({ error: "Failed to send message" });
   }
 });
 

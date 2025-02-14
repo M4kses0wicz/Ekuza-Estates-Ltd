@@ -238,7 +238,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   try {
-    const response = await fetch("/api/form-sent", {
+    const response = await fetch("/api/bespoke", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -248,9 +248,7 @@ form.addEventListener("submit", async (event) => {
 
     if (response.ok) {
       const result = await response.json();
-      alert("Form sent successfully!");
-      console.log(result);
-      form.reset();
+      window.location.href = "/form-sent";
     } else {
       const error = await response.json();
       alert(`Error: ${error.message}`);
