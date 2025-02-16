@@ -1,8 +1,4 @@
-
-# Ekuza Estates
-
-
-
+# Ekuza Estates Website
 
 ## Get Started
 
@@ -18,3 +14,4 @@ Run application
   npm run dev
 ```
 
+### Copyright © 2025 Ekuza Estates LTD. All rights reserved.
