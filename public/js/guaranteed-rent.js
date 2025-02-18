@@ -238,7 +238,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   try {
-    const response = await fetch("/api/bespoke", {
+    const response = await fetch("/api/guaranteed-rent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
