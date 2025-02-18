@@ -797,8 +797,18 @@ router.post("/bespoke", async (req, res) => {
 
 router.post("/guaranteed-rent", async (req, res) => {
   try {
-    const { title, email, message, hcaptchaToken, interests, date, time } =
-      req.body;
+    const {
+      firstName,
+      lastName,
+      phone,
+      title,
+      email,
+      message,
+      hcaptchaToken,
+      interests,
+      date,
+      time,
+    } = req.body;
 
     // const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
     // if (!isHCaptchaValid) {
@@ -978,7 +988,7 @@ router.post("/guaranteed-rent", async (req, res) => {
     const adminEmailData = {
       to: process.env.RECIPIENT_EMAIL,
       from: process.env.RECIPIENT_EMAIL,
-      subject: `New Guaranteed rent Form Submission!"}`,
+      subject: `New Guaranteed rent Form Submission!`,
       text: `
         New message from contact form:
 
