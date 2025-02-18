@@ -248,7 +248,7 @@ form.addEventListener("submit", async (event) => {
 
     if (response.ok) {
       const result = await response.json();
-      window.location.href = "/form-sent";
+      window.location.href = "/form-email-sent";
     } else {
       const error = await response.json();
       alert(`Error: ${error.message}`);
