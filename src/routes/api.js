@@ -24,7 +24,7 @@ router.post("/contact", async (req, res) => {
   try {
     const { title, email, message, hcaptchaToken, interests } = req.body;
 
-    const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
+    // const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
     // if (!isHCaptchaValid) {
     //   return res.status(400).json({ error: "Invalid captcha" });
     // }
@@ -87,7 +87,7 @@ router.post("/contact", async (req, res) => {
                   </h2>
                   <ul style="list-style-type: none; padding: 0">
                     <li style="margin-top: 10px; width: 100%; text-align: center">
-                      <strong>Title:</strong> ${title}
+                      <strong>Title:</strong> ${title || "No title"}
                     </li>
                     <li style="margin-top: 10px; width: 100%; text-align: center">
                       <strong>Email:</strong> ${email}
@@ -137,7 +137,7 @@ router.post("/rent-to-rent", async (req, res) => {
       hcaptchaToken,
     } = req.body;
 
-    const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
+    // const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
     // if (!isHCaptchaValid) {
     //   return res.status(400).json({ error: "Invalid captcha" });
     // }
@@ -253,7 +253,7 @@ router.post("/HMO", async (req, res) => {
       hcaptchaToken,
     } = req.body;
 
-    const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
+    // const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
     // if (!isHCaptchaValid) {
     //   return res.status(400).json({ error: "Invalid captcha" });
     // }
@@ -369,7 +369,7 @@ router.post("/BRR", async (req, res) => {
       hcaptchaToken,
     } = req.body;
 
-    const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
+    // const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
     // if (!isHCaptchaValid) {
     //   return res.status(400).json({ error: "Invalid captcha" });
     // }

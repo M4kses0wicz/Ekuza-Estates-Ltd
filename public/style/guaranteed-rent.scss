@@ -242,6 +242,7 @@ main {
       transition: 0.2s;
       width: 90%;
       height: 50px;
+      margin-bottom: 20px;
       @include min-mobile-w(2000px) {
         height: 65px;
         font-size: 18px;
@@ -331,6 +332,14 @@ main {
           background: #f2ab4061;
           font-weight: bold;
         }
+      }
+    }
+    .wrapper {
+      @include FlexCenter(row-reverse);
+      width: 90%;
+      gap: 25px;
+      @include mobile-w(1100px) {
+        flex-direction: column;
       }
     }
   }

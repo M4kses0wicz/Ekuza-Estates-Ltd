@@ -1333,6 +1333,7 @@ main form button {
   transition: 0.2s;
   width: 90%;
   height: 50px;
+  margin-bottom: 20px;
   background: #181113;
   border: none;
   border-radius: 7px;
@@ -1354,6 +1355,19 @@ main form button:hover {
 main form button:active {
   transform: translateY(10px);
   box-shadow: 0px 0px 0px #6b4d18;
+}
+main form .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 90%;
+  gap: 25px;
+}
+@media (max-width: 1100px) {
+  main form .wrapper {
+    flex-direction: column;
+  }
 }
 main section {
   width: 50%;

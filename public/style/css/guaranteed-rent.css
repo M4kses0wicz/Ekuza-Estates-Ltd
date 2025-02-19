@@ -1334,6 +1334,7 @@ main form button {
   transition: 0.2s;
   width: 90%;
   height: 50px;
+  margin-bottom: 20px;
   background: #181113;
   border: none;
   border-radius: 7px;
@@ -1422,6 +1423,19 @@ main form .custom-options .custom-option:hover {
 main form .custom-options .custom-option.selection {
   background: rgba(242, 171, 64, 0.3803921569);
   font-weight: bold;
+}
+main form .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 90%;
+  gap: 25px;
+}
+@media (max-width: 1100px) {
+  main form .wrapper {
+    flex-direction: column;
+  }
 }
 main section {
   width: 50%;

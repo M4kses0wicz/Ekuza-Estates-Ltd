@@ -72,6 +72,8 @@
     />
 
     <link rel="manifest" href="img/ico/site.webmanifest" />
+
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   </head>
 
   <body class="loading">
@@ -380,7 +382,13 @@
               id="message"
               placeholder="Type here..."
             ></textarea>
-            <button type="submit">SUBMIT</button>
+            <div class="wrapper">
+              <div
+                class="h-captcha"
+                data-sitekey="10000000-ffff-ffff-ffff-000000000001"
+              ></div>
+              <button type="submit">SUBMIT</button>
+            </div>
           </form>
         </section>
       </div>
