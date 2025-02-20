@@ -215,6 +215,7 @@ main {
     .budget-p {
       @extend label;
       transform: none !important;
+      margin-top: 10px;
     }
 
     .custom-select-wrapper {

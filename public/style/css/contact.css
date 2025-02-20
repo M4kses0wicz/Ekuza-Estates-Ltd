@@ -1291,6 +1291,7 @@ main form .checkboxes-container div label, main form .checkboxes-container div .
 }
 main form .budget-p {
   transform: none !important;
+  margin-top: 10px;
 }
 main form .custom-select-wrapper {
   position: relative;
