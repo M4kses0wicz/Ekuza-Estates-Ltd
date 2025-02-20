@@ -1048,14 +1048,14 @@ main {
 }
 main .container {
   width: 100svw;
-  height: 900px;
+  height: 1000px;
   margin: 50px 0px;
   display: flex;
   border: 1px #181113 solid;
 }
 @media (min-width: 2000px) {
   main .container {
-    height: 1090px;
+    height: 1100px;
   }
 }
 @media (max-width: 750px) {
@@ -1065,7 +1065,12 @@ main .container {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    height: 1050px;
+    height: 1100px;
+  }
+}
+@media (max-width: 380px) {
+  main .container {
+    height: 1150px;
   }
 }
 main .container section.img-container {
@@ -1164,21 +1169,21 @@ main form .header p {
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
-main form label {
+main form label, main form .budget-p {
   font-size: 22px;
   transform: translateY(33px);
   transition: 0.2s;
   font-weight: 700;
 }
 @media (min-width: 2000px) {
-  main form label {
+  main form label, main form .budget-p {
     font-size: 28px;
   }
 }
-main form label.txtarea {
+main form label.txtarea, main form .txtarea.budget-p {
   transform: translateY(0px) !important;
 }
-main form label.selected {
+main form label.selected, main form .selected.budget-p {
   transform: translateY(5px) scale(0.8);
 }
 main form input:not(.checkboxes-container input) {
@@ -1218,7 +1223,7 @@ main form p.i {
   }
 }
 main form .checkboxes-container {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-bottom: 3px #181113 solid;
   padding: 2.5px 0px;
   text-align: center;
@@ -1232,7 +1237,7 @@ main form .checkboxes-container {
 }
 @media (min-width: 2000px) {
   main form .checkboxes-container {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
   }
 }
 main form .checkboxes-container:hover {
@@ -1253,7 +1258,7 @@ main form .checkboxes-container div {
     margin: 5px;
   }
 }
-main form .checkboxes-container div:has(input:checked) label {
+main form .checkboxes-container div:has(input:checked) label, main form .checkboxes-container div:has(input:checked) .budget-p {
   background: rgba(242, 171, 64, 0.3803921569);
 }
 main form .checkboxes-container div input {
@@ -1271,18 +1276,88 @@ main form .checkboxes-container div input:last-of-type {
 main form .checkboxes-container div input:hover {
   border-color: #181113 !important;
 }
-main form .checkboxes-container div input:checked + label {
+main form .checkboxes-container div input:checked + label, main form .checkboxes-container div input:checked + .budget-p {
   opacity: 100%;
 }
-main form .checkboxes-container div label {
+main form .checkboxes-container div label, main form .checkboxes-container div .budget-p {
   font-size: 17px;
   opacity: 80%;
   transform: translateY(0px) !important;
 }
 @media (min-width: 2000px) {
-  main form .checkboxes-container div label {
+  main form .checkboxes-container div label, main form .checkboxes-container div .budget-p {
     font-size: 19px;
   }
+}
+main form .budget-p {
+  transform: none !important;
+}
+main form .custom-select-wrapper {
+  position: relative;
+  width: 350px;
+  margin: 2px 0px 35px 0px;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  main form .custom-select-wrapper {
+    width: 275px;
+  }
+}
+main form .custom-select {
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+main form .custom-select-trigger {
+  display: block;
+  background: none;
+  padding: 10px 15px;
+  border-bottom: 3px solid #181113;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.4s;
+  margin-bottom: 20px;
+}
+main form .custom-select-trigger:hover {
+  border-bottom: 3px #f2ab40 solid;
+  background: rgba(251, 246, 237, 0.4980392157);
+}
+main form .custom-select.opened .custom-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+main form .custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  margin-top: 5px;
+  max-height: 200px;
+  display: none;
+  z-index: 5;
+}
+main form .custom-options .custom-option {
+  padding: 10px 15px;
+  margin-top: 5px;
+  cursor: pointer;
+  background: #fffaf2;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px rgba(242, 171, 64, 0.2666666667) solid;
+  transition: 0.2s;
+}
+main form .custom-options .custom-option:hover {
+  background: #ffefd6;
+  border-bottom: 1px solid #f2ab40;
+}
+main form .custom-options .custom-option.selection {
+  background: rgba(242, 171, 64, 0.3803921569);
+  font-weight: bold;
 }
 main form textarea {
   width: 90%;
