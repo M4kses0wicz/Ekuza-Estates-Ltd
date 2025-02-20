@@ -18,6 +18,7 @@ form.addEventListener("submit", async (e) => {
     title: document.getElementById("title").value,
     email: document.getElementById("email").value,
     message: document.getElementById("message").value,
+    budget: document.getElementById("budget").value,
     hcaptchaToken,
     interests: {
       "rent-to-rent": document.getElementById("rent-to-rent").checked,

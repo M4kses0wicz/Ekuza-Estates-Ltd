@@ -22,7 +22,8 @@ const verifyHCaptcha = async (token) => {
 
 router.post("/contact", async (req, res) => {
   try {
-    const { title, email, message, hcaptchaToken, interests } = req.body;
+    const { title, email, message, hcaptchaToken, interests, budget } =
+      req.body;
 
     // const isHCaptchaValid = await verifyHCaptcha(hcaptchaToken);
     // if (!isHCaptchaValid) {
@@ -96,6 +97,9 @@ router.post("/contact", async (req, res) => {
                       <strong>Interests:</strong> ${
                         selectedInterests || "None selected"
                       }
+                    </li>
+                    <li style="margin-top: 10px; width: 100%; text-align: center">
+                      <strong>Budget:</strong> ${budget}
                     </li>
                   </ul>
                   <h3
