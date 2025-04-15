@@ -106,7 +106,12 @@
       }
     }
     strong {
-      color: rgb(104, 163, 16);
+      &.g {
+        color: rgb(104, 163, 16);
+      }
+      &:not(&.g) {
+        font-weight: 800;
+      }
     }
     a {
       color: $black;

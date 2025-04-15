@@ -1206,8 +1206,11 @@ img {
     font-size: 32px;
   }
 }
-.message-content-container strong {
+.message-content-container strong.g {
   color: rgb(104, 163, 16);
+}
+.message-content-container strong:not(.message-content-container strong.g) {
+  font-weight: 800;
 }
 .message-content-container a {
   color: #181113;
