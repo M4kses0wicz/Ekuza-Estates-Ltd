@@ -41,7 +41,7 @@ router.post("/contact", async (req, res) => {
 
     const emailData = {
       to: process.env.RECIPIENT_EMAIL,
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       subject: `New Contact Form Submission: ${title || "No Title"}`,
       text: `
         New message from contact form:
@@ -151,7 +151,7 @@ router.post("/rent-to-rent", async (req, res) => {
     }
 
     const emailData = {
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New Rent to Rent Contact Form Submission!`,
       text: `
@@ -267,7 +267,7 @@ router.post("/HMO", async (req, res) => {
     }
 
     const emailData = {
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New HMO Contact Form Submission!`,
       text: `
@@ -383,7 +383,7 @@ router.post("/BRR", async (req, res) => {
     }
 
     const emailData = {
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New BRR Contact Form Submission!`,
       text: `
@@ -527,7 +527,7 @@ router.post("/bespoke", async (req, res) => {
 
     const clientEmailData = {
       to: email,
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       subject: "We have received your request",
       text: `
         Thank you for reaching out to us! We will contact you shortly.
@@ -669,7 +669,7 @@ router.post("/bespoke", async (req, res) => {
 
     const adminEmailData = {
       to: process.env.RECIPIENT_EMAIL,
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       subject: `New Bespoke Deals Form Submission!`,
       text: `
         New message from contact form:
@@ -849,7 +849,7 @@ router.post("/guaranteed-rent", async (req, res) => {
 
     const clientEmailData = {
       to: email,
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       subject: "We have received your request",
       text: `
         Thank you for reaching out to us! We will contact you shortly.
@@ -991,7 +991,7 @@ router.post("/guaranteed-rent", async (req, res) => {
 
     const adminEmailData = {
       to: process.env.RECIPIENT_EMAIL,
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL,
       subject: `New Guaranteed rent Form Submission!`,
       text: `
         New message from contact form:
