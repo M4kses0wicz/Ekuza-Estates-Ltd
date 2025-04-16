@@ -112,7 +112,7 @@ main {
       height: 55%;
     }
     @include mobile-w(665px) {
-      padding: 15px 40px;
+      padding: 15px 25px;
     }
     .date,
     h3,
@@ -361,6 +361,9 @@ main {
             height: 1px;
             background: $black;
             margin: 0px 25px;
+            @include mobile-w(340px) {
+              margin: 0px 15px;
+            }
           }
         }
       }
@@ -380,6 +383,9 @@ main {
             height: 1px;
             background: $black;
             margin: 0px 25px;
+            @include mobile-w(340px) {
+              margin: 0px 15px;
+            }
           }
         }
       }
