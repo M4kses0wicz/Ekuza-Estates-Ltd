@@ -470,6 +470,13 @@ section.sec-desc {
         height: 1px;
         background: $black;
         margin: 0px 25px;
+        @include mobile-w(415px) {
+          margin: 0px 15px;
+        }
+        @include mobile-w(340px) {
+          margin: 0px 7.5px;
+          width: 15px;
+        }
       }
     }
   }
@@ -535,10 +542,17 @@ section.sec-desc {
       }
       &:first-of-type {
         color: #181113be;
+        border: red 2px solid;
         @include mobile-w(700px) {
           font-size: 14px;
           &::after {
             font-size: 12px;
+          }
+        }
+        @include mobile-w(415px) {
+          font-size: 12px;
+          &::after {
+            font-size: 11px;
           }
         }
       }

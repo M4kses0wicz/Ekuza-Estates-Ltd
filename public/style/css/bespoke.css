@@ -1602,6 +1602,17 @@ section.sec-desc p:first-of-type span.line {
   background: #181113;
   margin: 0px 25px;
 }
+@media (max-width: 415px) {
+  section.sec-desc p:first-of-type span.line {
+    margin: 0px 15px;
+  }
+}
+@media (max-width: 340px) {
+  section.sec-desc p:first-of-type span.line {
+    margin: 0px 7.5px;
+    width: 15px;
+  }
+}
 section.sec-desc img {
   width: 35%;
   height: 100%;
@@ -1691,6 +1702,7 @@ section.sec-desc .text-container p {
 }
 section.sec-desc .text-container p:first-of-type {
   color: rgba(24, 17, 19, 0.7450980392);
+  border: red 2px solid;
 }
 @media (max-width: 700px) {
   section.sec-desc .text-container p:first-of-type {
@@ -1698,6 +1710,14 @@ section.sec-desc .text-container p:first-of-type {
   }
   section.sec-desc .text-container p:first-of-type::after {
     font-size: 12px;
+  }
+}
+@media (max-width: 415px) {
+  section.sec-desc .text-container p:first-of-type {
+    font-size: 12px;
+  }
+  section.sec-desc .text-container p:first-of-type::after {
+    font-size: 11px;
   }
 }
 section.sec-desc .text-container p.desc {
