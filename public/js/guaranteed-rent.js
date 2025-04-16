@@ -221,6 +221,12 @@ const form = document.getElementById("contact-form");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
+  const hcaptchaToken = hcaptcha.getResponse();
+  if (!hcaptchaToken) {
+    alert("Please complete the captcha");
+    return;
+  }
+
   const formData = new FormData(form);
   const data = {
     firstName: formData.get("first-name"),
