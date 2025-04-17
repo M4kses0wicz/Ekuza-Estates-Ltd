@@ -19,7 +19,7 @@ app.use(
 );
 app.use(cors(config.security.cors));
 
-app.use(express.static(config.paths.public, config.cache.static));
+// app.use(express.static(config.paths.public, config.cache.static));
 app.use(hpp());
 app.use("/api", rateLimit(config.security.rateLimit));
 
