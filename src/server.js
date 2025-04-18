@@ -19,7 +19,7 @@ app.use(
 );
 app.use(cors(config.security.cors));
 
-app.use(express.static(config.paths.public, config.cache.static));
+// app.use(express.static(config.paths.public, config.cache.static));
 app.use(hpp());
 app.use("/api", rateLimit(config.security.rateLimit));
 
@@ -28,7 +28,8 @@ app.use(morgan("dev"));
 app.use(express.json(config.security.requestLimits));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
-app.use(express.static(path.join(__dirname, "../public")));
+// app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", routes);
 
