@@ -358,6 +358,13 @@ body header nav .burger {
   align-items: center;
   flex-direction: row;
   gap: 4px;
+  transition: 0.2s;
+}
+body header nav .burger:hover {
+  gap: 7px;
+}
+body header nav .burger:hover span {
+  background: #f2ab40 !important;
 }
 body header nav .burger span {
   display: block;
@@ -365,6 +372,19 @@ body header nav .burger span {
   width: 7px;
   background: #181113;
   border-radius: 100px;
+  transition: 0.1s;
+}
+body header nav .burger span:nth-of-type(1) {
+  animation: nav-span-anim 0.5s forwards;
+  animation-delay: 0.025s;
+}
+body header nav .burger span:nth-of-type(2) {
+  animation: nav-span-anim 0.5s forwards;
+  animation-delay: 0.05s;
+}
+body header nav .burger span:nth-of-type(3) {
+  animation: nav-span-anim 0.5s forwards;
+  animation-delay: 0.075s;
 }
 body .dropdown-menu-container {
   display: none !important;
@@ -939,6 +959,14 @@ body footer .km-container a .heart {
   }
   to {
     color: #181113;
+  }
+}
+@keyframes nav-span-anim {
+  from {
+    background: #f2ab40;
+  }
+  to {
+    background: #181113;
   }
 }
 @keyframes toast-anim {
