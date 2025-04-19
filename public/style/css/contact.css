@@ -363,9 +363,6 @@ body header nav .burger {
 body header nav .burger:hover {
   gap: 7px;
 }
-body header nav .burger:hover span {
-  background: #f2ab40 !important;
-}
 body header nav .burger span {
   display: block;
   height: 7px;
@@ -375,16 +372,13 @@ body header nav .burger span {
   transition: 0.1s;
 }
 body header nav .burger span:nth-of-type(1) {
-  animation: nav-span-anim 0.5s forwards;
-  animation-delay: 0.025s;
+  transition-delay: 0.05s;
 }
 body header nav .burger span:nth-of-type(2) {
-  animation: nav-span-anim 0.5s forwards;
-  animation-delay: 0.05s;
+  transition-delay: 0.1s;
 }
 body header nav .burger span:nth-of-type(3) {
-  animation: nav-span-anim 0.5s forwards;
-  animation-delay: 0.075s;
+  transition-delay: 0.15s;
 }
 body .dropdown-menu-container {
   display: none !important;
@@ -959,14 +953,6 @@ body footer .km-container a .heart {
   }
   to {
     color: #181113;
-  }
-}
-@keyframes nav-span-anim {
-  from {
-    background: #f2ab40;
-  }
-  to {
-    background: #181113;
   }
 }
 @keyframes toast-anim {

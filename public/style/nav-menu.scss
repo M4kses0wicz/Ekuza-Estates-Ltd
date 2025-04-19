@@ -196,9 +196,9 @@ body {
         transition: 0.2s;
         &:hover {
           gap: 7px;
-          span {
-            background: $gold !important;
-          }
+          // span {
+          //   background: $gold !important;
+          // }
         }
         // margin-left: 25px;
         span {
@@ -210,8 +210,7 @@ body {
           transition: 0.1s;
           @for $i from 1 through 3 {
             &:nth-of-type(#{$i}) {
-              animation: nav-span-anim 0.2s forwards;
-              animation-delay: calc($i * 0.025s);
+              transition-delay: $i * 0.05s;
             }
           }
         }
@@ -655,15 +654,6 @@ body {
   }
   to {
     color: $black;
-  }
-}
-
-@keyframes nav-span-anim {
-  from {
-    background: $gold;
-  }
-  to {
-    background: $black;
   }
 }
 
