@@ -583,6 +583,12 @@ body .dropdown-menu-container .menu .close {
 body .dropdown-menu-container .menu .close .x:hover p {
   text-decoration: none;
 }
+body .dropdown-menu-container .menu .close .x {
+  transition: 0.25s;
+}
+body .dropdown-menu-container .menu .close .x:hover {
+  rotate: 90deg;
+}
 body .dropdown-menu-container .menu .close p {
   text-decoration: underline;
   cursor: pointer;

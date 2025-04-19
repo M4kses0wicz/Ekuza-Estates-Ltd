@@ -409,6 +409,12 @@ body {
         .x:hover p {
           text-decoration: none;
         }
+        .x {
+          transition: 0.25s;
+          &:hover {
+            rotate: 90deg;
+          }
+        }
         p {
           text-decoration: underline;
           cursor: pointer;
