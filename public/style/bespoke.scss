@@ -290,6 +290,23 @@ main {
       position: relative;
       width: 175px;
       text-align: center;
+      opacity: 1;
+      select:only-child option[disabled]:only-child,
+      select:has(option[disabled]:only-child) {
+        ~ .custom-select {
+          opacity: 0.5;
+          pointer-events: none;
+          &::after {
+            content: "no hours available";
+            position: absolute;
+            width: 100px;
+            height: 10px;
+            font-size: 10px;
+            transform: translateX(-50%);
+            color: red;
+          }
+        }
+      }
     }
 
     .custom-select {

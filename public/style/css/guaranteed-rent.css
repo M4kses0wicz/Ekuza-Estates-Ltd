@@ -1380,6 +1380,22 @@ main form .custom-select-wrapper {
   position: relative;
   width: 175px;
   text-align: center;
+  opacity: 1;
+}
+main form .custom-select-wrapper select:only-child option[disabled]:only-child ~ .custom-select,
+main form .custom-select-wrapper select:has(option[disabled]:only-child) ~ .custom-select {
+  opacity: 0.5;
+  pointer-events: none;
+}
+main form .custom-select-wrapper select:only-child option[disabled]:only-child ~ .custom-select::after,
+main form .custom-select-wrapper select:has(option[disabled]:only-child) ~ .custom-select::after {
+  content: "no hours available";
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  font-size: 10px;
+  transform: translateX(-50%);
+  color: red;
 }
 main form .custom-select {
   position: relative;
