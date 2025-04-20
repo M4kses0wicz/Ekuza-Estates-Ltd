@@ -1738,7 +1738,6 @@ section.sec-desc .text-container p {
 }
 section.sec-desc .text-container p:first-of-type {
   color: rgba(24, 17, 19, 0.7450980392);
-  border: red 2px solid;
 }
 @media (max-width: 700px) {
   section.sec-desc .text-container p:first-of-type {

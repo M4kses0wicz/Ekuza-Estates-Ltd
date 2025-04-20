@@ -559,7 +559,7 @@ section.sec-desc {
       }
       &:first-of-type {
         color: #181113be;
-        border: red 2px solid;
+        // border: red 2px solid;
         @include mobile-w(700px) {
           font-size: 14px;
           &::after {
