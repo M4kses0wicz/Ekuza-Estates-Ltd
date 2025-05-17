@@ -548,6 +548,12 @@ body {
         @include min-mobile-w(1800px) {
           height: 200px;
         }
+        @include mobile-w(1800px) {
+          margin-left: 27.5px;
+        }
+        @include mobile-w(850px) {
+          margin-left: 0;
+        }
         border-radius: 3px;
         border: $gold 2px solid;
       }

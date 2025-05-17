@@ -822,6 +822,16 @@ body footer .sec-1 img {
     height: 200px;
   }
 }
+@media (max-width: 1800px) {
+  body footer .sec-1 img {
+    margin-left: 27.5px;
+  }
+}
+@media (max-width: 850px) {
+  body footer .sec-1 img {
+    margin-left: 0;
+  }
+}
 body footer .sec-2 {
   width: 100%;
   display: flex;
