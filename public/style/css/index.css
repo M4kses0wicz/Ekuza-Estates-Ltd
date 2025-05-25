@@ -54,6 +54,11 @@ body .header-margin-block {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-height: 670px) {
+  body .header-margin-block {
+    height: 95px;
+  }
+}
 @media (max-width: 600px) {
   body .header-margin-block {
     height: 90px;
@@ -150,6 +155,11 @@ body header {
   align-items: center;
   flex-direction: row;
   background: white;
+}
+@media (max-height: 670px) {
+  body header {
+    height: 95px;
+  }
 }
 @media (max-width: 600px) {
   body header {
@@ -1071,6 +1081,11 @@ img {
 main {
   width: 100svw;
   height: calc(100svh - 125px);
+}
+@media (max-height: 670px) {
+  main {
+    height: calc(100svh - 95px);
+  }
 }
 @media (max-width: 600px) {
   main {

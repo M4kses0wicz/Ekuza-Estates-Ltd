@@ -4,6 +4,9 @@
 main {
   width: 100svw;
   height: calc(100svh - 125px);
+  @include mobile-h(670px) {
+    height: calc(100svh - 95px);
+  }
   @include mobile-w(600px) {
     height: calc(100svh - 90px);
   }

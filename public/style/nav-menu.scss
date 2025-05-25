@@ -14,6 +14,9 @@ body {
   .header-margin-block {
     width: 100svw;
     height: 125px;
+    @include mobile-h(670px) {
+      height: 95px;
+    }
     display: flex;
     flex-wrap: wrap;
     @include mobile-w(600px) {
@@ -69,6 +72,9 @@ body {
     top: 0px;
     width: 100svw;
     height: 125px;
+    @include mobile-h(670px) {
+      height: 95px;
+    }
     border-bottom: 1px $black solid;
     @include FlexCenter(row);
     background: white;
