@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /form
+Disallow: /success
+Allow: /
+
+Sitemap: https://ekuzaestates.com/sitemap.xml
