@@ -40,6 +40,12 @@ img {
   }
 }
 
+@media (max-width: 1100px) {
+  main form .header {
+    margin-bottom: 0 !important;
+  }
+}
+
 body {
   background: #fbf6ed;
   width: 100svw;
@@ -1075,6 +1081,12 @@ img {
     scale: 75%;
     margin-right: 20px !important;
     margin-bottom: 20px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  main form .header {
+    margin-bottom: 0 !important;
   }
 }
 
