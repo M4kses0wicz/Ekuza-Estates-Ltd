@@ -40,6 +40,11 @@ img {
   }
 }
 
+main .container {
+  margin-top: 0 !important;
+  border-top: none !important;
+}
+
 body {
   background: #fbf6ed;
   width: 100svw;
@@ -1076,6 +1081,11 @@ img {
     margin-right: 20px !important;
     margin-bottom: 20px !important;
   }
+}
+
+main .container {
+  margin-top: 0 !important;
+  border-top: none !important;
 }
 
 .message {
