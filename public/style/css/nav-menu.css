@@ -798,7 +798,7 @@ body footer .container {
 }
 @media (max-width: 850px) {
   body footer .container {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 body footer .sec-1 {
@@ -826,6 +826,9 @@ body footer .sec-1 p {
 @media (max-width: 850px) {
   body footer .sec-1 p {
     text-align: center;
+    width: 75%;
+    margin-bottom: 25px;
+    opacity: 100%;
   }
 }
 body footer .sec-1 img {

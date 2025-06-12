@@ -527,7 +527,7 @@ body {
       height: 92.5%;
       display: flex;
       @include mobile-w(850px) {
-        flex-direction: column-reverse;
+        flex-direction: column;
       }
     }
     .sec-1 {
@@ -547,6 +547,9 @@ body {
         text-align: center;
         @include mobile-w(850px) {
           text-align: center;
+          width: 75%;
+          margin-bottom: 25px;
+          opacity: 100%;
         }
       }
       img {
