@@ -132,7 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
   createButton(configObj, null);
 });
 
-console.log("† - made by Maksymilian Klemensowicz (klemensowicz.pl)");
+console.log(
+  "† - made by Maksymilian Klemensowicz (M4kses0wicz on github - contact@klemensowicz.pl)"
+);
 
 const burger = document.querySelector(".burger");
 const x = document.querySelector(".x");
